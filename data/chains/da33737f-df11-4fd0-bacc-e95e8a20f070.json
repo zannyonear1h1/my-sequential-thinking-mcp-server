@@ -1,0 +1,133 @@
+{
+  "id": "da33737f-df11-4fd0-bacc-e95e8a20f070",
+  "problem": "Enhance puppeteer-browser MCP to detect navigation issues (CAPTCHAs, rate limits, errors) using screenshots and analysis.",
+  "thinking_type": "systems",
+  "context": "The server uses Puppeteer. Need to integrate screenshot capture and analysis (heuristics first, potentially AI later) into existing navigation/interaction tools (goto, click). Need to update tool responses and add logging.",
+  "created_at": "2025-03-28T16:07:12.263Z",
+  "updated_at": "2025-03-28T16:07:58.178Z",
+  "steps": [
+    {
+      "id": "aec7ca3f-ad35-40f0-9ae0-df5e9ab14139",
+      "description": "Identify System Boundaries & Components: Define the parts of the puppeteer-browser MCP server involved.",
+      "reasoning": "Establishes the scope of changes. Focuses on the `goto` and `click` tools, the underlying Puppeteer `Page` object, session management, and the logging mechanism.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T16:07:22.783Z",
+      "updated_at": "2025-03-28T16:07:22.783Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "772a52fb-3d85-4536-803b-f459c2cd0f89",
+      "description": "Define Detection Mechanism: Specify how issues will be detected.",
+      "reasoning": "Focus on a heuristic approach first. After `goto` or `click`, take a screenshot. Use `page.evaluate` to extract page text content and check for keywords (e.g., 'CAPTCHA', 'rate limit', 'verify', 'too many requests', common error messages). Also, check for known CAPTCHA element selectors (e.g., `iframe[src*='recaptcha']`, `#cf-challenge-running`). This provides a concrete method for detection.",
+      "evidence": "Heuristics are simpler to implement within the current constraints than full AI analysis.",
+      "confidence": 0.85,
+      "created_at": "2025-03-28T16:07:28.101Z",
+      "updated_at": "2025-03-28T16:07:28.101Z",
+      "previous_step_id": "aec7ca3f-ad35-40f0-9ae0-df5e9ab14139",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "62bec3f0-4f5a-44cc-9556-9b0817b5ae7d",
+      "description": "Implement Detection Logic: Modify the code to include the detection mechanism.",
+      "reasoning": "Create a reusable function `checkForIssues(page: Page, sessionId: string)` that takes a screenshot (saving it with a timestamp/session ID for reference), performs the heuristic checks (text content, element selectors), and returns an object indicating detected issues (e.g., `{ captcha: true, rateLimit: false, error: null }`). Call this function within the `goto` and `click` tool handlers after the primary action.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T16:07:33.236Z",
+      "updated_at": "2025-03-28T16:07:33.236Z",
+      "previous_step_id": "772a52fb-3d85-4536-803b-f459c2cd0f89",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "eddbb94a-b90f-47d6-9936-7e12dd7c2411",
+      "description": "Update Tool Responses & Logging: Modify how tools report results and log information.",
+      "reasoning": "The `goto` and `click` tools should include the results from `checkForIssues` in their response payload (e.g., `result: { success: true, issues: { captcha: false, ... } }`). Add detailed logging within `checkForIssues` including the path to the saved screenshot and the detected issue type. This makes the detection results actionable and traceable.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T16:07:41.573Z",
+      "updated_at": "2025-03-28T16:07:41.573Z",
+      "previous_step_id": "62bec3f0-4f5a-44cc-9556-9b0817b5ae7d",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "67d4e1b3-e88c-4cdb-9244-1165b5bd6131",
+      "description": "Consider Edge Cases & Future Enhancements: Think about limitations and potential improvements.",
+      "reasoning": "The heuristic approach might miss novel CAPTCHAs or rate limit pages. Consider dynamic loading issues (detection might run before the relevant content appears). Future enhancements could include: configurable keywords/selectors, integration with external AI vision APIs for more robust detection, automatic retry mechanisms, or allowing user intervention via `waitForUserAction` if an issue is detected.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T16:07:45.807Z",
+      "updated_at": "2025-03-28T16:07:45.807Z",
+      "previous_step_id": "eddbb94a-b90f-47d6-9936-7e12dd7c2411",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "c04c799d-2363-4c75-b51d-25f014dcb092",
+      "description": "Testing Strategy: Plan how to verify the implementation.",
+      "reasoning": "Test against known websites that present CAPTCHAs (e.g., Google search results page after many queries, Cloudflare protected sites) and sites known to implement rate limiting. Also test against standard pages to ensure no false positives. Check the logs and tool responses for correctness.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T16:07:51.415Z",
+      "updated_at": "2025-03-28T16:07:51.415Z",
+      "previous_step_id": "67d4e1b3-e88c-4cdb-9244-1165b5bd6131",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "c6bdbb21-d9ad-437b-81b3-ad58d2d354c2",
+      "description": "Documentation: Update documentation for the changes.",
+      "reasoning": "Document the new `issues` field in the response for `goto` and `click`. Explain the heuristic detection mechanism, its limitations, and how to interpret the results. Mention the saved screenshots and logging.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T16:07:58.178Z",
+      "updated_at": "2025-03-28T16:07:58.178Z",
+      "previous_step_id": "c04c799d-2363-4c75-b51d-25f014dcb092",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "puppeteer",
+      "mcp",
+      "error-detection",
+      "captcha",
+      "rate-limit",
+      "screenshot-analysis"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

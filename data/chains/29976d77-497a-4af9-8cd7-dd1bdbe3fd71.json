@@ -1,0 +1,107 @@
+{
+  "id": "29976d77-497a-4af9-8cd7-dd1bdbe3fd71",
+  "problem": "Develop a feature-rich asynchronous Discord music bot (ZMusica1) with multi-source audio/video playback, interactive UI, advanced queue management, permissions, and dual command interfaces (prefix/slash).",
+  "thinking_type": "systems",
+  "context": "New project request. Requires discord.py v2+, yt-dlp, ffmpeg. Focus on modularity (Cogs), robust state management, and synchronization between command types and UI. Prioritize stable audio.",
+  "created_at": "2025-04-10T23:56:51.974Z",
+  "updated_at": "2025-04-11T00:19:32.608Z",
+  "steps": [
+    {
+      "id": "1e4377ed-b82b-429c-b528-80a70f75da6d",
+      "description": "Define Core Bot Structure & Configuration Management",
+      "reasoning": "Establish the project layout (directories, main file) and decide how configuration (token, prefix, roles, etc.) will be loaded and accessed. This is foundational for all subsequent development.",
+      "evidence": "Based on `systemPatterns.md` (Cog architecture) and `techContext.md` (configuration files). Requirements specify modularity (Cogs) and configurable settings.",
+      "confidence": 1,
+      "created_at": "2025-04-10T23:59:17.484Z",
+      "updated_at": "2025-04-10T23:59:17.484Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "99d4491a-b726-4327-9565-d4afcb49cbf7",
+      "description": "Implement Core Audio Playback Cog (Basic Join/Leave/Play/Stop)",
+      "reasoning": "With the core structure in place, the next step is to implement the fundamental audio playback capabilities: connecting to voice channels, disconnecting, fetching a stream URL using yt-dlp, starting playback with FFmpegPCMAudio, and stopping playback. This forms the basis for all other music features.",
+      "evidence": "Directly addresses core requirements from `projectbrief.md`. Builds upon the Cog structure defined in `systemPatterns.md` and uses technologies from `techContext.md` (discord.py voice, yt-dlp, ffmpeg).",
+      "confidence": 1,
+      "created_at": "2025-04-11T00:00:53.308Z",
+      "updated_at": "2025-04-11T00:00:53.308Z",
+      "previous_step_id": "1e4377ed-b82b-429c-b528-80a70f75da6d",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "af6a62a2-e92c-419b-9940-4818f8a976e7",
+      "description": "Implement Queue Management (Data Structure, Add, Skip, View)",
+      "reasoning": "The core playback works for single tracks. The next essential feature is a queue to manage multiple tracks. This involves defining the queue data structure, modifying 'play' to add tracks, implementing the logic to automatically play the next track, and adding basic commands like 'skip' and 'queue' (view).",
+      "evidence": "Core requirement from `projectbrief.md`. Builds upon the `PlaybackCog`. Requires modifying the `after` callback logic and introducing per-guild state management as planned in `systemPatterns.md`.",
+      "confidence": 1,
+      "created_at": "2025-04-11T00:03:29.290Z",
+      "updated_at": "2025-04-11T00:03:29.290Z",
+      "previous_step_id": "99d4491a-b726-4327-9565-d4afcb49cbf7",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "d5c06373-e757-4f38-ac8e-e310c558dcea",
+      "description": "Implement Interactive UI Cog (discord.ui.View, Basic Controls)",
+      "reasoning": "With playback and queue logic functional via commands, the next step is to create the interactive player message using discord.ui.View. This involves defining the View class with buttons (Play/Pause, Skip, Stop), creating/updating the embed, and linking button interactions back to the playback/queue logic.",
+      "evidence": "Core requirement from `projectbrief.md`. Builds upon `PlaybackCog` state and functionality. Utilizes `discord.ui` as specified in `techContext.md` and planned in `systemPatterns.md`.",
+      "confidence": 1,
+      "created_at": "2025-04-11T00:09:00.998Z",
+      "updated_at": "2025-04-11T00:09:00.998Z",
+      "previous_step_id": "af6a62a2-e92c-419b-9940-4818f8a976e7",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "bf79e555-001c-4af5-8e5e-e2015d8d83d6",
+      "description": "Implement Advanced Queue Management (Remove, Move, Shuffle, Save/Load)",
+      "reasoning": "With basic queueing and UI controls working, enhance queue functionality by adding commands to manipulate the order (remove, move, shuffle) and persist queues (save, load). This requires file I/O for persistence.",
+      "evidence": "Core requirement from `projectbrief.md`. Builds upon the existing queue structure in `GuildPlayerState`. Requires file handling (JSON) as outlined in `techContext.md` and `systemPatterns.md`.",
+      "confidence": 1,
+      "created_at": "2025-04-11T00:19:32.608Z",
+      "updated_at": "2025-04-11T00:19:32.608Z",
+      "previous_step_id": "d5c06373-e757-4f38-ac8e-e310c558dcea",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 71,
+    "tags": [
+      "discord-bot",
+      "python",
+      "asyncio",
+      "music",
+      "discord.py",
+      "yt-dlp",
+      "ffmpeg",
+      "ui",
+      "slash-commands",
+      "ZMusica1"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

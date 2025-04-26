@@ -1,0 +1,131 @@
+{
+  "id": "63b2fe6d-7096-4b27-a3fd-8004e043621d",
+  "problem": "Plan the creation of a PowerShell script based on the provided detailed requirements for modifying Discord.",
+  "thinking_type": "systems",
+  "context": "**Objective:** Create a PowerShell script (`.ps1`) that automates the process of modifying a Discord installation on Windows to enable developer experiments, specifically focusing on reverting the UI via the \"Desktop Visual Refresh\" experiment. The script should guide the user through necessary manual steps using Windows message boxes.\n\n**PowerShell Script Requirements:**\n\n1.  **Load Windows Forms Assembly:**\n    *   Ensure the `System.Windows.Forms` assembly is loaded for displaying message boxes (e.g., `Add-Type -AssemblyName System.Windows.Forms`).\n\n2.  **Display Initial Disclaimer:**\n    *   Show a Windows Information message box.\n    *   **Title:** `Disclaimer`\n    *   **Text:**\n        ```\n        This script assists with enabling Discord developer features (experiments) and UI reversion. It modifies local Discord settings.\n\n        Use at your own discretion. The author provides this script for specific users and is not responsible for any unintended consequences.\n\n        Press OK to continue.\n        ```\n    *   Wait for the user to click OK.\n\n3.  **Prompt for Discord Uninstall:**\n    *   Show a Windows Information message box.\n    *   **Title:** `Step 1: Uninstall Discord`\n    *   **Text:**\n        ```\n        The next step requires uninstalling Discord.\n\n        1. The 'Programs and Features' window will now open.\n        2. Find 'Discord' in the list, select it, and click 'Uninstall'.\n        3. Follow the prompts to completely uninstall Discord.\n\n        Click OK on THIS message box *only after* Discord has been fully uninstalled.\n        ```\n    *   Wait for the user to click OK.\n\n4.  **Open Programs and Features:**\n    *   Execute `control.exe appwiz.cpl` to open the \"Programs and Features\" control panel applet.\n\n5.  **Wait for User Confirmation (Post-Uninstall):**\n    *   The script pauses at step 3 until the user confirms the uninstallation by clicking OK on that message box.\n\n6.  **Download Discord Installer:**\n    *   Display a message box: **Title:** `Step 2: Downloading Discord`, **Text:** `Downloading the latest Discord installer...` (This box should close automatically after the download attempt).\n    *   Define the download URL: `https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x64`\n    *   Define a temporary path for the downloaded file, e.g., `$env:TEMP\\DiscordSetup.exe`.\n    *   Use `Invoke-WebRequest` to download the file to the specified path.\n    *   Include error handling: Check if the download was successful. If not, display an error message box and exit the script.\n\n7.  **Install Discord:**\n    *   Display a message box: **Title:** `Step 3: Installing Discord`, **Text:** `Installing Discord. Please wait, this may take a moment...` (This box should close automatically after installation attempt).\n    *   Execute the downloaded installer (e.g., `$env:TEMP\\DiscordSetup.exe`). Attempt a silent installation if possible (e.g., using `/S` argument, though this may vary).\n    *   Use `Start-Process -Wait` to ensure the script waits for the installer process to complete before continuing.\n    *   Include error handling: Check if the installation process started and completed successfully. If not, display an error message box and exit.\n    *   Clean up the downloaded installer file afterwards (e.g., `Remove-Item $env:TEMP\\DiscordSetup.exe -ErrorAction SilentlyContinue`).\n\n8.  **Modify Discord `settings.json`:**\n    *   Define the path to `settings.json`: `$settingsPath = \"$env:APPDATA\\discord\\settings.json\"`\n    *   **Check Existence:** Verify if `$settingsPath` exists. If not, display an error message box (e.g., \"Error: settings.json not found. Was Discord installed correctly?\") and exit.\n    *   **Read and Parse:** Read the content of the file. Attempt to parse it as JSON using `ConvertFrom-Json`. Implement error handling for invalid JSON format. If parsing fails, display an error and exit.\n    *   **Add/Update Setting:** Add or update the following key-value pair in the parsed PowerShell object: `\"DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING\" = $true`.\n    *   **Convert Back and Write:** Convert the modified PowerShell object back to a JSON string using `ConvertTo-Json -Depth 10`. Write this string back to `$settingsPath`, overwriting the original file. Implement error handling for file writing errors.\n\n9.  **Launch Discord:**\n    *   Attempt to launch Discord. The typical command is: `Start-Process \"$env:LOCALAPPDATA\\Discord\\Update.exe\" -ArgumentList \"--processStart Discord.exe\"`\n    *   Include basic error handling in case the path is incorrect or Discord fails to launch.\n\n10. **Display DevTools Instructions:**\n    *   Show a Windows Information message box.\n    *   **Title:** `Step 4: Enable Console Pasting in Discord`\n    *   **Text:**\n        ```\n        Discord should now be launching. Once it's open:\n\n        1. Press Ctrl+Shift+I simultaneously to open the Developer Tools panel.\n        2. Click on the 'Console' tab within the Developer Tools.\n        3. Type exactly: allow pasting\n        4. Press the Enter key.\n\n        Click OK on THIS message box *after* you have successfully typed 'allow pasting' in the console and pressed Enter.\n        ```\n    *   Wait for the user to click OK.\n\n11. **Copy JavaScript to Clipboard:**\n    *   Define the JavaScript code block as a multi-line string variable in PowerShell.\n        ```powershell\n        $jsCode = @'\n        let _, a = Object.values,\n            b = \"getCurrentUser\",\n            c = \"actionHandler\",\n            d = \"_actionHandlers\",\n            l = \"_dispatcher\",\n            i = \"ExperimentStore\";\n        webpackChunkdiscord_app.push([\n            [Date.now()], {},\n            e => {\n                _ = e\n            }\n        ]), m = a((u = a(_.c).find(e => e?.exports?.default?.[b] && e?.exports?.default?.[l]?.[d]).exports.default)[l][d]._dependencyGraph.nodes), u[b]().flags |= 1, m.find(e => \"Developer\" + i == e.name)[c].CONNECTION_OPEN();\n        try {\n            m.find(e => i == e.name)[c].OVERLAY_INITIALIZE({\n                user: {\n                    flags: 1\n                }\n            })\n        } catch {}\n        m.find(e => i == e.name).storeDidChange()\n        '@\n        ```\n    *   Use `Set-Clipboard -Value $jsCode` to copy the script to the user's clipboard. Check for errors.\n\n12. **Display Final Instructions:**\n    *   Show a Windows Information message box.\n    *   **Title:** `Step 5: Apply Experiment Script`\n    *   **Text:**\n        ```\n        The required JavaScript has been copied to your clipboard.\n\n        1. Go back to the Discord Console tab (Ctrl+Shift+I if closed).\n        2. Click into the console input area.\n        3. Press Ctrl+V to paste the script.\n        4. Press Enter to execute the script.\n\n        After running the script:\n        - Go to User Settings (cog icon) > Experiments tab.\n        - Search for: Desktop Visual Refresh\n        - Select 'Treatment 0' under 'New Desktop UI'.\n\n        Discord's appearance should revert.\n\n        For questions, contact 'zannytornado' on Discord.\n\n        Press OK to close this script.\n        ```\n    *   Wait for the user to click OK.\n\n13. **End Script:** The script finishes execution.",
+  "created_at": "2025-03-27T22:09:18.624Z",
+  "updated_at": "2025-03-27T22:10:49.241Z",
+  "steps": [
+    {
+      "id": "21eedd15-7d86-4da4-b275-426440e96970",
+      "description": "Define the initial script setup, including loading necessary assemblies (`System.Windows.Forms`) and displaying the disclaimer message box to the user.",
+      "reasoning": "Establishes the script environment (for message boxes) and informs the user about the script's purpose and risks before any modifications occur. This aligns with Requirement #1 and #2.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-03-27T22:09:31.710Z",
+      "updated_at": "2025-03-27T22:09:31.710Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "60540dc8-d4c3-4e9c-b9c2-dfcaf5e9252a",
+      "description": "Plan the user-guided uninstallation process. This involves displaying a message box instructing the user to uninstall Discord, opening the 'Programs and Features' control panel (`control.exe appwiz.cpl`), and pausing script execution until the user confirms completion via the message box.",
+      "reasoning": "Handles the necessary manual uninstallation step by providing clear instructions and integrating with the system's uninstaller. The pause ensures the script doesn't proceed prematurely. This covers Requirements #3, #4, and #5.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-03-27T22:09:37.582Z",
+      "updated_at": "2025-03-27T22:09:37.582Z",
+      "previous_step_id": "21eedd15-7d86-4da4-b275-426440e96970",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "5d09acef-59cc-4e62-8006-f605dbb28a2e",
+      "description": "Plan the automated download and installation of Discord. This includes displaying status messages, using `Invoke-WebRequest` to download the installer to a temporary location (`$env:TEMP`), executing the installer with `Start-Process -Wait`, implementing error handling for both download and installation, and cleaning up the installer file.",
+      "reasoning": "Automates the reinstallation process after the manual uninstall. Using `-Wait` ensures sequential execution, and error handling improves robustness. Cleanup keeps the system tidy. This covers Requirements #6 and #7.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-03-27T22:09:52.651Z",
+      "updated_at": "2025-03-27T22:09:52.651Z",
+      "previous_step_id": "60540dc8-d4c3-4e9c-b9c2-dfcaf5e9252a",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "abeea271-3c66-430a-a618-51d20a1cb473",
+      "description": "Plan the modification of Discord's `settings.json` file. This involves locating the file (`$env:APPDATA\\discord\\settings.json`), checking for its existence, reading and parsing the JSON content (`ConvertFrom-Json`), adding/updating the specific developer flag (`DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING` = `$true`), converting the object back to JSON (`ConvertTo-Json -Depth 10`), and writing the changes back to the file. Include error handling for file not found, invalid JSON, and write errors.",
+      "reasoning": "This is the core modification step to enable developer tools. Precise JSON manipulation and error handling are crucial here. Using standard PowerShell cmdlets ensures compatibility. This covers Requirement #8.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-03-27T22:10:07.547Z",
+      "updated_at": "2025-03-27T22:10:07.547Z",
+      "previous_step_id": "5d09acef-59cc-4e62-8006-f605dbb28a2e",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "b868afb3-58b8-4c80-ae38-e8e06a3f5db0",
+      "description": "Plan launching the modified Discord client using `Start-Process` with the typical path (`$env:LOCALAPPDATA\\Discord\\Update.exe --processStart Discord.exe`). Then, display a message box guiding the user to open DevTools (Ctrl+Shift+I), navigate to the Console, and type `allow pasting`. Pause script execution until the user confirms completion.",
+      "reasoning": "Launches the client so the user can interact with it. The message box provides necessary instructions for enabling pasting in the DevTools console, which is required for the next step. The pause ensures the user has completed this manual action. This covers Requirements #9 and #10.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-03-27T22:10:22.093Z",
+      "updated_at": "2025-03-27T22:10:22.093Z",
+      "previous_step_id": "abeea271-3c66-430a-a618-51d20a1cb473",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "5b818951-50cd-4015-9662-96aa5ff0177a",
+      "description": "Plan copying the provided JavaScript snippet to the user's clipboard using `Set-Clipboard`. Then, display a final message box instructing the user to paste (Ctrl+V) and execute (Enter) the script in the Discord DevTools console. This message should also include instructions on how to find and use the 'Experiments' tab afterwards.",
+      "reasoning": "Automates placing the complex JS code onto the clipboard, reducing user error. The final message box provides the last set of instructions for the user to manually complete the process within Discord itself. This covers Requirements #11 and #12.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-03-27T22:10:36.268Z",
+      "updated_at": "2025-03-27T22:10:36.268Z",
+      "previous_step_id": "b868afb3-58b8-4c80-ae38-e8e06a3f5db0",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "c6c81002-f854-40fe-96b5-a8e82ccd5f82",
+      "description": "Plan the final step where the script waits for the user to acknowledge the last message box and then terminates gracefully.",
+      "reasoning": "Ensures the script doesn't close prematurely before the user has read the final instructions. This covers Requirement #13.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-03-27T22:10:49.241Z",
+      "updated_at": "2025-03-27T22:10:49.241Z",
+      "previous_step_id": "5b818951-50cd-4015-9662-96aa5ff0177a",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "powershell",
+      "discord",
+      "automation",
+      "scripting"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "id": "49ffa304-3a53-4991-a21f-dd4de207a2dc",
+  "problem": "Develop a Hybrid Browsing Automator MCP Server using Puppeteer and Gemini, along with a companion Chrome Extension for user browser control, including full documentation and a tutorial.",
+  "thinking_type": "systems",
+  "context": "The goal is to create a robust system allowing AI-driven browser automation via both a controlled Puppeteer instance and the user's own browser, with mechanisms for user intervention and detailed context passing.",
+  "created_at": "2025-04-01T13:48:53.207Z",
+  "updated_at": "2025-04-01T13:50:49.060Z",
+  "steps": [
+    {
+      "id": "849f2ae9-fde2-4c57-80f8-627855d938fd",
+      "description": "MCP Server Setup: Initialize Node.js project, install dependencies (Puppeteer, @google/generative-ai, ws for potential WebSocket communication), and establish basic project structure (e.g., src/, config/, logs/).",
+      "reasoning": "Establishes the core foundation for the MCP server, including necessary libraries and a logical file organization.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-04-01T13:49:02.010Z",
+      "updated_at": "2025-04-01T13:49:02.010Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "1e66b1ac-52ef-47c3-b2f6-adf4093886bc",
+      "description": "Gemini API Integration: Implement logic to interact with the Gemini API (model gemini-2.0-flash-thinking-exp-01-21) using the provided key. Define prompt structures for sending browser context (screenshots, DOM elements, tabs, etc.) and receiving automation commands. Ensure secure handling of the API key (e.g., environment variables or config file).",
+      "reasoning": "Connects the MCP server to the AI brain, enabling it to process browser state and generate automation instructions.",
+      "evidence": "User requirement #2 and #3.",
+      "confidence": 0.95,
+      "created_at": "2025-04-01T13:49:11.418Z",
+      "updated_at": "2025-04-01T13:49:11.418Z",
+      "previous_step_id": "849f2ae9-fde2-4c57-80f8-627855d938fd",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "4087d46b-c385-448e-b3b9-7285c0eeafdf",
+      "description": "Puppeteer Core Logic (PNM): Implement functions to wrap ALL core Puppeteer actions (navigation, clicks, typing, scrolling, waiting, element selection, file uploads, downloads, screenshot saving, etc.). Manage browser and page instances. This forms the engine for the Puppeteer Navigator Mode (PNM).",
+      "reasoning": "Provides the fundamental browser automation capabilities driven by Puppeteer, directly addressing user requirement #5 for PNM.",
+      "evidence": "User requirement #5.",
+      "confidence": 0.95,
+      "created_at": "2025-04-01T13:49:19.603Z",
+      "updated_at": "2025-04-01T13:49:19.603Z",
+      "previous_step_id": "1e66b1ac-52ef-47c3-b2f6-adf4093886bc",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "d2a52b69-2b5f-4a84-9f56-648eb2f1a315",
+      "description": "Context Extraction: Develop mechanisms to capture comprehensive browser context after each action. This includes taking screenshots, extracting relevant DOM elements (simplified representation or serialization), getting current URL, listing open tabs, and identifying the browser environment (Puppeteer vs. Extension). This context is vital for the Gemini prompt.",
+      "reasoning": "Fulfills the requirement to provide detailed, real-time browser state information to the AI for accurate decision-making.",
+      "evidence": "User requirement #4.",
+      "confidence": 0.95,
+      "created_at": "2025-04-01T13:49:30.638Z",
+      "updated_at": "2025-04-01T13:49:30.638Z",
+      "previous_step_id": "4087d46b-c385-448e-b3b9-7285c0eeafdf",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "a883412e-a4b7-4b23-8a68-d92c11f084bc",
+      "description": "User Intervention Handling: Implement a mechanism to pause AI automation, allow the user to interact directly with the browser (both Puppeteer instance and via the extension), and then resume AI control, passing the updated context back to the AI.",
+      "reasoning": "Addresses the requirement for hybrid control, allowing users to handle tasks the AI cannot (e.g., CAPTCHAs, complex logins) before letting the AI continue.",
+      "evidence": "User requirement #5.",
+      "confidence": 0.9,
+      "created_at": "2025-04-01T13:49:39.503Z",
+      "updated_at": "2025-04-01T13:49:39.503Z",
+      "previous_step_id": "d2a52b69-2b5f-4a84-9f56-648eb2f1a315",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "c5bdf1e4-8aec-4600-bf0d-346e44165b48",
+      "description": "Logging and Debugging: Implement comprehensive, live-time logging for both MCP server operations and Puppeteer actions/errors. Include timestamps, context information, and error stack traces.",
+      "reasoning": "Fulfills requirement #6 for debugging and monitoring the system's behavior and diagnosing issues effectively.",
+      "evidence": "User requirement #6.",
+      "confidence": 0.95,
+      "created_at": "2025-04-01T13:49:47.953Z",
+      "updated_at": "2025-04-01T13:49:47.953Z",
+      "previous_step_id": "a883412e-a4b7-4b23-8a68-d92c11f084bc",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "95a8e893-97d4-4996-9fb6-99436b5a90f7",
+      "description": "Chrome Extension Structure (URBM): Define the extension's manifest.json (requesting necessary permissions for full browser access), background script for communication and state management, and content scripts for interacting with web pages.",
+      "reasoning": "Establishes the necessary components and permissions for the Chrome extension to function and interact with the user's browser.",
+      "evidence": "User requirement for a Chrome extension with full access.",
+      "confidence": 0.95,
+      "created_at": "2025-04-01T13:49:56.895Z",
+      "updated_at": "2025-04-01T13:49:56.895Z",
+      "previous_step_id": "c5bdf1e4-8aec-4600-bf0d-346e44165b48",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "e2bb0ad8-4d6e-4ab8-b828-d7758c469d37",
+      "description": "Extension-MCP Communication: Implement a communication channel (likely WebSockets) between the extension's background script and the MCP server. Define clear message protocols for sending commands from the server to the extension and sending context/results back from the extension to the server.",
+      "reasoning": "Enables the core functionality of URBM by allowing the AI (via the MCP server) to remotely control and receive information from the user's browser via the extension.",
+      "evidence": "Necessary component for URBM functionality.",
+      "confidence": 0.9,
+      "created_at": "2025-04-01T13:50:07.561Z",
+      "updated_at": "2025-04-01T13:50:07.561Z",
+      "previous_step_id": "95a8e893-97d4-4996-9fb6-99436b5a90f7",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "23749c3b-18ac-4842-bbae-3dab70f07bbd",
+      "description": "Extension Browser Automation Logic (URBM): Implement logic within the extension's content scripts to execute browser actions (clicks, typing, navigation, etc.) based on commands received from the MCP server. Use Chrome Extension APIs and standard web APIs to interact with the DOM, capture screenshots (`chrome.tabs.captureVisibleTab`), and gather context within the user's active browser session.",
+      "reasoning": "Provides the mechanism for the AI to control the user's actual browser via the extension, enabling the URBM functionality.",
+      "evidence": "Core requirement for URBM mode.",
+      "confidence": 0.9,
+      "created_at": "2025-04-01T13:50:16.209Z",
+      "updated_at": "2025-04-01T13:50:16.209Z",
+      "previous_step_id": "e2bb0ad8-4d6e-4ab8-b828-d7758c469d37",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "a380e611-bbe6-4e28-be8b-b2fef8c7ca89",
+      "description": "Mode Switching Implementation (PNM/URBM): Implement logic within the MCP server to manage the active mode (PNM or URBM). Route AI commands and context gathering requests to the appropriate engine (Puppeteer functions or Extension communication channel). Provide a mechanism for the user to switch between modes.",
+      "reasoning": "Enables the user to choose the desired automation method (controlled environment vs. user's browser) as requested.",
+      "evidence": "User requirement for PNM and URBM modes.",
+      "confidence": 0.95,
+      "created_at": "2025-04-01T13:50:26.806Z",
+      "updated_at": "2025-04-01T13:50:26.806Z",
+      "previous_step_id": "23749c3b-18ac-4842-bbae-3dab70f07bbd",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "33885934-f1cd-4674-826d-03b9ed2de9c8",
+      "description": "Documentation Writing: Create comprehensive documentation (e.g., README.md) covering installation, configuration (API key), usage of both PNM and URBM modes, MCP server tools/commands, extension setup, user intervention process, and troubleshooting.",
+      "reasoning": "Provides users and developers with the necessary information to understand, set up, and use the system effectively.",
+      "evidence": "User requirement for complete documentation.",
+      "confidence": 0.95,
+      "created_at": "2025-04-01T13:50:40.884Z",
+      "updated_at": "2025-04-01T13:50:40.884Z",
+      "previous_step_id": "a380e611-bbe6-4e28-be8b-b2fef8c7ca89",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "029ba205-ac54-49f1-9239-d475587b4e69",
+      "description": "HTML Tutorial Creation: Develop a complete tutorial in HTML format (tutorial.html) with step-by-step instructions, code snippets, and potentially visual aids (screenshots/placeholders) covering setup, configuration, and basic usage examples for both PNM and URBM modes.",
+      "reasoning": "Provides an accessible, easy-to-follow guide for end-users to get started with the system.",
+      "evidence": "User requirement for a COMPLETE tutorial html file.",
+      "confidence": 0.95,
+      "created_at": "2025-04-01T13:50:49.060Z",
+      "updated_at": "2025-04-01T13:50:49.060Z",
+      "previous_step_id": "33885934-f1cd-4674-826d-03b9ed2de9c8",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "mcp-server",
+      "chrome-extension",
+      "puppeteer",
+      "gemini-api",
+      "browser-automation",
+      "hybrid-browsing"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

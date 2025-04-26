@@ -1,0 +1,132 @@
+{
+  "id": "83ef3627-fa85-45d1-b6c8-a3243d5328d4",
+  "problem": "Create a plan for developing a private Visual Studio Code extension with the following features:\n1. Full filesystem access for AI operations.\n2. Full MCP server management capabilities (create, manage, remove) driven by the selected AI model.\n3. User selection of AI mode and model.\n4. User configuration of the Straico API key.",
+  "thinking_type": "systems",
+  "context": "The extension is for personal use. It needs to interact with the Straico API for user info (GET /v0/user), model list (GET /v1/models), prompt completion (POST /v1/prompt/completion), and file uploads (POST /v0/file/upload). Authentication uses a Bearer token ($STRAICO_API_KEY). API details including request/response formats are provided in the initial request.",
+  "created_at": "2025-03-27T14:59:00.848Z",
+  "updated_at": "2025-03-27T15:00:51.012Z",
+  "steps": [
+    {
+      "id": "aa2dfa36-75ee-4424-a64e-cf21babcfc19",
+      "description": "Step 1: Define Core Components and Interactions. Identify UI, Core Logic, Straico API Client, Filesystem Interface, MCP Interface. Map interactions.",
+      "reasoning": "Establishes clear system architecture, manages complexity, ensures modularity. Aligns with 'systems' thinking.",
+      "evidence": "Standard software engineering principles and VS Code extension guidelines.",
+      "confidence": 0.9,
+      "created_at": "2025-03-27T14:59:15.776Z",
+      "updated_at": "2025-03-27T14:59:15.776Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "f4c4e514-5b95-4f34-a095-be9ff67bdb82",
+      "description": "Step 2: Plan Filesystem Access. Detail use of `vscode.workspace.fs` and Node.js `fs` (with safeguards) for full access. Define interface methods. Define AI interaction protocol.",
+      "reasoning": "Addresses requirement #1. Details implementation using VS Code/Node.js APIs, considers security for personal use with safeguards, defines interface and AI interaction.",
+      "evidence": "VS Code API docs, Node.js fs docs, security considerations balanced by personal use case and safeguards.",
+      "confidence": 0.85,
+      "created_at": "2025-03-27T14:59:36.957Z",
+      "updated_at": "2025-03-27T14:59:36.957Z",
+      "previous_step_id": "aa2dfa36-75ee-4424-a64e-cf21babcfc19",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "69eb6716-bc1d-435a-b855-a716a7bd0ff3",
+      "description": "Step 3: Plan MCP Server Management. Detail AI-driven commands, MCP Interface methods (create, list, status, stop, remove), Node.js `child_process` for lifecycle, configuration handling, state persistence (VS Code state), and UI integration.",
+      "reasoning": "Addresses requirement #2. Details AI interaction, interface, process management, config, persistence, and UI for MCP servers.",
+      "evidence": "Node.js child_process docs, VS Code API docs (state, UI). Central concept is AI generating commands/config.",
+      "confidence": 0.85,
+      "created_at": "2025-03-27T14:59:50.447Z",
+      "updated_at": "2025-03-27T14:59:50.447Z",
+      "previous_step_id": "f4c4e514-5b95-4f34-a095-be9ff67bdb82",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "dc2fa491-14b7-4ed9-ae37-c46565def55a",
+      "description": "Step 4: Plan AI Model/Mode Selection. Detail fetching models (GET /v1/models), defining/selecting modes (predefined personas?), UI for selection (dropdowns), state management, and applying selections to API calls/prompts.",
+      "reasoning": "Addresses requirement #3. Covers model fetching, mode definition/selection, UI, state, and application of choices.",
+      "evidence": "Straico API docs, VS Code API docs (UI, state). Assumes modes are predefined personas.",
+      "confidence": 0.9,
+      "created_at": "2025-03-27T15:00:04.146Z",
+      "updated_at": "2025-03-27T15:00:04.146Z",
+      "previous_step_id": "69eb6716-bc1d-435a-b855-a716a7bd0ff3",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "6fd8af24-59d5-46f7-b715-435179f31646",
+      "description": "Step 5: Plan API Key Config & Client. Detail secure key storage (`ExtensionContext.secrets`), config UI (command/setting), `Straico API Client` class with methods for user, models, completion, upload. Cover headers, error handling, multipart upload.",
+      "reasoning": "Addresses requirement #4 and API client implementation. Emphasizes secure key storage and details client methods, headers, errors, and file uploads.",
+      "evidence": "VS Code API docs (secrets, config), Straico API docs, standard API client practices.",
+      "confidence": 0.95,
+      "created_at": "2025-03-27T15:00:17.567Z",
+      "updated_at": "2025-03-27T15:00:17.567Z",
+      "previous_step_id": "dc2fa491-14b7-4ed9-ae37-c46565def55a",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "30d33936-6f21-41b2-8b85-0950ad087ad5",
+      "description": "Step 6: Plan UI/UX & Core Logic. Define Webview UI components (input, output, selectors, status, MCPs), secondary UI (status bar, commands, tree view?). Detail `Core Logic` orchestration: message handling, API calls, FS/MCP calls, state management.",
+      "reasoning": "Defines user interface/experience and central coordination. Outlines UI elements and Core Logic responsibilities connecting all components.",
+      "evidence": "VS Code API docs (Webview, Status Bar, Commands, Tree View), common UX patterns, mediator pattern for Core Logic.",
+      "confidence": 0.9,
+      "created_at": "2025-03-27T15:00:33.560Z",
+      "updated_at": "2025-03-27T15:00:33.560Z",
+      "previous_step_id": "6fd8af24-59d5-46f7-b715-435179f31646",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "5cffed4a-696d-42aa-b180-4b9a6a16ae7a",
+      "description": "Step 7: Dev Setup & Deployment. Define Tech Stack (TS, Webview UI Toolkit/VanillaJS, vsce), Project Structure, Dev Workflow (debug, lint), Build Process (npm scripts), Personal Deployment (manual .vsix install).",
+      "reasoning": "Covers practical build/use aspects: tech choices, structure, workflow, build, and simple deployment for personal use.",
+      "evidence": "VS Code extension docs, vsce docs, standard TS/Node.js practices.",
+      "confidence": 0.95,
+      "created_at": "2025-03-27T15:00:51.012Z",
+      "updated_at": "2025-03-27T15:00:51.012Z",
+      "previous_step_id": "30d33936-6f21-41b2-8b85-0950ad087ad5",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "vscode-extension",
+      "planning",
+      "straico-api",
+      "mcp-management",
+      "filesystem-access"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

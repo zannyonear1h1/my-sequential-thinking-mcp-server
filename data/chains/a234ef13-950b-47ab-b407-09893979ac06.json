@@ -1,0 +1,28 @@
+{
+  "id": "a234ef13-950b-47ab-b407-09893979ac06",
+  "problem": "Fix multiple Python errors (IndentationError, SyntaxError, missing setup function) in discord.py cogs based on traceback logs.",
+  "thinking_type": "analytical",
+  "context": "The user provided traceback logs pointing to specific lines in cogs/effects.py (line 158), cogs/player.py (line 117), cogs/ui.py (line 127), and an issue with cogs/models.py (missing setup function). The goal is to resolve these errors to allow the cogs to load successfully. This involves reading the relevant file sections, identifying the specific code issues (indentation, syntax, missing required function), and applying corrections using file manipulation tools. The appropriate mode should be adept at code analysis, debugging, and modification.",
+  "created_at": "2025-04-25T18:18:20.785Z",
+  "updated_at": "2025-04-25T18:18:20.785Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "python",
+      "discord.py",
+      "debugging",
+      "code-fix",
+      "indentation-error",
+      "syntax-error",
+      "attribute-error"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 5,
+    "pattern": "break_down_analyze_synthesize"
+  }
+}

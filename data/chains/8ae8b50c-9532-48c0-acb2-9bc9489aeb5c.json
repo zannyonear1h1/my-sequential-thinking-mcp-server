@@ -1,0 +1,46 @@
+{
+  "id": "8ae8b50c-9532-48c0-acb2-9bc9489aeb5c",
+  "problem": "Develop a feature-rich asynchronous Discord music bot with Python (discord.py v2+), supporting multiple audio sources (YouTube, SoundCloud via yt-dlp), video screensharing, dual control interfaces (prefix/slash commands, interactive UI), advanced queue management, permissions (DJ mode), audio effects, vote-to-skip, Stage Channel support, and persistence.",
+  "thinking_type": "systems",
+  "context": "The goal is a robust, well-commented, modular (Cog-based) bot adhering to specific technical requirements and user experience goals outlined in the initial request. Requires integration with external tools like yt-dlp and ffmpeg. Emphasis on stable audio and consistent state management between control interfaces.",
+  "created_at": "2025-04-13T23:41:44.306Z",
+  "updated_at": "2025-04-13T23:41:58.062Z",
+  "steps": [
+    {
+      "id": "81d74f5b-4c0e-4e42-8a77-e9a521a02553",
+      "description": "Define Project Structure and Core Components",
+      "reasoning": "Establish a clear, modular structure using Discord.py Cogs for maintainability and scalability. Identify key components needed to fulfill the requirements.",
+      "evidence": "The project requires numerous distinct functionalities (playback, UI, queue management, permissions, configuration, error handling) which map well to separate Cogs. Requirements specify modularity.",
+      "confidence": 0.95,
+      "created_at": "2025-04-13T23:41:58.062Z",
+      "updated_at": "2025-04-13T23:41:58.062Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 14,
+    "tags": [
+      "discord-bot",
+      "python",
+      "asyncio",
+      "discord.py",
+      "music-bot",
+      "yt-dlp",
+      "ffmpeg",
+      "ui",
+      "slash-commands"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "systems-thinking",
+  "display_name": "Systems Thinking Analysis",
+  "description": "Analyze a complex system by understanding relationships, feedback loops, and emergent properties",
+  "thinking_type": "systems",
+  "structure": {
+    "pattern": "map_analyze_model",
+    "expected_steps": 7,
+    "recommended_tags": ["systems", "complexity", "holistic"]
+  },
+  "steps": [
+    {
+      "description": "Define the system boundaries",
+      "reasoning": "Let's clearly define what is included in the system we're analyzing: ${problem}\n\nWe need to establish:\n- What elements are part of the system\n- What sits outside the system\n- The key interfaces and boundaries\n- The scope of our analysis",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "description": "Identify key components and actors",
+      "reasoning": "Within our defined system, let's identify the primary elements:\n\n1. Key components (technical, physical, informational)\n2. Primary actors/stakeholders\n3. Resources flowing through the system\n4. Critical processes and functions",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "description": "Map relationships and connections",
+      "reasoning": "Now let's map how the components relate to each other:\n\n- Direct connections between components\n- Information and resource flows\n- Dependencies and interdependencies\n- Hierarchical relationships",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "description": "Identify feedback loops",
+      "reasoning": "Let's analyze the feedback mechanisms in the system:\n\n- Reinforcing loops (amplifying effects)\n- Balancing loops (stabilizing effects)\n- Delays and their impacts\n- Second-order effects",
+      "evidence": "",
+      "confidence": 0.6
+    },
+    {
+      "description": "Analyze system behavior",
+      "reasoning": "Based on the components and relationships, let's analyze how the system behaves:\n\n- Emergent properties not obvious from individual components\n- System states and transitions\n- Resilience and vulnerability points\n- Response to perturbations and stressors",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "description": "Identify leverage points",
+      "reasoning": "Let's determine the high-leverage intervention points:\n\n- Where small changes could produce large effects\n- Structural vs. parameter changes\n- Potential for system redesign\n- Intervention risks and unintended consequences",
+      "evidence": "",
+      "confidence": 0.6
+    },
+    {
+      "description": "Develop a systemic solution approach",
+      "reasoning": "Based on our systems analysis, we can now propose holistic interventions:\n\n1. The key leverage points are...\n2. Potential interventions include...\n3. Expected system responses would be...\n4. Monitoring mechanisms should include...",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ]
+}

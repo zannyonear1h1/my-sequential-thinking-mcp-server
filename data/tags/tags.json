@@ -1,0 +1,1302 @@
+{
+  "custom:discord-bot": {
+    "id": "custom:discord-bot",
+    "name": "discord-bot",
+    "display_name": "discord-bot",
+    "category": "custom",
+    "description": "discord-bot tag",
+    "created_at": "2025-03-26T02:21:04.086Z",
+    "updated_at": "2025-04-25T15:16:06.645Z",
+    "usage_count": 13
+  },
+  "custom:python": {
+    "id": "custom:python",
+    "name": "python",
+    "display_name": "python",
+    "category": "custom",
+    "description": "python tag",
+    "created_at": "2025-03-26T02:21:04.089Z",
+    "updated_at": "2025-04-25T18:18:20.787Z",
+    "usage_count": 23
+  },
+  "custom:yt-dlp": {
+    "id": "custom:yt-dlp",
+    "name": "yt-dlp",
+    "display_name": "yt-dlp",
+    "category": "custom",
+    "description": "yt-dlp tag",
+    "created_at": "2025-03-26T02:21:04.090Z",
+    "updated_at": "2025-04-25T14:30:48.844Z",
+    "usage_count": 15
+  },
+  "custom:music": {
+    "id": "custom:music",
+    "name": "music",
+    "display_name": "music",
+    "category": "custom",
+    "description": "music tag",
+    "created_at": "2025-03-26T02:21:04.091Z",
+    "updated_at": "2025-04-25T15:16:06.658Z",
+    "usage_count": 7
+  },
+  "custom:new-project": {
+    "id": "custom:new-project",
+    "name": "new-project",
+    "display_name": "new-project",
+    "category": "custom",
+    "description": "new-project tag",
+    "created_at": "2025-03-26T02:21:04.092Z",
+    "updated_at": "2025-03-26T02:21:04.093Z",
+    "usage_count": 1
+  },
+  "custom:systems-thinking": {
+    "id": "custom:systems-thinking",
+    "name": "systems-thinking",
+    "display_name": "systems-thinking",
+    "category": "custom",
+    "description": "systems-thinking tag",
+    "created_at": "2025-03-26T02:21:04.093Z",
+    "updated_at": "2025-04-03T22:12:12.303Z",
+    "usage_count": 11
+  },
+  "custom:discordpy": {
+    "id": "custom:discordpy",
+    "name": "discordpy",
+    "display_name": "discord.py",
+    "category": "custom",
+    "description": "discord.py tag",
+    "created_at": "2025-03-26T15:25:11.849Z",
+    "updated_at": "2025-04-25T18:18:20.787Z",
+    "usage_count": 27
+  },
+  "custom:bugfix": {
+    "id": "custom:bugfix",
+    "name": "bugfix",
+    "display_name": "bugfix",
+    "category": "custom",
+    "description": "bugfix tag",
+    "created_at": "2025-03-26T15:25:11.851Z",
+    "updated_at": "2025-03-26T15:25:11.852Z",
+    "usage_count": 1
+  },
+  "custom:application-commands": {
+    "id": "custom:application-commands",
+    "name": "application-commands",
+    "display_name": "application-commands",
+    "category": "custom",
+    "description": "application-commands tag",
+    "created_at": "2025-03-26T15:25:11.852Z",
+    "updated_at": "2025-03-26T15:25:11.853Z",
+    "usage_count": 1
+  },
+  "custom:cogs": {
+    "id": "custom:cogs",
+    "name": "cogs",
+    "display_name": "cogs",
+    "category": "custom",
+    "description": "cogs tag",
+    "created_at": "2025-03-26T15:25:11.853Z",
+    "updated_at": "2025-04-24T16:05:35.746Z",
+    "usage_count": 5
+  },
+  "custom:zmusicbot": {
+    "id": "custom:zmusicbot",
+    "name": "zmusicbot",
+    "display_name": "ZMusicBot",
+    "category": "custom",
+    "description": "ZMusicBot tag",
+    "created_at": "2025-03-26T15:25:11.855Z",
+    "updated_at": "2025-04-25T15:16:06.648Z",
+    "usage_count": 16
+  },
+  "custom:powershell": {
+    "id": "custom:powershell",
+    "name": "powershell",
+    "display_name": "powershell",
+    "category": "custom",
+    "description": "powershell tag",
+    "created_at": "2025-03-27T00:51:29.632Z",
+    "updated_at": "2025-03-27T22:09:18.625Z",
+    "usage_count": 5
+  },
+  "custom:windows": {
+    "id": "custom:windows",
+    "name": "windows",
+    "display_name": "windows",
+    "category": "custom",
+    "description": "windows tag",
+    "created_at": "2025-03-27T00:51:29.634Z",
+    "updated_at": "2025-04-04T20:06:14.695Z",
+    "usage_count": 3
+  },
+  "custom:shortcut": {
+    "id": "custom:shortcut",
+    "name": "shortcut",
+    "display_name": "shortcut",
+    "category": "custom",
+    "description": "shortcut tag",
+    "created_at": "2025-03-27T00:51:29.635Z",
+    "updated_at": "2025-03-27T00:51:29.636Z",
+    "usage_count": 1
+  },
+  "custom:gui-revert": {
+    "id": "custom:gui-revert",
+    "name": "gui-revert",
+    "display_name": "gui-revert",
+    "category": "custom",
+    "description": "gui-revert tag",
+    "created_at": "2025-03-27T00:51:29.636Z",
+    "updated_at": "2025-03-27T02:01:15.869Z",
+    "usage_count": 3
+  },
+  "custom:process-management": {
+    "id": "custom:process-management",
+    "name": "process-management",
+    "display_name": "process-management",
+    "category": "custom",
+    "description": "process-management tag",
+    "created_at": "2025-03-27T00:51:29.638Z",
+    "updated_at": "2025-03-27T00:51:29.639Z",
+    "usage_count": 1
+  },
+  "custom:vencord": {
+    "id": "custom:vencord",
+    "name": "vencord",
+    "display_name": "vencord",
+    "category": "custom",
+    "description": "vencord tag",
+    "created_at": "2025-03-27T01:38:21.060Z",
+    "updated_at": "2025-03-27T02:07:08.846Z",
+    "usage_count": 3
+  },
+  "custom:scripting": {
+    "id": "custom:scripting",
+    "name": "scripting",
+    "display_name": "scripting",
+    "category": "custom",
+    "description": "scripting tag",
+    "created_at": "2025-03-27T01:38:21.062Z",
+    "updated_at": "2025-03-27T22:09:18.626Z",
+    "usage_count": 3
+  },
+  "custom:code-analysis": {
+    "id": "custom:code-analysis",
+    "name": "code-analysis",
+    "display_name": "code-analysis",
+    "category": "custom",
+    "description": "code-analysis tag",
+    "created_at": "2025-03-27T02:01:15.870Z",
+    "updated_at": "2025-03-27T02:01:15.871Z",
+    "usage_count": 1
+  },
+  "custom:modding": {
+    "id": "custom:modding",
+    "name": "modding",
+    "display_name": "Modding",
+    "category": "custom",
+    "description": "Modding tag",
+    "created_at": "2025-03-27T02:07:08.843Z",
+    "updated_at": "2025-03-27T02:07:08.844Z",
+    "usage_count": 1
+  },
+  "custom:javascript-injection": {
+    "id": "custom:javascript-injection",
+    "name": "javascript-injection",
+    "display_name": "JavaScript Injection",
+    "category": "custom",
+    "description": "JavaScript Injection tag",
+    "created_at": "2025-03-27T02:07:08.845Z",
+    "updated_at": "2025-03-27T02:07:08.846Z",
+    "usage_count": 1
+  },
+  "custom:experiments": {
+    "id": "custom:experiments",
+    "name": "experiments",
+    "display_name": "Experiments",
+    "category": "custom",
+    "description": "Experiments tag",
+    "created_at": "2025-03-27T02:07:08.847Z",
+    "updated_at": "2025-03-27T02:07:08.848Z",
+    "usage_count": 1
+  },
+  "custom:desktop-shortcut": {
+    "id": "custom:desktop-shortcut",
+    "name": "desktop-shortcut",
+    "display_name": "Desktop Shortcut",
+    "category": "custom",
+    "description": "Desktop Shortcut tag",
+    "created_at": "2025-03-27T02:07:08.849Z",
+    "updated_at": "2025-03-27T02:07:08.850Z",
+    "usage_count": 1
+  },
+  "custom:revert": {
+    "id": "custom:revert",
+    "name": "revert",
+    "display_name": "Revert",
+    "category": "custom",
+    "description": "Revert tag",
+    "created_at": "2025-03-27T02:07:08.850Z",
+    "updated_at": "2025-03-27T02:07:08.851Z",
+    "usage_count": 1
+  },
+  "custom:vscode-extension": {
+    "id": "custom:vscode-extension",
+    "name": "vscode-extension",
+    "display_name": "vscode-extension",
+    "category": "custom",
+    "description": "vscode-extension tag",
+    "created_at": "2025-03-27T14:59:00.853Z",
+    "updated_at": "2025-04-12T00:20:25.852Z",
+    "usage_count": 10
+  },
+  "custom:planning": {
+    "id": "custom:planning",
+    "name": "planning",
+    "display_name": "planning",
+    "category": "custom",
+    "description": "planning tag",
+    "created_at": "2025-03-27T14:59:00.854Z",
+    "updated_at": "2025-04-25T15:16:06.653Z",
+    "usage_count": 15
+  },
+  "custom:straico-api": {
+    "id": "custom:straico-api",
+    "name": "straico-api",
+    "display_name": "straico-api",
+    "category": "custom",
+    "description": "straico-api tag",
+    "created_at": "2025-03-27T14:59:00.855Z",
+    "updated_at": "2025-03-27T14:59:00.856Z",
+    "usage_count": 1
+  },
+  "custom:mcp-management": {
+    "id": "custom:mcp-management",
+    "name": "mcp-management",
+    "display_name": "mcp-management",
+    "category": "custom",
+    "description": "mcp-management tag",
+    "created_at": "2025-03-27T14:59:00.856Z",
+    "updated_at": "2025-03-27T14:59:00.857Z",
+    "usage_count": 1
+  },
+  "custom:filesystem-access": {
+    "id": "custom:filesystem-access",
+    "name": "filesystem-access",
+    "display_name": "filesystem-access",
+    "category": "custom",
+    "description": "filesystem-access tag",
+    "created_at": "2025-03-27T14:59:00.858Z",
+    "updated_at": "2025-03-27T14:59:00.859Z",
+    "usage_count": 1
+  },
+  "custom:automation": {
+    "id": "custom:automation",
+    "name": "automation",
+    "display_name": "automation",
+    "category": "custom",
+    "description": "automation tag",
+    "created_at": "2025-03-27T21:24:19.172Z",
+    "updated_at": "2025-03-27T22:09:18.626Z",
+    "usage_count": 2
+  },
+  "custom:ui-reversion": {
+    "id": "custom:ui-reversion",
+    "name": "ui-reversion",
+    "display_name": "ui-reversion",
+    "category": "custom",
+    "description": "ui-reversion tag",
+    "created_at": "2025-03-27T21:24:19.181Z",
+    "updated_at": "2025-03-27T21:24:19.182Z",
+    "usage_count": 1
+  },
+  "custom:developer-experiments": {
+    "id": "custom:developer-experiments",
+    "name": "developer-experiments",
+    "display_name": "developer-experiments",
+    "category": "custom",
+    "description": "developer-experiments tag",
+    "created_at": "2025-03-27T21:24:19.184Z",
+    "updated_at": "2025-03-27T21:24:19.186Z",
+    "usage_count": 1
+  },
+  "custom:script-planning": {
+    "id": "custom:script-planning",
+    "name": "script-planning",
+    "display_name": "script-planning",
+    "category": "custom",
+    "description": "script-planning tag",
+    "created_at": "2025-03-27T21:24:19.191Z",
+    "updated_at": "2025-03-27T21:24:19.193Z",
+    "usage_count": 1
+  },
+  "custom:prompt-engineering": {
+    "id": "custom:prompt-engineering",
+    "name": "prompt-engineering",
+    "display_name": "prompt-engineering",
+    "category": "custom",
+    "description": "prompt-engineering tag",
+    "created_at": "2025-03-28T15:12:29.687Z",
+    "updated_at": "2025-03-31T23:55:21.138Z",
+    "usage_count": 2
+  },
+  "custom:mcp-server": {
+    "id": "custom:mcp-server",
+    "name": "mcp-server",
+    "display_name": "mcp-server",
+    "category": "custom",
+    "description": "mcp-server tag",
+    "created_at": "2025-03-28T15:12:29.689Z",
+    "updated_at": "2025-04-03T21:18:35.088Z",
+    "usage_count": 15
+  },
+  "custom:puppeteer": {
+    "id": "custom:puppeteer",
+    "name": "puppeteer",
+    "display_name": "puppeteer",
+    "category": "custom",
+    "description": "puppeteer tag",
+    "created_at": "2025-03-28T15:12:29.691Z",
+    "updated_at": "2025-04-03T22:12:12.299Z",
+    "usage_count": 16
+  },
+  "custom:browser-automation": {
+    "id": "custom:browser-automation",
+    "name": "browser-automation",
+    "display_name": "browser-automation",
+    "category": "custom",
+    "description": "browser-automation tag",
+    "created_at": "2025-03-28T15:25:53.223Z",
+    "updated_at": "2025-04-03T22:12:12.299Z",
+    "usage_count": 13
+  },
+  "custom:modification": {
+    "id": "custom:modification",
+    "name": "modification",
+    "display_name": "modification",
+    "category": "custom",
+    "description": "modification tag",
+    "created_at": "2025-03-28T15:56:07.100Z",
+    "updated_at": "2025-03-28T15:56:07.101Z",
+    "usage_count": 1
+  },
+  "custom:captcha": {
+    "id": "custom:captcha",
+    "name": "captcha",
+    "display_name": "captcha",
+    "category": "custom",
+    "description": "captcha tag",
+    "created_at": "2025-03-28T15:56:07.102Z",
+    "updated_at": "2025-03-28T16:07:12.269Z",
+    "usage_count": 2
+  },
+  "custom:file-permissions": {
+    "id": "custom:file-permissions",
+    "name": "file-permissions",
+    "display_name": "file-permissions",
+    "category": "custom",
+    "description": "file-permissions tag",
+    "created_at": "2025-03-28T15:56:07.104Z",
+    "updated_at": "2025-03-28T15:56:07.105Z",
+    "usage_count": 1
+  },
+  "custom:lazy-loading": {
+    "id": "custom:lazy-loading",
+    "name": "lazy-loading",
+    "display_name": "lazy-loading",
+    "category": "custom",
+    "description": "lazy-loading tag",
+    "created_at": "2025-03-28T15:56:07.105Z",
+    "updated_at": "2025-03-28T15:56:07.106Z",
+    "usage_count": 1
+  },
+  "custom:mcp": {
+    "id": "custom:mcp",
+    "name": "mcp",
+    "display_name": "mcp",
+    "category": "custom",
+    "description": "mcp tag",
+    "created_at": "2025-03-28T16:07:12.266Z",
+    "updated_at": "2025-04-15T00:07:35.337Z",
+    "usage_count": 4
+  },
+  "custom:error-detection": {
+    "id": "custom:error-detection",
+    "name": "error-detection",
+    "display_name": "error-detection",
+    "category": "custom",
+    "description": "error-detection tag",
+    "created_at": "2025-03-28T16:07:12.268Z",
+    "updated_at": "2025-03-28T16:07:12.269Z",
+    "usage_count": 1
+  },
+  "custom:rate-limit": {
+    "id": "custom:rate-limit",
+    "name": "rate-limit",
+    "display_name": "rate-limit",
+    "category": "custom",
+    "description": "rate-limit tag",
+    "created_at": "2025-03-28T16:07:12.270Z",
+    "updated_at": "2025-03-28T16:07:12.271Z",
+    "usage_count": 1
+  },
+  "custom:screenshot-analysis": {
+    "id": "custom:screenshot-analysis",
+    "name": "screenshot-analysis",
+    "display_name": "screenshot-analysis",
+    "category": "custom",
+    "description": "screenshot-analysis tag",
+    "created_at": "2025-03-28T16:07:12.272Z",
+    "updated_at": "2025-03-28T16:07:12.273Z",
+    "usage_count": 1
+  },
+  "custom:ai-integration": {
+    "id": "custom:ai-integration",
+    "name": "ai-integration",
+    "display_name": "ai-integration",
+    "category": "custom",
+    "description": "ai-integration tag",
+    "created_at": "2025-03-28T16:27:37.631Z",
+    "updated_at": "2025-04-15T14:59:54.774Z",
+    "usage_count": 4
+  },
+  "custom:resilience": {
+    "id": "custom:resilience",
+    "name": "resilience",
+    "display_name": "resilience",
+    "category": "custom",
+    "description": "resilience tag",
+    "created_at": "2025-03-28T16:27:37.633Z",
+    "updated_at": "2025-03-28T20:40:44.787Z",
+    "usage_count": 2
+  },
+  "custom:minecraft": {
+    "id": "custom:minecraft",
+    "name": "minecraft",
+    "display_name": "minecraft",
+    "category": "custom",
+    "description": "minecraft tag",
+    "created_at": "2025-03-28T17:17:06.333Z",
+    "updated_at": "2025-04-09T20:44:58.372Z",
+    "usage_count": 9
+  },
+  "custom:spigot": {
+    "id": "custom:spigot",
+    "name": "spigot",
+    "display_name": "spigot",
+    "category": "custom",
+    "description": "spigot tag",
+    "created_at": "2025-03-28T17:17:06.335Z",
+    "updated_at": "2025-03-28T17:21:01.032Z",
+    "usage_count": 2
+  },
+  "custom:odin": {
+    "id": "custom:odin",
+    "name": "odin",
+    "display_name": "odin",
+    "category": "custom",
+    "description": "odin tag",
+    "created_at": "2025-03-28T17:17:06.338Z",
+    "updated_at": "2025-03-28T18:18:05.126Z",
+    "usage_count": 3
+  },
+  "custom:server-development": {
+    "id": "custom:server-development",
+    "name": "server-development",
+    "display_name": "server-development",
+    "category": "custom",
+    "description": "server-development tag",
+    "created_at": "2025-03-28T17:17:06.342Z",
+    "updated_at": "2025-03-28T18:18:05.126Z",
+    "usage_count": 2
+  },
+  "custom:game-server": {
+    "id": "custom:game-server",
+    "name": "game-server",
+    "display_name": "game-server",
+    "category": "custom",
+    "description": "game-server tag",
+    "created_at": "2025-03-28T17:17:06.346Z",
+    "updated_at": "2025-04-11T18:13:02.244Z",
+    "usage_count": 2
+  },
+  "custom:api-implementation": {
+    "id": "custom:api-implementation",
+    "name": "api-implementation",
+    "display_name": "api-implementation",
+    "category": "custom",
+    "description": "api-implementation tag",
+    "created_at": "2025-03-28T17:17:06.350Z",
+    "updated_at": "2025-04-10T12:56:58.733Z",
+    "usage_count": 2
+  },
+  "custom:plugin-architecture": {
+    "id": "custom:plugin-architecture",
+    "name": "plugin-architecture",
+    "display_name": "plugin-architecture",
+    "category": "custom",
+    "description": "plugin-architecture tag",
+    "created_at": "2025-03-28T17:17:06.352Z",
+    "updated_at": "2025-03-28T17:17:06.353Z",
+    "usage_count": 1
+  },
+  "custom:web-interface": {
+    "id": "custom:web-interface",
+    "name": "web-interface",
+    "display_name": "web-interface",
+    "category": "custom",
+    "description": "web-interface tag",
+    "created_at": "2025-03-28T17:17:06.354Z",
+    "updated_at": "2025-03-28T17:17:06.355Z",
+    "usage_count": 1
+  },
+  "custom:server": {
+    "id": "custom:server",
+    "name": "server",
+    "display_name": "server",
+    "category": "custom",
+    "description": "server tag",
+    "created_at": "2025-03-28T17:21:01.031Z",
+    "updated_at": "2025-04-09T20:44:58.372Z",
+    "usage_count": 4
+  },
+  "custom:fork": {
+    "id": "custom:fork",
+    "name": "fork",
+    "display_name": "fork",
+    "category": "custom",
+    "description": "fork tag",
+    "created_at": "2025-03-28T17:21:01.032Z",
+    "updated_at": "2025-03-28T17:21:01.033Z",
+    "usage_count": 1
+  },
+  "custom:plugin-compatibility": {
+    "id": "custom:plugin-compatibility",
+    "name": "plugin-compatibility",
+    "display_name": "plugin-compatibility",
+    "category": "custom",
+    "description": "plugin-compatibility tag",
+    "created_at": "2025-03-28T17:21:01.033Z",
+    "updated_at": "2025-03-28T17:21:01.034Z",
+    "usage_count": 1
+  },
+  "custom:web-ui": {
+    "id": "custom:web-ui",
+    "name": "web-ui",
+    "display_name": "web-ui",
+    "category": "custom",
+    "description": "web-ui tag",
+    "created_at": "2025-03-28T17:21:01.034Z",
+    "updated_at": "2025-03-28T17:21:01.035Z",
+    "usage_count": 1
+  },
+  "custom:project-planning": {
+    "id": "custom:project-planning",
+    "name": "project-planning",
+    "display_name": "project-planning",
+    "category": "custom",
+    "description": "project-planning tag",
+    "created_at": "2025-03-28T17:21:01.035Z",
+    "updated_at": "2025-03-28T17:21:01.036Z",
+    "usage_count": 1
+  },
+  "custom:spigot-fork": {
+    "id": "custom:spigot-fork",
+    "name": "spigot-fork",
+    "display_name": "spigot-fork",
+    "category": "custom",
+    "description": "spigot-fork tag",
+    "created_at": "2025-03-28T18:18:05.125Z",
+    "updated_at": "2025-03-28T18:18:05.126Z",
+    "usage_count": 1
+  },
+  "custom:nlp": {
+    "id": "custom:nlp",
+    "name": "nlp",
+    "display_name": "nlp",
+    "category": "custom",
+    "description": "nlp tag",
+    "created_at": "2025-03-28T18:24:52.471Z",
+    "updated_at": "2025-03-28T18:53:16.662Z",
+    "usage_count": 2
+  },
+  "custom:systems-design": {
+    "id": "custom:systems-design",
+    "name": "systems-design",
+    "display_name": "systems-design",
+    "category": "custom",
+    "description": "systems-design tag",
+    "created_at": "2025-03-28T20:40:44.786Z",
+    "updated_at": "2025-03-28T21:12:06.386Z",
+    "usage_count": 2
+  },
+  "custom:typescript": {
+    "id": "custom:typescript",
+    "name": "typescript",
+    "display_name": "typescript",
+    "category": "custom",
+    "description": "typescript tag",
+    "created_at": "2025-03-28T21:12:06.385Z",
+    "updated_at": "2025-04-15T14:59:54.771Z",
+    "usage_count": 3
+  },
+  "custom:gui": {
+    "id": "custom:gui",
+    "name": "gui",
+    "display_name": "gui",
+    "category": "custom",
+    "description": "gui tag",
+    "created_at": "2025-03-30T14:45:59.466Z",
+    "updated_at": "2025-04-15T00:07:35.337Z",
+    "usage_count": 5
+  },
+  "custom:c": {
+    "id": "custom:c",
+    "name": "c",
+    "display_name": "c++",
+    "category": "custom",
+    "description": "c++ tag",
+    "created_at": "2025-03-30T14:45:59.468Z",
+    "updated_at": "2025-03-30T14:45:59.469Z",
+    "usage_count": 1
+  },
+  "custom:patcher": {
+    "id": "custom:patcher",
+    "name": "patcher",
+    "display_name": "patcher",
+    "category": "custom",
+    "description": "patcher tag",
+    "created_at": "2025-03-30T14:45:59.470Z",
+    "updated_at": "2025-03-30T18:27:35.810Z",
+    "usage_count": 2
+  },
+  "custom:minebedrock4all": {
+    "id": "custom:minebedrock4all",
+    "name": "minebedrock4all",
+    "display_name": "MineBedrock4All",
+    "category": "custom",
+    "description": "MineBedrock4All tag",
+    "created_at": "2025-03-30T14:45:59.472Z",
+    "updated_at": "2025-03-30T14:45:59.474Z",
+    "usage_count": 1
+  },
+  "custom:wpf": {
+    "id": "custom:wpf",
+    "name": "wpf",
+    "display_name": "wpf",
+    "category": "custom",
+    "description": "wpf tag",
+    "created_at": "2025-03-30T18:27:35.806Z",
+    "updated_at": "2025-04-06T19:55:28.329Z",
+    "usage_count": 3
+  },
+  "custom:csharp": {
+    "id": "custom:csharp",
+    "name": "csharp",
+    "display_name": "csharp",
+    "category": "custom",
+    "description": "csharp tag",
+    "created_at": "2025-03-30T18:27:35.809Z",
+    "updated_at": "2025-04-04T20:06:14.695Z",
+    "usage_count": 3
+  },
+  "custom:visual-studio": {
+    "id": "custom:visual-studio",
+    "name": "visual-studio",
+    "display_name": "visual-studio",
+    "category": "custom",
+    "description": "visual-studio tag",
+    "created_at": "2025-03-30T18:27:35.812Z",
+    "updated_at": "2025-03-30T18:27:35.813Z",
+    "usage_count": 1
+  },
+  "custom:nexus-loader": {
+    "id": "custom:nexus-loader",
+    "name": "nexus-loader",
+    "display_name": "nexus-loader",
+    "category": "custom",
+    "description": "nexus-loader tag",
+    "created_at": "2025-03-30T18:27:35.815Z",
+    "updated_at": "2025-03-30T18:27:35.816Z",
+    "usage_count": 1
+  },
+  "custom:feasibility-analysis": {
+    "id": "custom:feasibility-analysis",
+    "name": "feasibility-analysis",
+    "display_name": "feasibility-analysis",
+    "category": "custom",
+    "description": "feasibility-analysis tag",
+    "created_at": "2025-03-31T23:55:21.141Z",
+    "updated_at": "2025-03-31T23:55:21.142Z",
+    "usage_count": 1
+  },
+  "custom:gemini-api": {
+    "id": "custom:gemini-api",
+    "name": "gemini-api",
+    "display_name": "gemini-api",
+    "category": "custom",
+    "description": "gemini-api tag",
+    "created_at": "2025-04-01T13:48:53.229Z",
+    "updated_at": "2025-04-15T14:59:54.780Z",
+    "usage_count": 7
+  },
+  "custom:hybrid-browsing": {
+    "id": "custom:hybrid-browsing",
+    "name": "hybrid-browsing",
+    "display_name": "hybrid-browsing",
+    "category": "custom",
+    "description": "hybrid-browsing tag",
+    "created_at": "2025-04-01T13:48:53.232Z",
+    "updated_at": "2025-04-01T13:48:53.234Z",
+    "usage_count": 1
+  },
+  "custom:gemini": {
+    "id": "custom:gemini",
+    "name": "gemini",
+    "display_name": "gemini",
+    "category": "custom",
+    "description": "gemini tag",
+    "created_at": "2025-04-03T16:05:06.174Z",
+    "updated_at": "2025-04-03T17:44:12.757Z",
+    "usage_count": 2
+  },
+  "custom:recreation": {
+    "id": "custom:recreation",
+    "name": "recreation",
+    "display_name": "recreation",
+    "category": "custom",
+    "description": "recreation tag",
+    "created_at": "2025-04-03T17:44:12.753Z",
+    "updated_at": "2025-04-03T17:44:12.754Z",
+    "usage_count": 1
+  },
+  "custom:enhancement": {
+    "id": "custom:enhancement",
+    "name": "enhancement",
+    "display_name": "enhancement",
+    "category": "custom",
+    "description": "enhancement tag",
+    "created_at": "2025-04-03T17:44:12.756Z",
+    "updated_at": "2025-04-23T01:53:36.427Z",
+    "usage_count": 2
+  },
+  "custom:architecture": {
+    "id": "custom:architecture",
+    "name": "architecture",
+    "display_name": "architecture",
+    "category": "custom",
+    "description": "architecture tag",
+    "created_at": "2025-04-03T19:07:20.873Z",
+    "updated_at": "2025-04-09T20:44:58.372Z",
+    "usage_count": 2
+  },
+  "custom:nodejs": {
+    "id": "custom:nodejs",
+    "name": "nodejs",
+    "display_name": "node.js",
+    "category": "custom",
+    "description": "node.js tag",
+    "created_at": "2025-04-03T20:21:47.317Z",
+    "updated_at": "2025-04-03T21:18:35.092Z",
+    "usage_count": 2
+  },
+  "custom:screenshare": {
+    "id": "custom:screenshare",
+    "name": "screenshare",
+    "display_name": "screenshare",
+    "category": "custom",
+    "description": "screenshare tag",
+    "created_at": "2025-04-04T20:06:14.697Z",
+    "updated_at": "2025-04-04T20:06:14.698Z",
+    "usage_count": 1
+  },
+  "custom:audio": {
+    "id": "custom:audio",
+    "name": "audio",
+    "display_name": "audio",
+    "category": "custom",
+    "description": "audio tag",
+    "created_at": "2025-04-04T20:06:14.699Z",
+    "updated_at": "2025-04-04T20:06:14.699Z",
+    "usage_count": 1
+  },
+  "custom:logging": {
+    "id": "custom:logging",
+    "name": "logging",
+    "display_name": "logging",
+    "category": "custom",
+    "description": "logging tag",
+    "created_at": "2025-04-04T20:06:14.700Z",
+    "updated_at": "2025-04-04T20:06:14.701Z",
+    "usage_count": 1
+  },
+  "custom:xaml": {
+    "id": "custom:xaml",
+    "name": "xaml",
+    "display_name": "xaml",
+    "category": "custom",
+    "description": "xaml tag",
+    "created_at": "2025-04-06T19:55:28.330Z",
+    "updated_at": "2025-04-06T19:55:28.332Z",
+    "usage_count": 1
+  },
+  "custom:build-error": {
+    "id": "custom:build-error",
+    "name": "build-error",
+    "display_name": "build-error",
+    "category": "custom",
+    "description": "build-error tag",
+    "created_at": "2025-04-06T19:55:28.335Z",
+    "updated_at": "2025-04-06T19:55:28.337Z",
+    "usage_count": 1
+  },
+  "custom:material-design": {
+    "id": "custom:material-design",
+    "name": "material-design",
+    "display_name": "material-design",
+    "category": "custom",
+    "description": "material-design tag",
+    "created_at": "2025-04-06T19:55:28.339Z",
+    "updated_at": "2025-04-06T19:55:28.341Z",
+    "usage_count": 1
+  },
+  "custom:debugging": {
+    "id": "custom:debugging",
+    "name": "debugging",
+    "display_name": "debugging",
+    "category": "custom",
+    "description": "debugging tag",
+    "created_at": "2025-04-06T19:55:28.343Z",
+    "updated_at": "2025-04-25T18:18:20.787Z",
+    "usage_count": 4
+  },
+  "custom:brightdata": {
+    "id": "custom:brightdata",
+    "name": "brightdata",
+    "display_name": "brightdata",
+    "category": "custom",
+    "description": "brightdata tag",
+    "created_at": "2025-04-07T01:02:59.572Z",
+    "updated_at": "2025-04-07T01:02:59.573Z",
+    "usage_count": 1
+  },
+  "custom:serp-api": {
+    "id": "custom:serp-api",
+    "name": "serp-api",
+    "display_name": "serp-api",
+    "category": "custom",
+    "description": "serp-api tag",
+    "created_at": "2025-04-07T01:02:59.576Z",
+    "updated_at": "2025-04-07T01:02:59.577Z",
+    "usage_count": 1
+  },
+  "custom:github": {
+    "id": "custom:github",
+    "name": "github",
+    "display_name": "github",
+    "category": "custom",
+    "description": "github tag",
+    "created_at": "2025-04-08T00:58:27.457Z",
+    "updated_at": "2025-04-08T00:58:27.461Z",
+    "usage_count": 1
+  },
+  "custom:sample-project": {
+    "id": "custom:sample-project",
+    "name": "sample-project",
+    "display_name": "sample-project",
+    "category": "custom",
+    "description": "sample-project tag",
+    "created_at": "2025-04-08T00:58:27.464Z",
+    "updated_at": "2025-04-08T00:58:27.465Z",
+    "usage_count": 1
+  },
+  "custom:releasecom": {
+    "id": "custom:releasecom",
+    "name": "releasecom",
+    "display_name": "release.com",
+    "category": "custom",
+    "description": "release.com tag",
+    "created_at": "2025-04-08T00:58:27.467Z",
+    "updated_at": "2025-04-08T00:58:27.469Z",
+    "usage_count": 1
+  },
+  "custom:web-scraping": {
+    "id": "custom:web-scraping",
+    "name": "web-scraping",
+    "display_name": "web-scraping",
+    "category": "custom",
+    "description": "web-scraping tag",
+    "created_at": "2025-04-08T00:58:27.472Z",
+    "updated_at": "2025-04-08T00:58:27.473Z",
+    "usage_count": 1
+  },
+  "custom:rust": {
+    "id": "custom:rust",
+    "name": "rust",
+    "display_name": "rust",
+    "category": "custom",
+    "description": "rust tag",
+    "created_at": "2025-04-09T17:37:20.080Z",
+    "updated_at": "2025-04-09T20:44:58.372Z",
+    "usage_count": 4
+  },
+  "custom:translation": {
+    "id": "custom:translation",
+    "name": "translation",
+    "display_name": "translation",
+    "category": "custom",
+    "description": "translation tag",
+    "created_at": "2025-04-09T17:37:20.085Z",
+    "updated_at": "2025-04-09T17:37:20.087Z",
+    "usage_count": 1
+  },
+  "custom:networking": {
+    "id": "custom:networking",
+    "name": "networking",
+    "display_name": "networking",
+    "category": "custom",
+    "description": "networking tag",
+    "created_at": "2025-04-09T17:37:20.089Z",
+    "updated_at": "2025-04-09T18:10:56.122Z",
+    "usage_count": 3
+  },
+  "custom:protocol": {
+    "id": "custom:protocol",
+    "name": "protocol",
+    "display_name": "protocol",
+    "category": "custom",
+    "description": "protocol tag",
+    "created_at": "2025-04-09T17:37:20.093Z",
+    "updated_at": "2025-04-09T17:42:01.487Z",
+    "usage_count": 2
+  },
+  "custom:tokio": {
+    "id": "custom:tokio",
+    "name": "tokio",
+    "display_name": "tokio",
+    "category": "custom",
+    "description": "tokio tag",
+    "created_at": "2025-04-09T17:42:01.489Z",
+    "updated_at": "2025-04-09T17:42:01.491Z",
+    "usage_count": 1
+  },
+  "custom:jni": {
+    "id": "custom:jni",
+    "name": "jni",
+    "display_name": "jni",
+    "category": "custom",
+    "description": "jni tag",
+    "created_at": "2025-04-09T18:10:56.119Z",
+    "updated_at": "2025-04-09T20:44:58.372Z",
+    "usage_count": 2
+  },
+  "custom:async": {
+    "id": "custom:async",
+    "name": "async",
+    "display_name": "async",
+    "category": "custom",
+    "description": "async tag",
+    "created_at": "2025-04-09T18:10:56.123Z",
+    "updated_at": "2025-04-25T14:30:48.841Z",
+    "usage_count": 15
+  },
+  "custom:code-generation": {
+    "id": "custom:code-generation",
+    "name": "code-generation",
+    "display_name": "code-generation",
+    "category": "custom",
+    "description": "code-generation tag",
+    "created_at": "2025-04-09T20:44:58.376Z",
+    "updated_at": "2025-04-09T20:44:58.378Z",
+    "usage_count": 1
+  },
+  "custom:seek-bar": {
+    "id": "custom:seek-bar",
+    "name": "seek-bar",
+    "display_name": "seek-bar",
+    "category": "custom",
+    "description": "seek-bar tag",
+    "created_at": "2025-04-10T12:56:58.722Z",
+    "updated_at": "2025-04-10T12:56:58.723Z",
+    "usage_count": 1
+  },
+  "custom:scrub-bar": {
+    "id": "custom:scrub-bar",
+    "name": "scrub-bar",
+    "display_name": "scrub-bar",
+    "category": "custom",
+    "description": "scrub-bar tag",
+    "created_at": "2025-04-10T12:56:58.726Z",
+    "updated_at": "2025-04-10T12:56:58.727Z",
+    "usage_count": 1
+  },
+  "custom:ffmpeg": {
+    "id": "custom:ffmpeg",
+    "name": "ffmpeg",
+    "display_name": "ffmpeg",
+    "category": "custom",
+    "description": "ffmpeg tag",
+    "created_at": "2025-04-10T23:39:50.215Z",
+    "updated_at": "2025-04-23T21:44:40.508Z",
+    "usage_count": 6
+  },
+  "custom:generation": {
+    "id": "custom:generation",
+    "name": "generation",
+    "display_name": "generation",
+    "category": "custom",
+    "description": "generation tag",
+    "created_at": "2025-04-10T23:39:50.218Z",
+    "updated_at": "2025-04-10T23:39:50.219Z",
+    "usage_count": 1
+  },
+  "custom:ui": {
+    "id": "custom:ui",
+    "name": "ui",
+    "display_name": "ui",
+    "category": "custom",
+    "description": "ui tag",
+    "created_at": "2025-04-10T23:52:44.360Z",
+    "updated_at": "2025-04-24T16:51:21.941Z",
+    "usage_count": 7
+  },
+  "custom:slash-commands": {
+    "id": "custom:slash-commands",
+    "name": "slash-commands",
+    "display_name": "slash-commands",
+    "category": "custom",
+    "description": "slash-commands tag",
+    "created_at": "2025-04-10T23:56:51.980Z",
+    "updated_at": "2025-04-24T13:28:09.049Z",
+    "usage_count": 6
+  },
+  "custom:zmusica1": {
+    "id": "custom:zmusica1",
+    "name": "zmusica1",
+    "display_name": "ZMusica1",
+    "category": "custom",
+    "description": "ZMusica1 tag",
+    "created_at": "2025-04-10T23:56:51.982Z",
+    "updated_at": "2025-04-10T23:56:51.983Z",
+    "usage_count": 1
+  },
+  "custom:vscode": {
+    "id": "custom:vscode",
+    "name": "vscode",
+    "display_name": "vscode",
+    "category": "custom",
+    "description": "vscode tag",
+    "created_at": "2025-04-11T18:13:02.241Z",
+    "updated_at": "2025-04-11T18:13:02.243Z",
+    "usage_count": 1
+  },
+  "custom:ide": {
+    "id": "custom:ide",
+    "name": "ide",
+    "display_name": "ide",
+    "category": "custom",
+    "description": "ide tag",
+    "created_at": "2025-04-11T18:13:02.246Z",
+    "updated_at": "2025-04-11T18:13:02.247Z",
+    "usage_count": 1
+  },
+  "custom:setup": {
+    "id": "custom:setup",
+    "name": "setup",
+    "display_name": "setup",
+    "category": "custom",
+    "description": "setup tag",
+    "created_at": "2025-04-11T18:13:02.248Z",
+    "updated_at": "2025-04-11T18:13:02.250Z",
+    "usage_count": 1
+  },
+  "custom:cline-replica": {
+    "id": "custom:cline-replica",
+    "name": "cline-replica",
+    "display_name": "cline-replica",
+    "category": "custom",
+    "description": "cline-replica tag",
+    "created_at": "2025-04-12T00:20:25.855Z",
+    "updated_at": "2025-04-12T00:20:25.856Z",
+    "usage_count": 1
+  },
+  "custom:powershell-integration": {
+    "id": "custom:powershell-integration",
+    "name": "powershell-integration",
+    "display_name": "powershell-integration",
+    "category": "custom",
+    "description": "powershell-integration tag",
+    "created_at": "2025-04-12T00:20:25.860Z",
+    "updated_at": "2025-04-12T00:20:25.861Z",
+    "usage_count": 1
+  },
+  "custom:gemini-25-pro": {
+    "id": "custom:gemini-25-pro",
+    "name": "gemini-25-pro",
+    "display_name": "gemini-2.5-pro",
+    "category": "custom",
+    "description": "gemini-2.5-pro tag",
+    "created_at": "2025-04-12T00:20:25.864Z",
+    "updated_at": "2025-04-15T00:07:35.337Z",
+    "usage_count": 2
+  },
+  "custom:dark-mode": {
+    "id": "custom:dark-mode",
+    "name": "dark-mode",
+    "display_name": "Dark Mode",
+    "category": "custom",
+    "description": "Dark Mode tag",
+    "created_at": "2025-04-15T00:07:35.339Z",
+    "updated_at": "2025-04-15T00:07:35.340Z",
+    "usage_count": 1
+  },
+  "custom:http-request": {
+    "id": "custom:http-request",
+    "name": "http-request",
+    "display_name": "http-request",
+    "category": "custom",
+    "description": "http-request tag",
+    "created_at": "2025-04-15T14:59:54.778Z",
+    "updated_at": "2025-04-15T14:59:54.780Z",
+    "usage_count": 1
+  },
+  "custom:interactive-ui": {
+    "id": "custom:interactive-ui",
+    "name": "interactive-ui",
+    "display_name": "interactive-ui",
+    "category": "custom",
+    "description": "interactive-ui tag",
+    "created_at": "2025-04-19T22:53:29.820Z",
+    "updated_at": "2025-04-24T00:47:08.571Z",
+    "usage_count": 2
+  },
+  "custom:youtube": {
+    "id": "custom:youtube",
+    "name": "youtube",
+    "display_name": "youtube",
+    "category": "custom",
+    "description": "youtube tag",
+    "created_at": "2025-04-22T19:28:41.736Z",
+    "updated_at": "2025-04-25T14:30:48.844Z",
+    "usage_count": 6
+  },
+  "custom:development-strategy": {
+    "id": "custom:development-strategy",
+    "name": "development-strategy",
+    "display_name": "development-strategy",
+    "category": "custom",
+    "description": "development-strategy tag",
+    "created_at": "2025-04-23T21:19:22.018Z",
+    "updated_at": "2025-04-23T21:19:22.021Z",
+    "usage_count": 1
+  },
+  "custom:state-management": {
+    "id": "custom:state-management",
+    "name": "state-management",
+    "display_name": "state-management",
+    "category": "custom",
+    "description": "state-management tag",
+    "created_at": "2025-04-23T22:20:43.150Z",
+    "updated_at": "2025-04-23T22:20:43.154Z",
+    "usage_count": 1
+  },
+  "custom:background-tasks": {
+    "id": "custom:background-tasks",
+    "name": "background-tasks",
+    "display_name": "background-tasks",
+    "category": "custom",
+    "description": "background-tasks tag",
+    "created_at": "2025-04-23T22:20:43.155Z",
+    "updated_at": "2025-04-23T22:20:43.156Z",
+    "usage_count": 1
+  },
+  "custom:indentation": {
+    "id": "custom:indentation",
+    "name": "indentation",
+    "display_name": "indentation",
+    "category": "custom",
+    "description": "indentation tag",
+    "created_at": "2025-04-24T14:52:59.122Z",
+    "updated_at": "2025-04-24T16:44:51.052Z",
+    "usage_count": 3
+  },
+  "custom:syntax": {
+    "id": "custom:syntax",
+    "name": "syntax",
+    "display_name": "syntax",
+    "category": "custom",
+    "description": "syntax tag",
+    "created_at": "2025-04-24T14:52:59.124Z",
+    "updated_at": "2025-04-24T14:52:59.125Z",
+    "usage_count": 1
+  },
+  "custom:debug": {
+    "id": "custom:debug",
+    "name": "debug",
+    "display_name": "debug",
+    "category": "custom",
+    "description": "debug tag",
+    "created_at": "2025-04-24T16:05:35.745Z",
+    "updated_at": "2025-04-24T16:05:35.746Z",
+    "usage_count": 1
+  },
+  "custom:initialization": {
+    "id": "custom:initialization",
+    "name": "initialization",
+    "display_name": "initialization",
+    "category": "custom",
+    "description": "initialization tag",
+    "created_at": "2025-04-25T15:16:06.651Z",
+    "updated_at": "2025-04-25T15:16:06.653Z",
+    "usage_count": 1
+  },
+  "custom:mode-selection": {
+    "id": "custom:mode-selection",
+    "name": "mode-selection",
+    "display_name": "mode-selection",
+    "category": "custom",
+    "description": "mode-selection tag",
+    "created_at": "2025-04-25T15:16:06.655Z",
+    "updated_at": "2025-04-25T15:16:06.656Z",
+    "usage_count": 1
+  },
+  "custom:code-fix": {
+    "id": "custom:code-fix",
+    "name": "code-fix",
+    "display_name": "code-fix",
+    "category": "custom",
+    "description": "code-fix tag",
+    "created_at": "2025-04-25T18:18:20.788Z",
+    "updated_at": "2025-04-25T18:18:20.790Z",
+    "usage_count": 1
+  },
+  "custom:indentation-error": {
+    "id": "custom:indentation-error",
+    "name": "indentation-error",
+    "display_name": "indentation-error",
+    "category": "custom",
+    "description": "indentation-error tag",
+    "created_at": "2025-04-25T18:18:20.792Z",
+    "updated_at": "2025-04-25T18:18:20.793Z",
+    "usage_count": 1
+  },
+  "custom:syntax-error": {
+    "id": "custom:syntax-error",
+    "name": "syntax-error",
+    "display_name": "syntax-error",
+    "category": "custom",
+    "description": "syntax-error tag",
+    "created_at": "2025-04-25T18:18:20.794Z",
+    "updated_at": "2025-04-25T18:18:20.795Z",
+    "usage_count": 1
+  },
+  "custom:attribute-error": {
+    "id": "custom:attribute-error",
+    "name": "attribute-error",
+    "display_name": "attribute-error",
+    "category": "custom",
+    "description": "attribute-error tag",
+    "created_at": "2025-04-25T18:18:20.796Z",
+    "updated_at": "2025-04-25T18:18:20.797Z",
+    "usage_count": 1
+  }
+}

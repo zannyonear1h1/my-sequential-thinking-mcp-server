@@ -1,0 +1,28 @@
+{
+  "id": "3468d424-75b9-4e8d-9f49-4cb172e553a0",
+  "problem": "Determine the best mode for initializing or continuing the ZMusic Discord bot project based on the user's detailed request.",
+  "thinking_type": "analytical",
+  "context": "The user provided a comprehensive list of features for a Discord music bot focused on YouTube. The project structure seems to exist already based on environment details. Need to assess the current state (by reading memory bank and potentially code) and plan the implementation. The task involves both high-level planning and detailed coding.",
+  "created_at": "2025-04-25T15:16:06.640Z",
+  "updated_at": "2025-04-25T15:16:06.640Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord-bot",
+      "python",
+      "music-bot",
+      "initialization",
+      "planning",
+      "mode-selection",
+      "zmusic"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 5,
+    "pattern": "break_down_analyze_synthesize"
+  }
+}

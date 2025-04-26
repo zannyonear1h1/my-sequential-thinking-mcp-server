@@ -1,0 +1,28 @@
+{
+  "id": "27dfe5d8-3978-4896-93d2-7924f3f4c949",
+  "problem": "Develop a complex Discord music bot (ZMusic v2) with YouTube audio/video playback, interactive UI, advanced queue management, permissions, and other features as specified in the objective.",
+  "thinking_type": "systems",
+  "context": "Project involves multiple interacting components (discord.py Cogs, yt-dlp, ffmpeg, persistent storage, background tasks, interactive UI). Need to ensure modularity, state consistency, and robustness.",
+  "created_at": "2025-04-23T21:44:40.505Z",
+  "updated_at": "2025-04-23T21:44:40.505Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord.py",
+      "music-bot",
+      "asyncio",
+      "yt-dlp",
+      "ffmpeg",
+      "ui",
+      "python"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

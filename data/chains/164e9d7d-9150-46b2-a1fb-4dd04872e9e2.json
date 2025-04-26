@@ -1,0 +1,27 @@
+{
+  "id": "164e9d7d-9150-46b2-a1fb-4dd04872e9e2",
+  "problem": "Analyze Vencord source code to understand how it enables Discord experiments (specifically for reverting UI changes), then create a PowerShell script to close Discord, reopen it with the old UI using that mechanism, create a desktop shortcut, and show a warning dialog.",
+  "thinking_type": "systems",
+  "context": "The user wants to revert Discord's UI to a pre-March 2025 state, likely using Vencord's experiment manipulation features. The script should automate closing Discord, reopening it in the desired state, and provide user feedback/convenience (shortcut, warning). Vencord source code is available in 'Reference 1'.",
+  "created_at": "2025-03-27T02:01:15.868Z",
+  "updated_at": "2025-03-27T02:01:15.868Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "powershell",
+      "discord",
+      "vencord",
+      "ui-revert",
+      "scripting",
+      "code-analysis"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

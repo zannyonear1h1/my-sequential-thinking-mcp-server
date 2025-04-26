@@ -1,0 +1,29 @@
+{
+  "id": "37138f2b-3f66-4549-b946-108fdb21a657",
+  "problem": "Develop the ZMusic Discord Bot as specified in the project brief and memory bank documents.",
+  "thinking_type": "systems",
+  "context": "The bot requires integration of discord.py, yt-dlp, ffmpeg, asynchronous programming, persistent storage, interactive UI (discord.ui), dual command interfaces (prefix/slash), and various features like playback, queue management, effects, video sharing, permissions, etc. Modularity via Cogs is planned. See memory-bank/ files for full details.",
+  "created_at": "2025-04-25T14:30:48.815Z",
+  "updated_at": "2025-04-25T14:30:48.815Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord-bot",
+      "python",
+      "asyncio",
+      "music-bot",
+      "youtube",
+      "yt-dlp",
+      "discord.py",
+      "zmusic"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

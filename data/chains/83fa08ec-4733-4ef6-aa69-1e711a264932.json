@@ -1,0 +1,133 @@
+{
+  "id": "83fa08ec-4733-4ef6-aa69-1e711a264932",
+  "problem": "Design a Puppeteer-based MCP server (`puppeteer-browser`) for robust, observable browser automation, supporting multiple sessions, complex state, advanced AI interpretation, and high resilience.",
+  "thinking_type": "systems",
+  "context": "Detailed requirements provided: \n1. Goal: Create `puppeteer-browser` MCP server for non-headless Chrome automation, ensuring cross-website compatibility and observability. Target Path: C:\\Users\\Shadow\\Cline Data\\MCPs 1\\Zanny's Free to Use Puppeteer MCP Server\\2\\\n2. Core Functionality: Tools for goto, click, type, select, waitForSelector, evaluate, extractText, extractAttribute, screenshot, scroll, hover. Extensible design.\n3. Concurrency/State: Manage multiple concurrent sessions independently. Robust state management (logins, cookies, storage) across requests within a session.\n4. Invocation: Direct commands (e.g., `browser(session_id): action`) and advanced AI-driven natural language interpretation for complex/ambiguous tasks.\n5. Configuration: Parameters like default_delay_ms, navigation_timeout_ms, user_agent_string, viewport_width/height, screenshot_on_error, data_extraction_format. Overridable defaults.\n6. Error Handling/Resilience: Advanced error handling (retries, timeouts), anti-bot/CAPTCHA strategies, extensive logging. Intelligent retries, dynamic selector adaptation, AI-driven problem solving for autonomy.\n7. Data Handling: Structured data return (JSON default), configurable format for multiple items.",
+  "created_at": "2025-03-28T20:40:44.780Z",
+  "updated_at": "2025-03-28T20:41:47.936Z",
+  "steps": [
+    {
+      "id": "cab3e90e-45b7-4712-ad49-c4d6455f846f",
+      "description": "Initialize Node.js/TypeScript project structure for the MCP server in 'C:\\Users\\Shadow\\Cline Data\\MCPs 1\\Zanny's Free to Use Puppeteer MCP Server\\2\\'. Install dependencies: @modelcontextprotocol/sdk, puppeteer. Define basic MCP server entry point (index.ts).",
+      "reasoning": "Establishes the foundational codebase and environment for the server, ensuring correct dependencies and project layout from the start.",
+      "evidence": "Standard practice for Node.js/TypeScript project setup. Required dependencies identified from project requirements.",
+      "confidence": 1,
+      "created_at": "2025-03-28T20:40:58.663Z",
+      "updated_at": "2025-03-28T20:40:58.663Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "52cec2fb-efa6-4ebf-8dee-47928b74c892",
+      "description": "Implement `SessionManager` class/module. This component will be responsible for launching, tracking (by unique ID), managing state (initially just the Puppeteer Browser/Page instances), and closing non-headless Chrome browser sessions. Provide functions like `createSession()`, `getSession(id)`, `closeSession(id)`.",
+      "reasoning": "Addresses the core requirement of handling multiple concurrent browser sessions independently. Centralizes session lifecycle management.",
+      "evidence": "Requirement 3: Multiple Sessions. Standard pattern for managing concurrent resources.",
+      "confidence": 1,
+      "created_at": "2025-03-28T20:41:08.092Z",
+      "updated_at": "2025-03-28T20:41:08.092Z",
+      "previous_step_id": "cab3e90e-45b7-4712-ad49-c4d6455f846f",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "269f324d-e123-47cb-90a0-b0d7e3a3300a",
+      "description": "Implement an `ActionExecutor` module. Define MCP tools for each core Puppeteer action specified (goto, click, type, select, waitForSelector, evaluate, extractText, extractAttribute, screenshot, scroll, hover). Each tool handler will retrieve the appropriate session via `SessionManager` and execute the corresponding Puppeteer command on the session's Page object. Define input schemas for each tool.",
+      "reasoning": "Directly implements Requirement 2 (Core Functionality). Separates action execution logic from session management, promoting modularity.",
+      "evidence": "Requirement 2 lists specific Puppeteer actions to be implemented as tools.",
+      "confidence": 1,
+      "created_at": "2025-03-28T20:41:15.241Z",
+      "updated_at": "2025-03-28T20:41:15.241Z",
+      "previous_step_id": "52cec2fb-efa6-4ebf-8dee-47928b74c892",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "3b7d3cd8-5b27-49a4-9a9e-cd63d327bb45",
+      "description": "Implement a `ConfigManager` module. Define default values for configurable parameters (default_delay_ms, navigation_timeout_ms, user_agent_string, viewport, screenshot_on_error, data_extraction_format). Load configuration potentially from environment variables or a config file. Allow overriding defaults per session or per action call where applicable (e.g., delay in `type`, timeout in `waitForSelector`).",
+      "reasoning": "Addresses Requirement 5 (Configurable Parameters). Centralizes configuration logic, making defaults and overrides manageable.",
+      "evidence": "Requirement 5 lists specific parameters and the need for defaults and overrides.",
+      "confidence": 1,
+      "created_at": "2025-03-28T20:41:21.830Z",
+      "updated_at": "2025-03-28T20:41:21.830Z",
+      "previous_step_id": "269f324d-e123-47cb-90a0-b0d7e3a3300a",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "5e0f4096-fb9f-4eab-802c-174b2157e4a6",
+      "description": "Enhance `ActionExecutor` with robust error handling. Implement try-catch blocks around Puppeteer calls. Add extensive logging for actions, errors, and decisions. Implement basic resilience features: configurable retries for transient errors (e.g., network issues, element not immediately available) and the `screenshot_on_error` configuration.",
+      "reasoning": "Addresses the foundational aspects of Requirement 6 (Error Handling & Resilience). Ensures basic robustness and provides debugging information.",
+      "evidence": "Requirement 6 specifies error handling, retries, timeouts, logging, and screenshot on error.",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T20:41:28.492Z",
+      "updated_at": "2025-03-28T20:41:28.492Z",
+      "previous_step_id": "3b7d3cd8-5b27-49a4-9a9e-cd63d327bb45",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "01f7edf3-d5dc-4f49-b999-97b63a258c87",
+      "description": "Implement advanced features: \n*   **Complex State Management:** Enhance `SessionManager` to store/retrieve cookies, local/session storage per session. \n*   **Advanced Resilience:** Implement intelligent retries (varying strategies), dynamic selector adaptation (e.g., using broader selectors or visual cues if specific ones fail), and initial hooks for AI-driven problem solving (logging detailed context on persistent failures). \n*   **Invocation:** Design the MCP tool interface to accept session IDs. Implement a separate mechanism or potentially a dedicated 'natural_language_command' tool to handle AI interpretation of complex, ambiguous natural language requests, breaking them down into sequences of core actions. This likely involves integrating with an external LLM or using advanced NLP techniques within the server.",
+      "reasoning": "Addresses the most complex requirements (3, 4, 6) involving state persistence, advanced error recovery, and sophisticated user interaction models. This step significantly increases the server's autonomy and usability.",
+      "evidence": "Requirements 3 (Complex State), 4 (Invocation Methods including Advanced NL), and 6 (Advanced Resilience & Self-Correction, AI-driven Problem Solving).",
+      "confidence": 0.85,
+      "created_at": "2025-03-28T20:41:35.879Z",
+      "updated_at": "2025-03-28T20:41:35.879Z",
+      "previous_step_id": "5e0f4096-fb9f-4eab-802c-174b2157e4a6",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "228db3d6-6272-4b68-a14c-8fee784c5cb8",
+      "description": "Integrate all modules (`SessionManager`, `ActionExecutor`, `ConfigManager`) within the main MCP server (`index.ts`). Implement comprehensive testing (unit tests for modules, integration tests for core workflows). Prepare build scripts (`npm run build`). Document server usage and configuration. Finally, add the server configuration to the MCP settings file (`cline_mcp_settings.json`) to make it available.",
+      "reasoning": "Ensures all components work together correctly, verifies functionality through testing, and makes the server usable by integrating it into the MCP environment.",
+      "evidence": "Standard software development lifecycle steps. Necessary for delivering a functional and usable MCP server.",
+      "confidence": 1,
+      "created_at": "2025-03-28T20:41:47.936Z",
+      "updated_at": "2025-03-28T20:41:47.936Z",
+      "previous_step_id": "01f7edf3-d5dc-4f49-b999-97b63a258c87",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "mcp-server",
+      "puppeteer",
+      "browser-automation",
+      "systems-design",
+      "resilience",
+      "ai-integration"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

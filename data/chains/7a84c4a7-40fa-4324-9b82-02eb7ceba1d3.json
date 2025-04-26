@@ -1,0 +1,30 @@
+{
+  "id": "7a84c4a7-40fa-4324-9b82-02eb7ceba1d3",
+  "problem": "Develop a feature-rich Discord Music Bot (ZMusica1) with async playback, multi-source support, video screenshare, interactive UI, advanced queue management, permissions, vote-skip, and dual command interfaces (prefix/slash).",
+  "thinking_type": "systems",
+  "context": "Project requires discord.py, yt-dlp, ffmpeg. Modularity via Cogs is preferred. Focus on audio stability and synchronized state across interfaces.",
+  "created_at": "2025-04-10T23:52:44.353Z",
+  "updated_at": "2025-04-10T23:52:44.353Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord-bot",
+      "python",
+      "asyncio",
+      "music",
+      "discord.py",
+      "yt-dlp",
+      "ffmpeg",
+      "ui",
+      "cogs"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

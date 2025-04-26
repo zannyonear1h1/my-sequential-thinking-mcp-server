@@ -1,0 +1,133 @@
+{
+  "id": "d1aa2bf7-8c51-4a99-b743-36a575d1c219",
+  "problem": "Design and plan the implementation of a Puppeteer-based MCP server named 'puppeteer-browser' for robust, observable browser automation, including advanced NLP control and resilience.",
+  "thinking_type": "systems",
+  "context": "Detailed requirements provided by the user:\n\n**1. Overall Goal:**\nCreate an MCP server named `puppeteer-browser` that enables Roo Cline & Cline to perform browser automation tasks using Puppeteer. The server should control *non-headless* Chrome browser instances, allowing the user to observe the automation in real-time. The server must aim for **guaranteed operation across all target websites**, employing advanced techniques to handle variations and anti-automation measures.\nBe sure to use the AI model that is current set on Roo Code, and before each step is performed, anaylze the image using the model from Roo Code's configuration, then use that to find issues with the browser or page, or if there is a captcha, a block, a rate limit, any issue can be found and can be resolved accordingly.\n\n**2. Core Functionality (Puppeteer Actions):**\nThe server must provide tools corresponding to common Puppeteer actions, including but not limited to:\n*   `goto(url)`\n*   `click(selector)`\n*   `type(selector, text, [options])`\n*   `select(selector, value)`\n*   `waitForSelector(selector, [options])`\n*   `evaluate(js_function, ...args)`\n*   `extractText(selector)`\n*   `extractAttribute(selector, attributeName)`\n*   `screenshot([options])`\n*   `scroll(x, y)`\n*   `hover(selector)`\nExtensible design for future actions.\n\n**3. Concurrency and State Management:**\n*   **Multiple Sessions:** Support managing multiple concurrent browser sessions independently.\n*   **Complex State Management:** Robust mechanisms for managing complex state (logins, cookies, storage, variables) across requests within a session.\n\n**4. Invocation / Triggering:**\n*   **Direct Commands:** Clear prefix (e.g., `browser(session_id): action`).\n*   **Advanced Natural Language Intent:** AI-driven interpretation for ambiguous/complex multi-step tasks.\n\n**5. Configurable Parameters:**\n*   `default_delay_ms`\n*   `navigation_timeout_ms`\n*   `user_agent_string`\n*   `viewport_width`, `viewport_height`\n*   `screenshot_on_error` (boolean)\n*   `data_extraction_format` (json, csv, text_list)\nAllow overrides.\n\n**6. Error Handling & Resilience:**\n*   Advanced error handling (retries, timeouts).\n*   Strategies for anti-bot/CAPTCHAs.\n*   Extensive logging.\n*   **Advanced Resilience & Self-Correction:** Intelligent retries, dynamic selector adaptation, AI-driven problem solving (diagnose, formulate alternatives, minimize clarification requests).\n\n**7. Data Handling:**\n*   Clear structure for single/multiple results (using `data_extraction_format`).\n*   Likely JSON output.",
+  "created_at": "2025-03-28T18:24:52.470Z",
+  "updated_at": "2025-03-28T18:25:37.125Z",
+  "steps": [
+    {
+      "id": "6ca2cc5d-b732-4787-919c-0af26b5524e2",
+      "description": "Define System Boundaries & Goals",
+      "reasoning": "Establish the scope and purpose of the system. What is included/excluded? What are the primary success metrics? This sets the context for all subsequent design decisions.",
+      "evidence": "User requirements document (provided in initial prompt). Specifically sections 1 (Overall Goal) and implicit boundaries (e.g., focuses on Chrome, uses Puppeteer, interacts via MCP).",
+      "confidence": 1,
+      "created_at": "2025-03-28T18:25:01.747Z",
+      "updated_at": "2025-03-28T18:25:01.747Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "30f26a6f-4adc-4461-86de-335e0f581e35",
+      "description": "Identify Key Components & Interactions",
+      "reasoning": "Break down the system into its core functional units and understand how they connect. This helps visualize the architecture and dependencies.",
+      "evidence": "Derived from user requirements: MCP Server framework, Puppeteer library, need for session management, state handling, NLP, vision analysis, configuration, error handling, and data extraction.",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T18:25:08.546Z",
+      "updated_at": "2025-03-28T18:25:08.546Z",
+      "previous_step_id": "6ca2cc5d-b732-4787-919c-0af26b5524e2",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "e937a5ec-7763-413a-9744-c4d2e7a41fdd",
+      "description": "Analyze Component Relationships & Dependencies",
+      "reasoning": "Understand how the components interact. What are the inputs/outputs of each? Which components rely on others? This clarifies the internal structure and potential integration points.",
+      "evidence": "Logical flow: User Request (NLP/Direct) -> MCP Server -> Session Manager -> Puppeteer Controller -> Chrome Browser. State Manager interacts with Session Manager and Puppeteer Controller. Vision AI interacts with Puppeteer Controller (for screenshots) and potentially the main MCP logic (for decision making). Config Manager provides settings to various components.",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T18:25:15.102Z",
+      "updated_at": "2025-03-28T18:25:15.102Z",
+      "previous_step_id": "30f26a6f-4adc-4461-86de-335e0f581e35",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "ed561942-5287-4161-8665-a50f174c0e9f",
+      "description": "Identify Feedback Loops & Control Mechanisms",
+      "reasoning": "Systems maintain stability and achieve goals through feedback. This step identifies how the system monitors its state, detects deviations, and adjusts its actions. Key for resilience, state management, NLP interpretation, and vision analysis.",
+      "evidence": "Requirements for: State Management (maintaining context), Error Handling/Resilience (retries, adaptation, AI problem-solving), NLP (interpreting complex tasks, potentially asking for clarification), Vision AI (analyzing page state, detecting issues like CAPTCHAs). These all imply feedback loops where the system's output/state influences subsequent actions.",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T18:25:21.867Z",
+      "updated_at": "2025-03-28T18:25:21.867Z",
+      "previous_step_id": "e937a5ec-7763-413a-9744-c4d2e7a41fdd",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "5f1f6f84-acbd-41fb-8a58-29252ad14db2",
+      "description": "Analyze External Environment & Influences",
+      "reasoning": "Systems don't exist in isolation. Understanding the external factors (target websites, anti-bot tech, user behavior) is critical for designing robust and resilient automation.",
+      "evidence": "Requirements explicitly mention: 'guaranteed operation across all target websites', handling 'variations and anti-automation measures', 'CAPTCHAs', 'dynamic selector adaptation'. Also considers user interaction via direct commands and complex NLP.",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T18:25:26.190Z",
+      "updated_at": "2025-03-28T18:25:26.190Z",
+      "previous_step_id": "ed561942-5287-4161-8665-a50f174c0e9f",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "46e30cee-9381-4d96-ae1f-0d61e602dca4",
+      "description": "Synthesize High-Level System Design",
+      "reasoning": "Combine the understanding of components, interactions, feedback loops, and external factors into a coherent architectural blueprint. This defines the overall structure and approach.",
+      "evidence": "Based on analysis in previous steps. Proposes a modular design: MCP Interface, NLP/Command Parser, Session Manager (handling multiple Puppeteer instances), State Manager (per session), Puppeteer Action Executor (with integrated vision analysis, error handling, resilience logic), Configuration Manager, Logger.",
+      "confidence": 0.85,
+      "created_at": "2025-03-28T18:25:30.373Z",
+      "updated_at": "2025-03-28T18:25:30.373Z",
+      "previous_step_id": "5f1f6f84-acbd-41fb-8a58-29252ad14db2",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "4eefaa68-da8b-48f4-ae0b-da0151ffe2ed",
+      "description": "Identify Potential Challenges, Risks & Emergent Behaviors",
+      "reasoning": "Complex systems can exhibit unexpected behaviors. Identifying potential issues (e.g., race conditions in concurrency, NLP misinterpretations, complex anti-bot interactions, cascading failures) allows for proactive mitigation planning.",
+      "evidence": "Consideration of requirements like concurrency, complex state, NLP ambiguity, vision analysis integration, and robust anti-bot measures inherently introduces complexity and potential failure points.",
+      "confidence": 0.8,
+      "created_at": "2025-03-28T18:25:37.125Z",
+      "updated_at": "2025-03-28T18:25:37.125Z",
+      "previous_step_id": "46e30cee-9381-4d96-ae1f-0d61e602dca4",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "mcp-server",
+      "puppeteer",
+      "browser-automation",
+      "nlp",
+      "planning",
+      "systems-thinking"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

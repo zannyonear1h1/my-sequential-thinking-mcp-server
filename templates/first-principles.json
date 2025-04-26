@@ -1,0 +1,43 @@
+{
+  "name": "first-principles",
+  "display_name": "First Principles Analysis",
+  "description": "Break down a complex problem into its fundamental principles, then reassemble from the ground up",
+  "thinking_type": "first-principles",
+  "structure": {
+    "pattern": "identify_break_down_reassemble",
+    "expected_steps": 5,
+    "recommended_tags": ["first-principles", "problem-solving"]
+  },
+  "steps": [
+    {
+      "description": "Identify the problem clearly",
+      "reasoning": "Define the problem we're trying to solve: ${problem}\n\nTo ensure we're addressing the right issue, we should clarify what we're actually trying to accomplish and why it matters.",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "description": "Break the problem down into fundamental elements",
+      "reasoning": "Let's identify the core components of this problem:\n\n1. What are the basic building blocks?\n2. What fundamental principles apply?\n3. What assumptions might we be making?",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "description": "Challenge existing assumptions",
+      "reasoning": "Now we need to question our default assumptions about the problem:\n\n- What conventional wisdom are we taking for granted?\n- Are there industry or cognitive biases affecting our analysis?\n- Which assumptions, if incorrect, would completely change our approach?",
+      "evidence": "",
+      "confidence": 0.6
+    },
+    {
+      "description": "Reassemble from first principles",
+      "reasoning": "Using only the fundamental principles we've identified, let's build a solution from the ground up:\n\n- What is the simplest possible approach?\n- How can we combine fundamental elements in new ways?\n- What novel approaches become possible when we discard traditional thinking?",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "description": "Draw actionable conclusions",
+      "reasoning": "Based on our first principles analysis, we can now recommend concrete next steps:\n\n1. The fundamental issue is...\n2. The most promising approach is...\n3. Specific actions to take include...",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ]
+}

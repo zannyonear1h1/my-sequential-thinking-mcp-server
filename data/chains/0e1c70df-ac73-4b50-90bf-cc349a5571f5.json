@@ -1,0 +1,120 @@
+{
+  "id": "0e1c70df-ac73-4b50-90bf-cc349a5571f5",
+  "problem": "Create a program to modify Discord, enabling experiments like Vencord. Features include: analyze Vencord source for experiment enabling code, auto close/reopen Discord on launch, create desktop shortcut with Discord icon, inject code to enable experiments, show a specific Windows warning dialog, provide a revert option. Update memory bank after each major step.",
+  "thinking_type": "systems",
+  "context": "Target OS is Windows. Vencord source code is available in 'Reference 1'. The program should modify the local Discord installation and be reversible. A specific warning message is required.",
+  "created_at": "2025-03-27T02:07:08.837Z",
+  "updated_at": "2025-03-27T02:11:21.167Z",
+  "steps": [
+    {
+      "id": "396e91da-466e-4deb-af77-779010be0db2",
+      "description": "Analyze Vencord source code in `Reference 1` to identify the mechanism for enabling Discord experiments. Find the core logic for unlocking experiments and the code for the 'experiments' tab/plugin.",
+      "reasoning": "Understanding how Vencord unlocks experiments is essential before attempting to replicate the functionality. This step provides the technical basis for the code injection required later.",
+      "evidence": "User requirement to study Vencord source code first. Source code is available in the 'Reference 1' directory.",
+      "confidence": 0.95,
+      "created_at": "2025-03-27T02:07:19.148Z",
+      "updated_at": "2025-03-27T02:07:19.148Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "10bfd247-fc6c-4983-bc63-547b45f38aca",
+      "description": "Design the core program structure (Windows executable/script). Outline steps: 1. Find Discord process. 2. Terminate Discord process. 3. Locate Discord's core JS file (e.g., app.asar or relevant JS bundle). 4. Backup the original JS file. 5. Inject the experiment-enabling JavaScript. 6. Relaunch Discord. 7. Display the specified warning message.",
+      "reasoning": "Defines the sequence of actions the program must perform on the user's system. Addresses requirements like closing/reopening Discord and sets the stage for file modification.",
+      "evidence": "User requirements for auto close/reopen and warning message. Logical flow for modifying an application.",
+      "confidence": 0.9,
+      "created_at": "2025-03-27T02:09:42.608Z",
+      "updated_at": "2025-03-27T02:09:42.608Z",
+      "previous_step_id": "396e91da-466e-4deb-af77-779010be0db2",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "5d962ab5-3ea2-4b3b-aff9-6618ca218b30",
+      "description": "Develop the JavaScript code snippet for injection. Focus on reliably finding the relevant webpack module (e.g., ExperimentStore or similar) and patching the 'isDeveloper' getter or equivalent check to always return true. Include error handling and logging.",
+      "reasoning": "This is the core technical challenge. The JS code needs to function correctly within Discord's runtime environment after being injected.",
+      "evidence": "Analysis of Vencord code (Step 6) identified the patching target. Standalone injection requires robust module finding.",
+      "confidence": 0.75,
+      "created_at": "2025-03-27T02:10:11.036Z",
+      "updated_at": "2025-03-27T02:10:11.036Z",
+      "previous_step_id": "10bfd247-fc6c-4983-bc63-547b45f38aca",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "e137de99-4429-46a9-8685-3cf0e18c1774",
+      "description": "Implement the creation of a desktop shortcut (.lnk file) for the main launcher script. The shortcut should use the icon from the main Discord executable.",
+      "reasoning": "Fulfills the user requirement for a convenient desktop launcher with a familiar icon.",
+      "evidence": "User request: 'make a Desktop icon of the Program's launcher with the default Discord icon'.",
+      "confidence": 0.95,
+      "created_at": "2025-03-27T02:10:18.432Z",
+      "updated_at": "2025-03-27T02:10:18.432Z",
+      "previous_step_id": "5d962ab5-3ea2-4b3b-aff9-6618ca218b30",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "4dab8b8b-fc28-4c17-87da-41b879e3e63c",
+      "description": "Implement the revert functionality. Create a separate script (e.g., 'Restore Discord Setup.ps1') that terminates Discord, restores the original backed-up JS file (e.g., 'index.js.bak'), and optionally restarts Discord. Create a desktop shortcut for this revert script.",
+      "reasoning": "Provides the user with a safe and easy way to undo the modifications, as requested.",
+      "evidence": "User request: 'Also allow reverting Discord back to normal before any changes were made.' and reference to 'Restore Discord Setup' shortcut in the warning message.",
+      "confidence": 0.95,
+      "created_at": "2025-03-27T02:10:31.712Z",
+      "updated_at": "2025-03-27T02:10:31.712Z",
+      "previous_step_id": "e137de99-4429-46a9-8685-3cf0e18c1774",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "80a2eb87-b932-45b7-8bcb-a3db218dd6f4",
+      "description": "Summarize the completed plan (Vencord analysis, PowerShell script design, JS injection strategy, shortcut creation, revert mechanism) and save it to the 'zannys-memory-bank' MCP server.",
+      "reasoning": "Fulfills the user requirement to update the memory bank after each request (interpreting 'request' as a major phase like planning). Consolidates the plan for future reference.",
+      "evidence": "User request: 'IMPORTANT NOTICE: Be sure to update the memory bank AFTER EVERY REQUEST!'",
+      "confidence": 1,
+      "created_at": "2025-03-27T02:11:21.167Z",
+      "updated_at": "2025-03-27T02:11:21.167Z",
+      "previous_step_id": "4dab8b8b-fc28-4c17-87da-41b879e3e63c",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 86,
+    "tags": [
+      "Discord",
+      "Modding",
+      "JavaScript Injection",
+      "Windows",
+      "Vencord",
+      "Experiments",
+      "Desktop Shortcut",
+      "Revert"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

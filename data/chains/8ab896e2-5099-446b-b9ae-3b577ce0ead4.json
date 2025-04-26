@@ -1,0 +1,179 @@
+{
+  "id": "8ab896e2-5099-446b-b9ae-3b577ce0ead4",
+  "problem": "Develop Zanny's Browser Automation Hybrid MCP Server V1.0, integrating Gemini AI with Puppeteer and a Chrome Extension for browser automation.",
+  "thinking_type": "systems",
+  "context": "Hybrid approach using Puppeteer (PNM) and User's Chrome via Extension (URBM). Requires AI context gathering (screenshots, DOM, URL, tabs), user intervention mechanism, robust logging, documentation, and a tutorial.",
+  "created_at": "2025-04-03T21:18:35.085Z",
+  "updated_at": "2025-04-03T21:21:33.819Z",
+  "steps": [
+    {
+      "id": "2d4da377-fec0-4104-91e8-73cc3b02a072",
+      "description": "Phase 1: Foundation & Core Server Setup. Initialize Node.js/TypeScript project, install core dependencies (@modelcontextprotocol/sdk, dotenv, puppeteer, ws, @google/generative-ai, logger), implement basic MCP server structure, setup .env, and implement the initial Logging module.",
+      "reasoning": "Establishes the project baseline, installs necessary tools, and sets up the fundamental server and logging infrastructure required for all subsequent phases.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T21:19:06.689Z",
+      "updated_at": "2025-04-03T21:19:06.689Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "b7eaff5d-342c-4d82-9ca7-f420b01b8470",
+      "description": "Phase 2: Puppeteer Navigator Mode (PNM) Basics. Implement the Puppeteer Control module, including launching/closing the browser instance and basic actions (navigate, waitForSelector, click, type). Integrate basic PNM control into the MCP server.",
+      "reasoning": "Builds the first core automation capability (direct Puppeteer control) upon the foundational server structure. Provides a tangible automation feature early on.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T21:19:14.093Z",
+      "updated_at": "2025-04-03T21:19:14.093Z",
+      "previous_step_id": "2d4da377-fec0-4104-91e8-73cc3b02a072",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "c0fc06c8-8f78-493d-b42a-4afb8c77d66e",
+      "description": "Phase 3: Gemini Integration Basics. Implement the Gemini AI Module, securely load the API key, create a basic function to send prompts and receive responses, and integrate a simple AI response-to-PNM action flow.",
+      "reasoning": "Introduces the AI component early, allowing for testing of the core AI interaction loop and its integration with the existing PNM capabilities.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-04-03T21:19:21.294Z",
+      "updated_at": "2025-04-03T21:19:21.294Z",
+      "previous_step_id": "b7eaff5d-342c-4d82-9ca7-f420b01b8470",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "8bbba6e2-e2db-46fa-af6a-4eed1e585278",
+      "description": "Phase 4: Chrome Extension & URBM Communication. Create the basic Chrome Extension structure (manifest, background/content scripts), implement WebSocket client (extension) and server (MCP server), and establish basic two-way communication.",
+      "reasoning": "Builds the second major component (Chrome Extension) and establishes the communication channel for the User Real Browser Mode (URBM), preparing for action execution in the user's browser.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T21:19:40.410Z",
+      "updated_at": "2025-04-03T21:19:40.410Z",
+      "previous_step_id": "c0fc06c8-8f78-493d-b42a-4afb8c77d66e",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "07839335-7dee-4b5a-bcce-f85490b8543e",
+      "description": "Phase 5: URBM Action Execution. Implement action execution logic in the extension's content script (via background script), mirroring basic PNM actions (navigate, click, type) for URBM. Refine the server-extension message protocol.",
+      "reasoning": "Enables the server to control the user's browser via the extension, completing the basic functionality for the User Real Browser Mode.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-04-03T21:19:46.433Z",
+      "updated_at": "2025-04-03T21:19:46.433Z",
+      "previous_step_id": "8bbba6e2-e2db-46fa-af6a-4eed1e585278",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "5b7f7a37-14e6-431e-9392-67e7e33382cb",
+      "description": "Phase 6: Context Gathering & AI Enhancement. Implement context gathering (URL, title, relevant DOM elements, screenshots) in both PNM and URBM. Enhance the Gemini AI Module to accept this context and refine prompts for better accuracy.",
+      "reasoning": "Provides the AI with the necessary information to understand the browser state, significantly improving its ability to interpret commands and plan actions accurately in both modes.",
+      "evidence": "",
+      "confidence": 0.85,
+      "created_at": "2025-04-03T21:19:55.238Z",
+      "updated_at": "2025-04-03T21:19:55.238Z",
+      "previous_step_id": "07839335-7dee-4b5a-bcce-f85490b8543e",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "1b5c6dbc-2d1e-4b65-96fe-e1fb61d0ae61",
+      "description": "Phase 7: User Intervention & State Management. Implement the State Manager module. Add MCP tools/mechanisms to pause and resume automation. Implement logic in Orchestrator, PNM, and URBM modules to respect the paused state.",
+      "reasoning": "Adds the critical capability for users to intervene when AI automation fails or requires manual input, ensuring the system can handle complex real-world scenarios.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-04-03T21:20:01.455Z",
+      "updated_at": "2025-04-03T21:20:01.455Z",
+      "previous_step_id": "5b7f7a37-14e6-431e-9392-67e7e33382cb",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "51df57e8-3dd5-4571-a1a1-4c64da8976a7",
+      "description": "Phase 8: Advanced Features & Refinements. Implement more complex actions (e.g., scraping, file downloads, basic iframe/shadow DOM handling). Improve error handling, reporting, and logging across all modules.",
+      "reasoning": "Enhances the robustness and capability of the system beyond basic actions, addressing more complex automation tasks and improving maintainability through better error handling and logging.",
+      "evidence": "",
+      "confidence": 0.8,
+      "created_at": "2025-04-03T21:20:09.023Z",
+      "updated_at": "2025-04-03T21:20:09.023Z",
+      "previous_step_id": "1b5c6dbc-2d1e-4b65-96fe-e1fb61d0ae61",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "efd98c15-1384-427b-8827-ab74f44fd5b5",
+      "description": "Phase 9: Documentation & Tutorial. Create comprehensive project documentation (README.md covering setup, config, architecture) and develop the HTML tutorial file (tutorial.html) with usage examples.",
+      "reasoning": "Ensures the project is understandable, usable, and maintainable by providing clear instructions and explanations for setup, configuration, and operation.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T21:20:18.818Z",
+      "updated_at": "2025-04-03T21:20:18.818Z",
+      "previous_step_id": "51df57e8-3dd5-4571-a1a1-4c64da8976a7",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "8e1fccb7-8886-4452-9543-30be8615fb69",
+      "description": "Phase 10: Testing & Deployment. Conduct thorough end-to-end testing (PNM, URBM, AI, user intervention). Package the Chrome extension and prepare the server build for deployment/running.",
+      "reasoning": "Validates the complete system functionality against requirements, identifies remaining bugs, ensures stability, and prepares the final deliverables for use.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T21:21:33.819Z",
+      "updated_at": "2025-04-03T21:21:33.819Z",
+      "previous_step_id": "efd98c15-1384-427b-8827-ab74f44fd5b5",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "mcp-server",
+      "browser-automation",
+      "gemini-ai",
+      "puppeteer",
+      "chrome-extension",
+      "typescript",
+      "node.js"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "id": "0f4fb82d-3210-4a6e-8d36-6c1876780a45",
+  "problem": "Generate a complete, well-commented, and robust asynchronous Python project for a Discord music bot with features including multi-source playback (YouTube, SoundCloud), video screensharing, dual control interfaces (prefix/slash commands, interactive UI), advanced queue management, permissions (DJ mode), vote-to-skip, Stage Channel support, and audio effects.",
+  "thinking_type": "systems",
+  "context": "The bot needs to be built using discord.py (supporting UI, Slash Commands, Stages), asyncio, yt-dlp, and potentially ffmpeg-python. It requires configuration files (token, cookies) and persistence for queues and settings. The output should include the Python code (preferably Cog-based), requirements.txt, and setup instructions. Key challenges include state synchronization between different control methods and stable audio/video handling.",
+  "created_at": "2025-04-10T23:39:50.205Z",
+  "updated_at": "2025-04-10T23:41:24.071Z",
+  "steps": [
+    {
+      "id": "d5e6f0ac-8314-44b8-b115-8a2499c022ef",
+      "description": "Define Project Structure and Dependencies",
+      "reasoning": "Establish the foundational directory layout (main script, cogs, utils, data) and list necessary Python libraries in requirements.txt. This organizes the project from the start.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-04-10T23:40:31.173Z",
+      "updated_at": "2025-04-10T23:40:31.173Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "c8e5cb02-37e1-4fc0-acd3-2b6a84ac04de",
+      "description": "Setup Core Bot Structure and Configuration Loading",
+      "reasoning": "Create the main bot script, initialize discord.py client/intents, load configuration (token, prefix, etc.) from files/env vars, and set up Cog loading.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-04-10T23:40:40.436Z",
+      "updated_at": "2025-04-10T23:40:40.436Z",
+      "previous_step_id": "d5e6f0ac-8314-44b8-b115-8a2499c022ef",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "6b4bcf98-41f8-4fc9-bda1-ee8d07737e67",
+      "description": "Implement Player State Management",
+      "reasoning": "Create a class or structure (likely per-guild) to hold the current voice client, queue (collections.deque recommended), playback state (playing, paused, stopped), volume, loop mode, DJ mode status, and the reference to the interactive player message. This is central to the bot's operation.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-04-10T23:40:56.268Z",
+      "updated_at": "2025-04-10T23:40:56.268Z",
+      "previous_step_id": "c8e5cb02-37e1-4fc0-acd3-2b6a84ac04de",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "478cd02a-0296-438c-9c8b-b2d31fecbf3d",
+      "description": "Implement Audio Source Fetching and Basic Playback",
+      "reasoning": "Integrate yt-dlp to fetch audio stream URLs from YouTube/SoundCloud. Implement core playback logic: joining voice channels, playing audio using discord.FFmpegPCMAudio, handling basic controls (play, pause, stop, skip), and managing the queue within the player state.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-04-10T23:41:04.577Z",
+      "updated_at": "2025-04-10T23:41:04.577Z",
+      "previous_step_id": "6b4bcf98-41f8-4fc9-bda1-ee8d07737e67",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "befc3eab-f442-4d65-8faf-461111b7fd78",
+      "description": "Implement Command Interfaces (Prefix & Slash)",
+      "reasoning": "Create Cogs for different command groups (e.g., playback, queue, admin). Implement both prefix commands (using discord.ext.commands) and Slash Commands (using discord.app_commands) for all core functionalities, ensuring they interact correctly with the shared player state.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-04-10T23:41:13.900Z",
+      "updated_at": "2025-04-10T23:41:13.900Z",
+      "previous_step_id": "478cd02a-0296-438c-9c8b-b2d31fecbf3d",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "c3ce86de-a137-4187-8211-d1da1d5d7315",
+      "description": "Implement Interactive Player UI (discord.ui)",
+      "reasoning": "Create a discord.ui.View class for the interactive player. Define buttons, select menus, and potentially modals for playback control, queue management, search, etc. Implement the logic to update the player state and refresh the UI message upon interaction. Ensure state synchronization with command-based controls.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-04-10T23:41:18.579Z",
+      "updated_at": "2025-04-10T23:41:18.579Z",
+      "previous_step_id": "befc3eab-f442-4d65-8faf-461111b7fd78",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "267276b8-985b-41d6-b434-00a808335f30",
+      "description": "Implement Advanced Features and Refinements",
+      "reasoning": "Add remaining features: video screensharing, permissions/DJ mode, vote-to-skip, advanced queue management (save/load/import/export), audio effects, Stage Channel support, idle disconnect, error handling, and persistence. Refine code, add comments, and create setup instructions.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-04-10T23:41:24.071Z",
+      "updated_at": "2025-04-10T23:41:24.071Z",
+      "previous_step_id": "c3ce86de-a137-4187-8211-d1da1d5d7315",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "discord",
+      "python",
+      "music-bot",
+      "asyncio",
+      "yt-dlp",
+      "discord.ui",
+      "cogs",
+      "ffmpeg",
+      "generation"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

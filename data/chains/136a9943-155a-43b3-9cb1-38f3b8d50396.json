@@ -1,0 +1,43 @@
+{
+  "id": "136a9943-155a-43b3-9cb1-38f3b8d50396",
+  "problem": "Create a Windows program that closes Discord, reopens it with an old UI (pre-March 2025), shows a specific warning dialog, and creates a desktop shortcut using the Discord icon.",
+  "thinking_type": "systems",
+  "context": "Target OS is Windows. Needs process management (close Discord), application launching (reopen Discord, potentially with specific flags/config for old UI), GUI interaction (warning dialog), and file system/shell interaction (desktop shortcut creation, icon assignment). The 'old UI' requirement is critical and might be the most challenging part, possibly involving undocumented flags, configuration file manipulation, or even specific older versions if available and feasible. Language choice should consider Windows API access and ease of use for these tasks.",
+  "created_at": "2025-03-27T00:47:10.093Z",
+  "updated_at": "2025-03-27T00:47:39.621Z",
+  "steps": [
+    {
+      "id": "fa1a0ca2-d4a3-41eb-b1a6-c16e55741112",
+      "description": "Step 1: Evaluate and select the best programming language for the task on Windows.",
+      "reasoning": "The program requires Windows-specific interactions: process management (killing Discord), application launching (potentially with flags), native GUI dialogs (warning message), and shell integration (desktop shortcut with icon). The language choice impacts feasibility, development effort, and ease of distribution. Candidates include PowerShell (native, good Windows integration), Python (cross-platform but needs libraries like pywin32, psutil), AutoHotkey (automation-focused), C# (strong Windows integration via .NET). The 'best' depends on balancing native capabilities, library availability, developer familiarity (if known), and distribution ease.",
+      "evidence": "PowerShell: Get-Process, Stop-Process, Start-Process, [System.Windows.Forms.MessageBox], WScript.Shell COM object. Python: psutil, subprocess, tkinter/ctypes, pythoncom/winshell. C#: System.Diagnostics.Process, System.Windows.Forms.MessageBox, Windows Shell API wrappers. AutoHotkey: Process, WinWait, MsgBox, FileCreateShortcut commands.",
+      "confidence": 0.9,
+      "created_at": "2025-03-27T00:47:39.621Z",
+      "updated_at": "2025-03-27T00:47:39.621Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 14,
+    "tags": [
+      "windows",
+      "discord",
+      "automation",
+      "gui",
+      "process management",
+      "shortcut"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

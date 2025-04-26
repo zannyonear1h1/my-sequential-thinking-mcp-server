@@ -1,0 +1,133 @@
+{
+  "id": "db70615a-da89-490d-9771-134da3c1a46b",
+  "problem": "Create a Windows program (PowerShell script) that:\n1. Force-closes Discord.\n2. Displays a specific warning dialog: 'ZannyTornado says: Be sure to run the \"Old Discord GUI by Zanny\" desktop shortcut if you want to run this program again! No other modifications to the Discord application are made through this software! ^_^'\n3. Restarts Discord.\n4. *Attempts* to make Discord use an older UI (pre-March 2025) - **Acknowledge this is likely unfeasible.**\n5. Creates a desktop shortcut named 'Old Discord GUI by Zanny' for the script, using the Discord icon.",
+  "thinking_type": "systems",
+  "context": "Target OS is Windows. PowerShell is the chosen language. The primary challenge is the UI reversion requirement, which is likely impossible to achieve reliably or safely. Focus on the process restart, warning message, and shortcut creation. Memory Bank files (productContext, activeContext, etc.) have been initialized.",
+  "created_at": "2025-03-27T00:51:29.627Z",
+  "updated_at": "2025-03-27T00:53:20.954Z",
+  "steps": [
+    {
+      "id": "2f3dde76-e007-4398-b6b3-23c4b4cd4b82",
+      "description": "Define Script Structure & Variables",
+      "reasoning": "Establish the basic structure of the PowerShell script. Define necessary variables for paths, messages, and shortcut details to improve readability and maintainability. Determine the likely path for Discord's executable.",
+      "evidence": "Standard scripting practice. Simplifies later steps. Based on `techContext.md` assumptions about Discord path.",
+      "confidence": 0.95,
+      "created_at": "2025-03-27T00:51:37.630Z",
+      "updated_at": "2025-03-27T00:51:37.630Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "d14590c9-34ea-42d1-b780-1c6255ceb285",
+      "description": "Implement Discord Process Termination",
+      "reasoning": "Use PowerShell's `Get-Process` and `Stop-Process` cmdlets (or `taskkill` command) to find and forcefully terminate all running Discord processes. Include error handling in case Discord is not running.",
+      "evidence": "Required by user request. Standard PowerShell cmdlets for process management.",
+      "confidence": 0.9,
+      "created_at": "2025-03-27T00:52:07.257Z",
+      "updated_at": "2025-03-27T00:52:07.257Z",
+      "previous_step_id": "2f3dde76-e007-4398-b6b3-23c4b4cd4b82",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "253ccc32-8aa5-4d83-b4fc-a3011169a367",
+      "description": "Implement Warning Dialog",
+      "reasoning": "Use the .NET `System.Windows.Forms.MessageBox` class within PowerShell to display the specific warning message provided by the user. Load the required assembly (`System.Windows.Forms`). Configure the dialog title and icon (e.g., Warning icon).",
+      "evidence": "Required by user request. Standard PowerShell method for displaying GUI dialogs via .NET.",
+      "confidence": 0.95,
+      "created_at": "2025-03-27T00:52:18.193Z",
+      "updated_at": "2025-03-27T00:52:18.193Z",
+      "previous_step_id": "d14590c9-34ea-42d1-b780-1c6255ceb285",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "94e49e0f-8ab2-42b9-ba75-b407fedfff10",
+      "description": "Implement Discord Restart",
+      "reasoning": "Use the `Start-Process` cmdlet to launch the Discord executable. Use the path determined in the variable definition step. Ensure it launches the main Discord application, potentially via its Update.exe launcher.",
+      "evidence": "Required by user request. Standard PowerShell cmdlet for starting processes.",
+      "confidence": 0.95,
+      "created_at": "2025-03-27T00:52:25.196Z",
+      "updated_at": "2025-03-27T00:52:25.196Z",
+      "previous_step_id": "253ccc32-8aa5-4d83-b4fc-a3011169a367",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "ef4f7b17-2956-4175-87db-c53a3985ec76",
+      "description": "Address UI Reversion (Acknowledge Limitation)",
+      "reasoning": "Explicitly state within the plan and potentially as comments in the script that reverting the Discord UI is highly complex, likely requires unsupported modifications (e.g., replacing core files, specific command-line flags that might not exist or work), violates ToS, and is prone to breaking with updates. Conclude that this feature will not be implemented due to these risks and unreliability.",
+      "evidence": "User request vs. technical feasibility and safety concerns documented in `productContext.md` and `techContext.md`.",
+      "confidence": 1,
+      "created_at": "2025-03-27T00:53:03.527Z",
+      "updated_at": "2025-03-27T00:53:03.527Z",
+      "previous_step_id": "94e49e0f-8ab2-42b9-ba75-b407fedfff10",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "7535f39a-eba3-4621-8c3f-0bb741603a55",
+      "description": "Implement Shortcut Creation",
+      "reasoning": "Use the `WScript.Shell` COM object in PowerShell to create a shortcut (.lnk file) on the user's Desktop. Configure the shortcut's target path to run the PowerShell script itself (e.g., `powershell.exe -File C:\\path\\to\\script.ps1`). Set the shortcut name as specified ('Old Discord GUI by Zanny'). Set the icon location to the Discord executable path.",
+      "evidence": "Required by user request. Standard PowerShell method for creating shortcuts via COM object.",
+      "confidence": 0.9,
+      "created_at": "2025-03-27T00:53:14.828Z",
+      "updated_at": "2025-03-27T00:53:14.828Z",
+      "previous_step_id": "ef4f7b17-2956-4175-87db-c53a3985ec76",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "ef28f92f-3bee-4391-8302-bd506995ec70",
+      "description": "Final Script Review & Cleanup",
+      "reasoning": "Review the complete PowerShell script for clarity, correctness, and robustness. Add comments explaining different sections. Ensure proper error handling (e.g., for process termination, file paths, shortcut creation). Verify variable usage and consistency. Ensure the script addresses all feasible user requirements.",
+      "evidence": "Standard software development practice for quality assurance.",
+      "confidence": 0.95,
+      "created_at": "2025-03-27T00:53:20.954Z",
+      "updated_at": "2025-03-27T00:53:20.954Z",
+      "previous_step_id": "7535f39a-eba3-4621-8c3f-0bb741603a55",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "discord",
+      "powershell",
+      "windows",
+      "shortcut",
+      "gui-revert",
+      "process-management"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

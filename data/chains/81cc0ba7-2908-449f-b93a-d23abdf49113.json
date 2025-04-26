@@ -1,0 +1,28 @@
+{
+  "id": "81cc0ba7-2908-449f-b93a-d23abdf49113",
+  "problem": "Develop a feature-rich asynchronous Discord music bot focused on YouTube playback with interactive UI, queue management, permissions, and video (audio) streaming.",
+  "thinking_type": "systems",
+  "context": "The bot needs to handle YouTube URLs, playlists, and search. It requires a persistent interactive player message with a live progress bar, dual command interfaces (prefix/slash), advanced queue features (save/load/import/export), permissions (DJ mode), audio effects, seeking, vote-skip, idle disconnect, and Stage Channel support. Uses discord.py, yt-dlp, ffmpeg.",
+  "created_at": "2025-04-19T22:53:29.805Z",
+  "updated_at": "2025-04-19T22:53:29.805Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord-bot",
+      "python",
+      "asyncio",
+      "discord.py",
+      "yt-dlp",
+      "music-bot",
+      "interactive-ui"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

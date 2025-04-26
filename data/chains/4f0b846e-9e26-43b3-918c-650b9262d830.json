@@ -1,0 +1,27 @@
+{
+  "id": "4f0b846e-9e26-43b3-918c-650b9262d830",
+  "problem": "Create a complete Python-based Discord bot with music playback (using yt-dlp), slash commands, interactive embeds, and numerous features as specified in the detailed requirements.",
+  "thinking_type": "systems",
+  "context": "New project. Need to establish core architecture, component interactions, data flow, error handling, and resource management. Memory Bank files also need to be created.",
+  "created_at": "2025-03-26T02:21:04.077Z",
+  "updated_at": "2025-03-26T02:21:04.077Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord-bot",
+      "python",
+      "yt-dlp",
+      "music",
+      "new-project",
+      "systems-thinking"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

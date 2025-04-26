@@ -1,0 +1,41 @@
+{
+  "id": "d62c5df5-6550-41f5-add7-6ecabc7a6154",
+  "problem": "Create a VS Code extension replicating Cline, using a specific PowerShell script for Gemini 2.5 Pro calls.",
+  "thinking_type": "systems",
+  "context": "The extension needs to integrate a user-provided PowerShell script for LLM interaction. Must adhere strictly to custom instructions regarding memory bank, no placeholders, teaching, scoring, and completing the task without constant approval.",
+  "created_at": "2025-04-12T00:20:25.848Z",
+  "updated_at": "2025-04-12T00:21:25.871Z",
+  "steps": [
+    {
+      "id": "f6052b6e-1cbd-48a3-ae18-3c1a960f8042",
+      "description": "Create the initial memory-bank/projectbrief.md file.",
+      "reasoning": "Establish the project's core goal as per the Memory Bank structure requirement.",
+      "evidence": "",
+      "confidence": 1,
+      "created_at": "2025-04-12T00:21:25.871Z",
+      "updated_at": "2025-04-12T00:21:25.871Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 14,
+    "tags": [
+      "vscode-extension",
+      "cline-replica",
+      "powershell-integration",
+      "gemini-2.5-pro"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "ac7348b7-4027-4118-b3d8-bafa36f163f9",
+  "problem": "Improve and reformat the provided AI prompt for a C# WPF application modification task. Focus on clarity, feasibility, specificity, and structure for an AI assistant.",
+  "thinking_type": "analytical",
+  "context": "The original prompt involves reading a codebase, checking for Minecraft Bedrock, potentially installing it via an APPX from a store link, and making several UI/UX changes to the NexusLoaderReborn WPF application.",
+  "created_at": "2025-03-31T23:55:21.135Z",
+  "updated_at": "2025-03-31T23:56:00.521Z",
+  "steps": [
+    {
+      "id": "24af6fd9-e5e3-4db3-ad2f-d3bb6bb59142",
+      "description": "Analyze Original Requirements",
+      "reasoning": "Deconstruct the user's request into individual functional and UI requirements to understand the scope.",
+      "evidence": "Original prompt text: 'Let's read the ENTIRE codebase, then: 1. Add a function... 1a. display... 1b. From this link... 2. Then install... 2a. Once the installation... 2b. Once Minecraft... click... 3. Remove the blue text highlight... 4. Can you add a 70% transparency... 5. Be sure the window is able to be dragged... 6. Make the background theme... black color...'",
+      "confidence": 1,
+      "created_at": "2025-03-31T23:55:35.936Z",
+      "updated_at": "2025-03-31T23:55:35.936Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "60890f48-e208-4908-98a3-610eb52a490d",
+      "description": "Identify Ambiguities & Feasibility Issues",
+      "reasoning": "Evaluate the technical feasibility and clarity of each request. Some actions, like direct APPX download from a store URL or precise progress tracking of external installers, are problematic.",
+      "evidence": "Requirement 1b: 'From this link, get the APPX file.' - Store pages don't typically offer direct APPX downloads. Requirement 2: 'install the APPX file, and provide a popup... with a progress bar that will show the live time percentage...' - Tracking external process progress accurately is difficult/impossible without specific APIs from the installer. Requirement 3: 'Remove the blue text highlight from the patch title, and unpatch title' - Needs specific UI element identifiers. Requirement 'read the ENTIRE codebase' - Inefficient and unnecessary; need to target relevant files.",
+      "confidence": 0.95,
+      "created_at": "2025-03-31T23:55:41.330Z",
+      "updated_at": "2025-03-31T23:55:41.330Z",
+      "previous_step_id": "24af6fd9-e5e3-4db3-ad2f-d3bb6bb59142",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "bff7febb-847b-4c65-879e-c2bf6d1d40e6",
+      "description": "Propose Alternatives & Refinements",
+      "reasoning": "Suggest feasible solutions for the problematic requirements. Focus on using standard OS tools (like PowerShell) and clarifying UI targeting.",
+      "evidence": "Refinement for 1b/2: Instead of direct download, use PowerShell `Start-Process ms-windows-store://pdp/?productid=9NBLGGH2JHXJ` to open the store page OR `Add-AppxPackage -Path <path>` if user provides the file. Refinement for 2: Use an indeterminate progress bar (`IsIndeterminate=True`) or a simple 'Installing...' message while the external process runs. Refinement for 3: Request specific `x:Name` attributes for UI elements or instruct the AI to search XAML for likely candidates based on content ('Patch', 'Unpatch'). Refinement for 'read ENTIRE codebase': Specify key files like `MainWindow.xaml`, `MainWindow.xaml.cs`, `App.xaml`, relevant ViewModels/Services.",
+      "confidence": 0.9,
+      "created_at": "2025-03-31T23:55:48.165Z",
+      "updated_at": "2025-03-31T23:55:48.165Z",
+      "previous_step_id": "60890f48-e208-4908-98a3-610eb52a490d",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "b9b81922-9410-4f02-bfed-afb1b08764ee",
+      "description": "Structure the Improved Prompt",
+      "reasoning": "Organize the refined requirements into a clear, actionable format for the AI. Use headings, numbered lists, and specific instructions.",
+      "evidence": "Proposed Structure: \n1. **Project Context:** Specify target project (NexusLoaderReborn), language (C#), framework (WPF), and key files to analyze. \n2. **Feature: Minecraft Bedrock Check & Install:** \n    a. Implement detection (PowerShell/Registry). \n    b. Show confirmation dialog. \n    c. If yes, initiate install (Store link or `Add-AppxPackage`). \n    d. Show indeterminate progress indicator. \n    e. Show completion message. \n    f. Trigger 'Patch' action programmatically. \n3. **UI Styling Adjustments:** \n    a. Remove specific styling from 'Patch'/'Unpatch' titles (provide names or ask AI to find). \n    b. Apply 70% transparency (specify method: Window or main container background). \n    c. Ensure window draggability (check/implement custom chrome if needed). \n    d. Set `Topmost=False`. \n    e. Set background to black. \n    f. Adjust foreground elements for contrast.",
+      "confidence": 1,
+      "created_at": "2025-03-31T23:55:55.956Z",
+      "updated_at": "2025-03-31T23:55:55.956Z",
+      "previous_step_id": "bff7febb-847b-4c65-879e-c2bf6d1d40e6",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "cd97252d-e648-4ddb-b8d5-c930dc30777e",
+      "description": "Synthesize the Improved Prompt",
+      "reasoning": "Combine the structured requirements and refined approaches into the final prompt text, ready for the AI assistant.",
+      "evidence": "Synthesized Prompt Text (incorporating structure from step 4 and refinements from step 3). See the <answer> tag in the final response for the full text.",
+      "confidence": 1,
+      "created_at": "2025-03-31T23:56:00.521Z",
+      "updated_at": "2025-03-31T23:56:00.521Z",
+      "previous_step_id": "b9b81922-9410-4f02-bfed-afb1b08764ee",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "prompt-engineering",
+      "wpf",
+      "csharp",
+      "feasibility-analysis"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 5,
+    "pattern": "break_down_analyze_synthesize"
+  }
+}

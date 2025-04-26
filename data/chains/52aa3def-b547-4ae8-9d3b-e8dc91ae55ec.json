@@ -1,0 +1,29 @@
+{
+  "id": "52aa3def-b547-4ae8-9d3b-e8dc91ae55ec",
+  "problem": "Develop a feature-rich Discord music bot (ZMusic) focused on YouTube playback (audio/video), with dual command interfaces (prefix/slash) and a persistent interactive player message including a live progress bar.",
+  "thinking_type": "systems",
+  "context": "The bot requires asyncio, discord.py (v2+), yt-dlp, ffmpeg. Key features include queue management (save/load/import/export), permissions (DJ mode), vote-skip, effects, search, stage channel support, idle disconnect, and robust error handling. A major challenge is the live-updating progress bar in the interactive player, requiring careful background task management to avoid rate limits.",
+  "created_at": "2025-04-24T00:47:08.563Z",
+  "updated_at": "2025-04-24T00:47:08.563Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord-bot",
+      "python",
+      "asyncio",
+      "discord.py",
+      "yt-dlp",
+      "music-bot",
+      "youtube",
+      "interactive-ui"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

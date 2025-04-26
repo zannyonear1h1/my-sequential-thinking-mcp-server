@@ -1,0 +1,180 @@
+{
+  "id": "bcc7470b-339f-44bc-98a9-5ea00883b547",
+  "problem": "Develop a complete, well-commented, and robust asynchronous Python Discord bot (ZMusic) capable of playing audio and video (via screenshare audio) exclusively from YouTube. Features include dual control (text/slash commands & interactive UI), live progress bar, playlists, search, permissions (DJ mode), advanced queue management (save/load, import/export), audio effects, quality selection, vote-to-skip, and Stage Channel support.",
+  "thinking_type": "systems",
+  "context": "The bot needs to use discord.py (supporting UI, Slash Commands, Stages), asyncio, yt-dlp, and potentially ffmpeg. Key challenges include the live-updating progress bar without hitting rate limits, robust state synchronization between control methods, and handling YouTube-specific playback intricacies. Modularity (Cogs) and clear documentation are required.",
+  "created_at": "2025-04-24T16:51:21.934Z",
+  "updated_at": "2025-04-24T16:53:44.774Z",
+  "steps": [
+    {
+      "id": "12dc095e-3782-4fa6-a38d-f1ff14bfc527",
+      "description": "Step 1: Setup & Core Structure",
+      "reasoning": "Establish the foundational project structure, dependencies, basic bot configuration, and initial Memory Bank documentation. This provides the skeleton for all subsequent features.",
+      "evidence": "Project requirements specify Python, discord.py, asyncio, yt-dlp, modularity (Cogs), configuration files (token, cookies), and documentation.",
+      "confidence": 1,
+      "created_at": "2025-04-24T16:51:44.111Z",
+      "updated_at": "2025-04-24T16:51:44.111Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "5ca4de53-1c03-449f-b3af-7861c4164c2f",
+      "description": "Step 2: Basic Playback & Queue",
+      "reasoning": "Implement the core music playing functionality. This includes joining voice channels, fetching audio streams from YouTube URLs using yt-dlp, managing a simple queue, and providing basic playback controls (play, pause, resume, skip, stop, volume). This forms the MVP of the music playback.",
+      "evidence": "Core requirements include asynchronous operation, YouTube playback, queueing, and standard music controls.",
+      "confidence": 1,
+      "created_at": "2025-04-24T16:51:57.459Z",
+      "updated_at": "2025-04-24T16:51:57.459Z",
+      "previous_step_id": "12dc095e-3782-4fa6-a38d-f1ff14bfc527",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "ac2e6625-2e75-4743-9bdc-1ae8c2acf42d",
+      "description": "Step 3: Interactive Player UI (Initial)",
+      "reasoning": "Create the persistent 'Now Playing' message using discord.ui.View and an embed. Implement basic interactive components (buttons for Play/Pause, Skip, Stop) to control the playback state established in Step 2. This introduces the UI aspect.",
+      "evidence": "Requirements specify a persistent interactive player interface with buttons and an embed.",
+      "confidence": 1,
+      "created_at": "2025-04-24T16:52:11.900Z",
+      "updated_at": "2025-04-24T16:52:11.900Z",
+      "previous_step_id": "5ca4de53-1c03-449f-b3af-7861c4164c2f",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "8b604f13-98de-47c3-8ac6-b2e227f6dee1",
+      "description": "Step 4: Live Progress Bar & UI Refinement",
+      "reasoning": "Implement the live-updating progress bar/scrubber within the interactive player message. This requires a background task per player to periodically update the message, carefully managing rate limits. Refine the embed display to include more details (duration, requester, volume, loop status).",
+      "evidence": "Requirement for a visually updating progress bar and timestamp, needing a background task and rate limit awareness. Embed needs to show detailed info.",
+      "confidence": 0.95,
+      "created_at": "2025-04-24T16:52:27.566Z",
+      "updated_at": "2025-04-24T16:52:27.566Z",
+      "previous_step_id": "ac2e6625-2e75-4743-9bdc-1ae8c2acf42d",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "213d6834-5601-4cf4-9215-f476c5b454a6",
+      "description": "Step 5: Advanced Playback Features",
+      "reasoning": "Implement features enhancing the core playback: YouTube search (command and interactive), playlist handling (auto-detection and queuing), seeking functionality, basic audio effects (bassboost, speed), and Stage Channel compatibility.",
+      "evidence": "Requirements include search, playlist support, seeking, audio effects, and Stage Channel support.",
+      "confidence": 1,
+      "created_at": "2025-04-24T16:52:43.399Z",
+      "updated_at": "2025-04-24T16:52:43.399Z",
+      "previous_step_id": "8b604f13-98de-47c3-8ac6-b2e227f6dee1",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "f2c3f411-9fbd-4082-8f0f-5c5a0fb3398e",
+      "description": "Step 6: Advanced Queue Management & Persistence",
+      "reasoning": "Implement advanced queue features: save/load queues to persistent storage (JSON per guild), import/export queues (text files), and queue manipulation commands (remove, move, shuffle). Enhance the interactive UI with controls for these features.",
+      "evidence": "Requirements include save/load, import/export, and manipulation commands/interactions for queues, plus persistence.",
+      "confidence": 1,
+      "created_at": "2025-04-24T16:52:56.340Z",
+      "updated_at": "2025-04-24T16:52:56.340Z",
+      "previous_step_id": "213d6834-5601-4cf4-9215-f476c5b454a6",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "573f9769-8c50-4437-a74f-7f66daef67d1",
+      "description": "Step 7: Permissions, DJ Mode & Vote Skip",
+      "reasoning": "Implement control mechanisms: role-based permissions, a configurable DJ mode restricting certain actions, and a vote-to-skip system with configurable thresholds.",
+      "evidence": "Requirements include permissions, DJ mode toggle, and vote-skip functionality.",
+      "confidence": 1,
+      "created_at": "2025-04-24T16:53:07.527Z",
+      "updated_at": "2025-04-24T16:53:07.527Z",
+      "previous_step_id": "f2c3f411-9fbd-4082-8f0f-5c5a0fb3398e",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "241e7a86-b981-4efa-bf5a-d45e13942377",
+      "description": "Step 8: Video Screensharing (Audio Only)",
+      "reasoning": "Implement the ability to stream the audio from YouTube videos via Discord's screenshare feature, controlled by commands and potentially a UI toggle. Focus on audio stability.",
+      "evidence": "Requirement for video screensharing functionality.",
+      "confidence": 0.9,
+      "created_at": "2025-04-24T16:53:19.179Z",
+      "updated_at": "2025-04-24T16:53:19.179Z",
+      "previous_step_id": "573f9769-8c50-4437-a74f-7f66daef67d1",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "b893f952-9bcc-4f0c-ba3e-fa78b7c6e039",
+      "description": "Step 9: Dual Command Interface & Configuration",
+      "reasoning": "Implement both prefix commands (with customizable prefix) and Slash Commands for all functionalities. Ensure they coexist and interact correctly with the player state and UI. Set up the configuration system (files/env vars) for token, cookies, permissions, DJ role, vote skip, prefix, idle timeout, quality, update interval, error channel.",
+      "evidence": "Requirements for dual command interfaces, customizable prefix, Slash Commands, and extensive configuration options.",
+      "confidence": 1,
+      "created_at": "2025-04-24T16:53:32.068Z",
+      "updated_at": "2025-04-24T16:53:32.068Z",
+      "previous_step_id": "241e7a86-b981-4efa-bf5a-d45e13942377",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "7affaff6-e736-4325-90e5-b41642391596",
+      "description": "Step 10: Final Polish & Documentation",
+      "reasoning": "Implement remaining features like idle auto-disconnect and comprehensive error handling (including reporting). Ensure code quality (comments, PEP 8, modularity). Generate requirements.txt and detailed setup/usage instructions (README.md), including ffmpeg setup and Slash Command registration.",
+      "evidence": "Requirements include idle disconnect, error handling/reporting, code quality standards, requirements.txt, and setup instructions.",
+      "confidence": 1,
+      "created_at": "2025-04-24T16:53:44.774Z",
+      "updated_at": "2025-04-24T16:53:44.774Z",
+      "previous_step_id": "b893f952-9bcc-4f0c-ba3e-fa78b7c6e039",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "discord-bot",
+      "python",
+      "asyncio",
+      "youtube",
+      "music",
+      "discord.py",
+      "yt-dlp",
+      "ui"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

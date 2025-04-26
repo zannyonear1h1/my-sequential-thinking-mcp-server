@@ -1,0 +1,90 @@
+{
+  "id": "7f770749-7080-408f-a7a4-390b104752d8",
+  "problem": "Modify the puppeteer-browser MCP server: 1. Save screenshots/downloads to './User Content & Downloads'. 2. Ensure file saving permissions. 3. Implement CAPTCHA detection/waiting for user resolution. 4. Implement lazy browser launching (only on first session start).",
+  "thinking_type": "systems",
+  "context": "Planning modifications for the existing puppeteer-browser MCP server.",
+  "created_at": "2025-03-28T15:56:07.095Z",
+  "updated_at": "2025-03-28T15:56:55.247Z",
+  "steps": [
+    {
+      "id": "3cc9e7ee-3365-45ab-9655-8434bfacc226",
+      "description": "Modify Save Locations: Update screenshot and potential download paths to target './User Content & Downloads' relative to the server's build directory. Use `path.join` and `fs.promises.mkdir`.",
+      "reasoning": "Centralize user-generated content in a dedicated folder within the server's location.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T15:56:16.178Z",
+      "updated_at": "2025-03-28T15:56:16.178Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "4d1e0f0d-2790-4f0a-9027-68957b18b70b",
+      "description": "Ensure File Permissions: Use `fs.promises.mkdir` with `recursive: true` before saving screenshots/downloads to guarantee the target directory exists. Note limitations regarding OS-level permissions.",
+      "reasoning": "Prevent errors caused by missing directories and clarify the scope of permission handling.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T15:56:26.249Z",
+      "updated_at": "2025-03-28T15:56:26.249Z",
+      "previous_step_id": "3cc9e7ee-3365-45ab-9655-8434bfacc226",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "3a47df5a-e4f8-423c-8bdb-65b5730cb72f",
+      "description": "Implement CAPTCHA Handling: Add basic detection for common CAPTCHA elements (iframes, divs). If detected, return a specific status/message. Add a new tool `waitForUserAction(selector, timeout)` to pause execution until the user solves the CAPTCHA and a target element appears.",
+      "reasoning": "Provide a mechanism for workflows to pause and wait for manual user intervention when CAPTCHAs are encountered.",
+      "evidence": "",
+      "confidence": 0.8,
+      "created_at": "2025-03-28T15:56:41.341Z",
+      "updated_at": "2025-03-28T15:56:41.341Z",
+      "previous_step_id": "4d1e0f0d-2790-4f0a-9027-68957b18b70b",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "977c493d-953b-4de3-a219-a51b08304f67",
+      "description": "Implement Lazy Browser Launch: Modify `initializeBrowser` to be called only when needed (e.g., in `start_session`) instead of on server startup. Remove the initial call from `run()`.",
+      "reasoning": "Prevent the browser window from opening immediately when the MCP server starts or restarts, launching it only when a session is actually requested.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T15:56:55.247Z",
+      "updated_at": "2025-03-28T15:56:55.247Z",
+      "previous_step_id": "3a47df5a-e4f8-423c-8bdb-65b5730cb72f",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 57,
+    "tags": [
+      "mcp-server",
+      "puppeteer",
+      "modification",
+      "planning",
+      "systems-thinking",
+      "captcha",
+      "file-permissions",
+      "lazy-loading"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "id": "50d064b6-213c-4b9e-b640-372152bf9f74",
+  "problem": "Develop a browser automation MCP server ('Zanny's Browser Automation Hybrid MCP Server V1.0') using Gemini AI. It needs two modes: controlling a dedicated Puppeteer instance (PNM) and controlling the user's Chrome via an extension (URBM). Key requirements include secure AI key handling, passing browser context (screenshots, DOM, URL, tabs) to the AI, a user intervention mechanism (pause/resume), robust logging, and comprehensive documentation/tutorial.",
+  "thinking_type": "systems",
+  "context": "Project Name: Zanny's Browser Automation Hybrid MCP Server V1.0\nDevelopment Location: C:\\Users\\Shadow\\Cline Data\\MCPs 1\\Hybrid Browse Automator MCP Server\\V1.0",
+  "created_at": "2025-04-03T20:21:47.309Z",
+  "updated_at": "2025-04-03T20:22:41.436Z",
+  "steps": [
+    {
+      "id": "a0e9edcc-fb15-4016-be88-538ac79c9143",
+      "description": "Step 1: Setup & Core Backend Structure",
+      "reasoning": "Establish the foundational project structure, dependencies, and secure configuration loading. This includes initializing Node.js, setting up a basic Express server framework to handle MCP communication, and implementing dotenv for secure API key management as required.",
+      "evidence": "Project requirements specify Node.js backend, MCP server functionality, and secure API key handling via .env.",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T20:21:55.680Z",
+      "updated_at": "2025-04-03T20:21:55.680Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "97aca720-2eb1-458e-9a52-4185c7f3ec05",
+      "description": "Step 2: Gemini AI Integration",
+      "reasoning": "Integrate the Google Gemini API for interpreting user commands. This involves setting up the API client using the securely loaded key, defining the prompt structure to include browser context (URL, title, relevant DOM elements, potential screenshots), sending requests to the specified Gemini model, and processing the AI's response into actionable browser commands.",
+      "evidence": "Requirement I. AI Integration specifies using Gemini, passing context (screenshots, DOM, URL, tabs), and using the model to drive automation.",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T20:22:04.540Z",
+      "updated_at": "2025-04-03T20:22:04.540Z",
+      "previous_step_id": "a0e9edcc-fb15-4016-be88-538ac79c9143",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "a10a94cb-7a52-44b1-9c40-70dc8f3685c8",
+      "description": "Step 3: Implement Puppeteer Navigator Mode (PNM)",
+      "reasoning": "Develop the first automation mode where the server controls a dedicated Puppeteer instance. This requires installing Puppeteer, writing functions to launch/manage the browser instance, and implementing core automation actions (navigate, click, type, scrape, screenshot, download handling) based on commands derived from the AI or direct MCP calls.",
+      "evidence": "Requirement II. Puppeteer Navigator Mode specifies launching and controlling a Puppeteer instance and implementing core actions.",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T20:22:14.216Z",
+      "updated_at": "2025-04-03T20:22:14.216Z",
+      "previous_step_id": "97aca720-2eb1-458e-9a52-4185c7f3ec05",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "cbc652bb-79db-40be-bcfc-577f4b788582",
+      "description": "Step 4: Develop Chrome Extension & URBM Communication",
+      "reasoning": "Create the Chrome Extension required for User Real Browser Mode (URBM). This includes setting up the extension manifest (permissions like activeTab, tabs, scripting, storage, downloads), implementing the background script, and establishing a secure communication channel (e.g., WebSockets) between the extension and the backend server to relay commands and status.",
+      "evidence": "Requirements II. User Real Browser Mode and III. Chrome Extension specify the need for an extension, communication with the server, and necessary permissions.",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T20:22:21.742Z",
+      "updated_at": "2025-04-03T20:22:21.742Z",
+      "previous_step_id": "a10a94cb-7a52-44b1-9c40-70dc8f3685c8",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "cd59b162-d8e3-4bb2-bc79-3af6470c8b9c",
+      "description": "Step 5: Implement User Real Browser Mode (URBM) Actions",
+      "reasoning": "Implement the browser automation logic within the Chrome Extension. This involves using Chrome Extension APIs (like `chrome.tabs.executeScript`, `chrome.debugger` if necessary, or content scripts) to perform actions (navigation, clicks, typing, scraping, etc.) in the user's active browser tab based on commands received from the backend server via the established communication channel.",
+      "evidence": "Requirement III. Action Execution specifies enabling the extension to perform browser actions based on server instructions.",
+      "confidence": 0.9,
+      "created_at": "2025-04-03T20:22:28.318Z",
+      "updated_at": "2025-04-03T20:22:28.318Z",
+      "previous_step_id": "cbc652bb-79db-40be-bcfc-577f4b788582",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "2aeecfcd-d662-44d3-904b-fa40858711c7",
+      "description": "Step 6: Implement User Intervention & Logging",
+      "reasoning": "Develop the mechanism allowing users to pause AI automation and take manual control in both PNM (Puppeteer) and URBM (Chrome Extension), with the ability for the AI to resume control afterward. Simultaneously, implement robust, real-time logging across the system (server ops, AI calls, Puppeteer actions, extension communication) to facilitate debugging and monitoring.",
+      "evidence": "Requirement I. User Intervention explicitly asks for a pause/resume mechanism. Requirement I. Logging & Debugging details the need for comprehensive logging.",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T20:22:35.837Z",
+      "updated_at": "2025-04-03T20:22:35.837Z",
+      "previous_step_id": "cd59b162-d8e3-4bb2-bc79-3af6470c8b9c",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "0b3b8965-96fd-42b1-88ea-cc2ed9c58bbb",
+      "description": "Step 7: Documentation, Tutorial, Testing & Refinement",
+      "reasoning": "Finalize the project by creating comprehensive documentation (architecture, setup, API, config, modes), developing a user tutorial (HTML file with examples), conducting thorough testing of all components (server, PNM, URBM, AI, extension), analyzing results, fixing bugs, and refining the system based on testing outcomes.",
+      "evidence": "Requirement IV. Deliverables & Process explicitly lists documentation, tutorial, testing, and analysis as required outputs.",
+      "confidence": 0.95,
+      "created_at": "2025-04-03T20:22:41.436Z",
+      "updated_at": "2025-04-03T20:22:41.436Z",
+      "previous_step_id": "2aeecfcd-d662-44d3-904b-fa40858711c7",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "mcp-server",
+      "browser-automation",
+      "gemini-ai",
+      "puppeteer",
+      "chrome-extension",
+      "node.js"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

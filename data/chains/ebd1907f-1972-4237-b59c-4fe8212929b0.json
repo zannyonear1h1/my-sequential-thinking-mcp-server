@@ -1,0 +1,132 @@
+{
+  "id": "ebd1907f-1972-4237-b59c-4fe8212929b0",
+  "problem": "Develop an MCP server named 'puppeteer-browser' for non-headless Chrome automation using Puppeteer, supporting multiple sessions, complex state, various actions, configurable parameters, robust error handling, and advanced interpretation/resilience features.",
+  "thinking_type": "systems",
+  "context": "Target Path: C:\\Users\\Shadow\\Cline Data\\MCPs 1\\Zanny's Free to Use Puppeteer MCP Server\\3\\\nKey Features: Non-headless, multi-session, state management, configurable, resilient, NLP/AI-driven interpretation (caller-side), screenshot/element data return.",
+  "created_at": "2025-03-28T21:12:06.356Z",
+  "updated_at": "2025-03-28T21:13:14.801Z",
+  "steps": [
+    {
+      "id": "0d0392e8-053d-4ed1-99a3-62b504ac1e46",
+      "description": "Define System Boundaries & Goals: Scope includes non-headless Chrome automation via Puppeteer actions exposed as MCP tools. Excludes complex NLP interpretation within the server itself (assumed caller-side). Goal is reliable, observable, multi-session browser control with robust state and error handling, returning necessary data (text, attributes, screenshots) to the caller.",
+      "reasoning": "Establishes a clear understanding of the system's limits and objectives based on requirements before detailing internal structure. Aligns with systems thinking principle of defining the system first.",
+      "evidence": "User prompt: Overall Goal (1), Core Functionality (2), Invocation (4 - noting NLP is likely caller-side), Data Handling (7).",
+      "confidence": 1,
+      "created_at": "2025-03-28T21:12:26.094Z",
+      "updated_at": "2025-03-28T21:12:26.094Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "c83d5209-19b0-40d7-9734-b9a79d5ff102",
+      "description": "Identify Key Components & Interactions: 1) MCP Server Interface (receives requests, sends responses/errors). 2) Session Manager (creates, tracks, terminates browser sessions, maps session IDs to Puppeteer Browser/Page instances). 3) Puppeteer Wrapper (abstracts Puppeteer actions, handles non-headless launch, manages page context). 4) Browser Instances (actual Chrome processes controlled by Puppeteer). Interactions: MCP Interface -> Session Manager -> Puppeteer Wrapper -> Browser Instance.",
+      "reasoning": "Breaks the system into manageable parts and defines their relationships, crucial for understanding system structure and behavior. Follows systems thinking principle of decomposition.",
+      "evidence": "User prompt: Core Functionality (2), Concurrency (3), Invocation (4). Implied need for managing multiple browsers and wrapping Puppeteer.",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T21:12:34.878Z",
+      "updated_at": "2025-03-28T21:12:34.878Z",
+      "previous_step_id": "0d0392e8-053d-4ed1-99a3-62b504ac1e46",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "2fa334d9-bc81-4cfa-a2f6-ea4dba17ec50",
+      "description": "Analyze System Dynamics (State, Feedback, Resilience): State (cookies, local storage) is managed per session within the Puppeteer Wrapper/Page context. Feedback loops: Action execution -> Success/Failure -> Response to caller (with data/screenshot) OR Error Handling (retry, adapt selector, log). Resilience mechanisms (retries, dynamic selectors, potential AI problem-solving - though AI part likely caller-side) act as control loops attempting to maintain successful operation despite website variations or anti-bot measures. Configurable parameters (delays, timeouts) influence these dynamics.",
+      "reasoning": "Focuses on how the system behaves over time, handles state changes, and responds to internal/external events (like errors or website changes). Addresses key requirements for state management and resilience using a systems dynamics perspective.",
+      "evidence": "User prompt: Concurrency (3), Configurable Parameters (5), Error Handling & Resilience (6), Data Handling (7).",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T21:12:41.938Z",
+      "updated_at": "2025-03-28T21:12:41.938Z",
+      "previous_step_id": "c83d5209-19b0-40d7-9734-b9a79d5ff102",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "3717d03f-abb8-4a9b-8d01-0f8fd02cfc10",
+      "description": "Model Information Flow & Control: Request (Tool Call + Args + Session ID) -> MCP Interface -> Session Manager (validates session) -> Puppeteer Wrapper (executes action, applies config params like delays/timeouts) -> Browser Instance. Response Flow: Browser State Change -> Puppeteer Wrapper (captures data/screenshot/error) -> Session Manager -> MCP Interface -> Response (JSON data, screenshot reference, success/error status) to Caller. Control: Config params modify Wrapper behavior. Error handling logic within Wrapper controls retries/adaptation.",
+      "reasoning": "Maps the path of data and control signals through the system components identified earlier. Clarifies how inputs lead to outputs and how the system is regulated, essential for detailed design.",
+      "evidence": "User prompt: Core Functionality (2), Invocation (4), Configurable Parameters (5), Error Handling (6), Data Handling (7). Synthesis of previous steps.",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T21:12:49.349Z",
+      "updated_at": "2025-03-28T21:12:49.349Z",
+      "previous_step_id": "2fa334d9-bc81-4cfa-a2f6-ea4dba17ec50",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "ebf250f7-e283-4a93-b285-e793c5657235",
+      "description": "Identify Leverage Points & Potential Issues: Leverage Points: Configurable parameters (delays, timeouts, UA), resilience strategies (retries, selector adaptation), session management robustness. Potential Issues: Anti-bot measures (CAPTCHAs, fingerprinting), dynamic/changing website structures breaking selectors, race conditions in async operations, resource consumption (multiple Chrome instances), managing complex state across requests reliably, error propagation from Puppeteer.",
+      "reasoning": "Highlights critical areas for tuning system performance and stability (leverage points) and anticipates potential challenges (issues) based on the system's nature and requirements. Guides focus during implementation and testing.",
+      "evidence": "User prompt: Configurable Parameters (5), Error Handling & Resilience (6). Inherent challenges of web scraping/automation.",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T21:12:56.798Z",
+      "updated_at": "2025-03-28T21:12:56.798Z",
+      "previous_step_id": "3717d03f-abb8-4a9b-8d01-0f8fd02cfc10",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "1d12ca20-d4d3-446c-88e6-2b2baa6a0e66",
+      "description": "Define Implementation Strategy & Technology Choices: Use TypeScript for type safety. Utilize `@modelcontextprotocol/sdk` for MCP server boilerplate. Employ `puppeteer-core` to connect to an existing Chrome installation or manage downloads. Structure code modularly (e.g., `server.ts`, `sessionManager.ts`, `puppeteerWrapper.ts`, `actions/`). Implement session management using a Map (`sessionId -> { browser, page }`). Wrap Puppeteer calls in try/catch blocks for error handling. Implement basic retry logic first, then consider more advanced resilience. Use environment variables for configuration (API keys, paths if needed).",
+      "reasoning": "Translates the system model into concrete technical decisions and an implementation approach. Selects appropriate technologies and outlines the project structure.",
+      "evidence": "Standard practices for Node.js/TypeScript development, MCP SDK documentation, Puppeteer documentation, User prompt requirements (non-headless implies potentially using existing Chrome).",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T21:13:03.935Z",
+      "updated_at": "2025-03-28T21:13:03.935Z",
+      "previous_step_id": "ebf250f7-e283-4a93-b285-e793c5657235",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "e6723029-8816-495d-ac77-5273065898ac",
+      "description": "Synthesize & Finalize Plan: The system will be a TypeScript-based MCP server using `@modelcontextprotocol/sdk` and `puppeteer-core`. It will manage multiple non-headless Chrome sessions via a Session Manager. A Puppeteer Wrapper will expose core actions (goto, click, type, etc.) as MCP tools, handling state, configuration (delays, timeouts, UA), basic error handling (retries, screenshot on error), and data extraction (JSON). Resilience features like dynamic selectors are future enhancements. Focus on core functionality and session management first. Caller handles complex NLP.",
+      "reasoning": "Consolidates the analysis and design steps into a final, actionable plan, summarizing the key decisions and implementation priorities. Completes the systems thinking process.",
+      "evidence": "Synthesis of steps 1-6.",
+      "confidence": 1,
+      "created_at": "2025-03-28T21:13:14.801Z",
+      "updated_at": "2025-03-28T21:13:14.801Z",
+      "previous_step_id": "1d12ca20-d4d3-446c-88e6-2b2baa6a0e66",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "mcp-server",
+      "puppeteer",
+      "browser-automation",
+      "typescript",
+      "systems-design"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

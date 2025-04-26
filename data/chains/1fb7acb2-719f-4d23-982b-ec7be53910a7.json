@@ -1,0 +1,29 @@
+{
+  "id": "1fb7acb2-719f-4d23-982b-ec7be53910a7",
+  "problem": "Develop a feature-rich asynchronous Discord music bot focused on YouTube playback with dual command interfaces (prefix/slash) and an interactive player UI including a live progress bar.",
+  "thinking_type": "systems",
+  "context": "The bot needs features like playlist support, search, permissions (DJ mode), advanced queue management, audio effects, quality selection, vote-to-skip, Stage Channel support, and video screensharing. Key challenge is the live-updating progress bar without hitting rate limits. Project requires Python, discord.py, yt-dlp, ffmpeg.",
+  "created_at": "2025-04-23T19:13:10.062Z",
+  "updated_at": "2025-04-23T19:13:10.062Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord-bot",
+      "python",
+      "asyncio",
+      "music-bot",
+      "youtube",
+      "discord.py",
+      "yt-dlp",
+      "ffmpeg"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

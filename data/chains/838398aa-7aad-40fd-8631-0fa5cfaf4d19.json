@@ -1,0 +1,86 @@
+{
+  "id": "838398aa-7aad-40fd-8631-0fa5cfaf4d19",
+  "problem": "Improve the user's prompt for creating a Puppeteer MCP server to be effective & easy to understand.",
+  "thinking_type": "systems",
+  "context": "Original prompt:\n\nLet's create a MCP server for Roo Cline & Cline that will complete the following objectives:\n\n1. Using Puppeteer & the user's prompt & instructions, use puppeteer to open a non-headless browser for any purpose, be sure to allow the AI to self correct mistakes in the user's instructions or prompt, and to allow customizable paremeters, such as delay between actions, speed of action chain, and generate 5 more useful customizable parameters & ideas for improving MCP & browser usage.\n2. Make sure the MCP server is able to be called by ANY POSSIBLE WAY and use a BIG & VAST range of trigger keywords, trigger sentences and etc. Follow a example like below:\n- Using browser mcp:\ngo to google.com and then search for elon musk and extract the information about the search result.\n3. Add ALL possible browser use mechanisms and features to make sure nothing is missing, and that I can ask ANYTHING, and it can do it.",
+  "created_at": "2025-03-28T15:12:29.681Z",
+  "updated_at": "2025-03-28T15:13:19.744Z",
+  "steps": [
+    {
+      "id": "aad22eb0-e43f-428e-97cb-b87c8fe93c9d",
+      "description": "Analyze original prompt components using systems thinking.",
+      "reasoning": "Break down the user's request into system elements (inputs, processes, outputs, feedback, environment) to understand the desired MCP server's function and interactions.",
+      "evidence": "Objective 1: \n- Input: User prompt/instructions.\n- Process: Puppeteer opens non-headless browser, performs actions, AI self-correction.\n- Output: Browser actions completed, potentially extracted data.\n- Parameters (Control Inputs): Delay, speed, 5+ others (TBD).\n- Feedback: AI self-correction implies internal feedback loop.\nObjective 2:\n- Input: User natural language request (keywords, sentences).\n- Process: MCP server interprets request, maps to Puppeteer actions.\n- Output: Triggering of browser automation.\n- Environment: Cline interface, user interaction model.\nObjective 3:\n- Input: User request ('ANYTHING').\n- Process: Comprehensive browser automation capabilities (unspecified).\n- Output: Desired browser state/result.\n- Constraint: 'ALL possible browser use mechanisms and features'. This is an unbounded requirement.",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T15:12:38.492Z",
+      "updated_at": "2025-03-28T15:12:38.492Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "4f6a7f9e-ae4c-4fdc-abab-7f926d301817",
+      "description": "Identify weaknesses in the original prompt.",
+      "reasoning": "Pinpoint specific issues like vagueness, unrealistic expectations, and lack of concrete details that hinder effective implementation.",
+      "evidence": "Weaknesses identified:\n1.  **Vagueness:** 'any purpose', 'ANY POSSIBLE WAY', 'BIG & VAST range', 'ALL possible browser use mechanisms', 'ANYTHING'. These are too broad and lack specific, actionable requirements.\n2.  **Unrealistic Expectations:** 'AI to self correct mistakes in the user's instructions or prompt' is extremely complex and needs better definition. 'ALL possible browser features' and 'do ANYTHING' are practically impossible to guarantee.\n3.  **Lack of Structure:** The objectives are listed but not well-integrated. How does the triggering mechanism (Obj 2) relate to the core Puppeteer actions (Obj 1)? How are the 'ALL features' (Obj 3) exposed or controlled?\n4.  **Ambiguity in 'Self-Correction':** What constitutes a 'mistake'? How should the AI prioritize user intent vs. literal instruction? What are the limits of correction?\n5.  **Missing Details:** How should the MCP server handle errors (e.g., website changes, login failures)? How should extracted data be formatted/returned? What are the security considerations for running a browser instance?\n6.  **Parameter Generation:** Asking the AI implementing the server to *also* generate parameters ('generate 5 more useful customizable parameters') mixes requirements definition with implementation brainstorming.",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T15:12:50.034Z",
+      "updated_at": "2025-03-28T15:12:50.034Z",
+      "previous_step_id": "aad22eb0-e43f-428e-97cb-b87c8fe93c9d",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "7a427b31-790a-476f-b63c-faa11c443414",
+      "description": "Brainstorm improvements for the prompt.",
+      "reasoning": "Generate concrete suggestions to address the identified weaknesses, making the prompt clearer, more realistic, and actionable for the AI building the MCP server.",
+      "evidence": "Improvement Ideas:\n1.  **Define Scope Clearly:** Replace vague terms like 'any purpose'/'ANYTHING' with specific categories of tasks (e.g., data extraction, form filling, navigation, testing, monitoring). Define boundaries.\n2.  **Structure Functionality:** Separate core browser actions (navigation, clicks, typing, scraping) from control mechanisms (triggering, parameters) and advanced features (error handling, self-correction).\n3.  **Specify 'Self-Correction':** Define the scope of self-correction. Suggest options: a) retry failed actions, b) adapt selectors if elements change slightly, c) ask user for clarification when ambiguity is high, d) log errors clearly. Avoid promising full autonomy.\n4.  **Refine Triggering:** Instead of 'ANY POSSIBLE WAY', suggest specific trigger patterns: direct commands ('browser: go to X'), natural language intent detection (focused on browser tasks), maybe specific keywords. Provide more diverse examples.\n5.  **Parameterize Realistically:** List concrete, useful parameters upfront (e.g., `default_delay_ms`, `navigation_timeout_ms`, `user_agent_string`, `viewport_width`, `viewport_height`, `screenshot_on_error` (boolean), `data_extraction_format` (e.g., JSON, CSV, text)). Separate parameter *definition* from *generation*.\n6.  **Address 'All Features':** Rephrase as 'Support a comprehensive set of common Puppeteer actions'. List key actions explicitly (e.g., `goto`, `click`, `type`, `select`, `waitForSelector`, `evaluate`, `screenshot`, `pdf`). Allow for extensibility rather than claiming completeness.\n7.  **Add Essential Non-Functional Requirements:** Include error handling strategy, logging requirements, data return format, security considerations (sandboxing, data privacy), configuration management.",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T15:13:06.347Z",
+      "updated_at": "2025-03-28T15:13:06.347Z",
+      "previous_step_id": "4f6a7f9e-ae4c-4fdc-abab-7f926d301817",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "795a09df-406d-4f82-a5e7-469f7010e124",
+      "description": "Structure the improved prompt.",
+      "reasoning": "Organize the brainstormed improvements into a coherent and easy-to-follow structure for the final prompt.",
+      "evidence": "Proposed Prompt Structure:\n1.  **Overall Goal:** State the objective clearly - create a Puppeteer-based MCP server for browser automation.\n2.  **Core Functionality (Puppeteer Actions):**\n    *   Specify non-headless browser operation.\n    *   List key supported actions (navigation, interaction, data extraction, waits, etc.).\n    *   Mention extensibility for adding more actions later.\n3.  **Invocation/Triggering:**\n    *   Describe how the user will invoke the MCP server (e.g., specific commands, natural language intent focused on browser tasks).\n    *   Provide clear examples.\n4.  **Configurable Parameters:**\n    *   List essential parameters with defaults (e.g., delays, timeouts, user agent, viewport).\n    *   Explain how users can override these parameters per request.\n5.  **Error Handling & Resilience:**\n    *   Define basic error handling (e.g., retries, timeouts).\n    *   Specify logging requirements.\n    *   Clarify the 'self-correction' scope (e.g., adaptive selectors, user clarification prompts, not full autonomy).\n6.  **Data Handling:**\n    *   Specify how extracted data should be returned (e.g., format options like JSON, text).\n7.  **Security Considerations:**\n    *   Briefly mention the need for secure implementation (e.g., avoiding arbitrary code execution from web pages).\n8.  **Non-Goals (Optional but helpful):**\n    *   Explicitly state what is *not* included (e.g., managing multiple concurrent browser sessions initially, complex state management across requests).",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T15:13:19.744Z",
+      "updated_at": "2025-03-28T15:13:19.744Z",
+      "previous_step_id": "7a427b31-790a-476f-b63c-faa11c443414",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 57,
+    "tags": [
+      "prompt-engineering",
+      "mcp-server",
+      "puppeteer",
+      "systems-thinking"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

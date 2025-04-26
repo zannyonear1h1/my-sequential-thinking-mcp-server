@@ -1,0 +1,133 @@
+{
+  "id": "98592306-c24b-43f6-a4a5-80771cf2b37b",
+  "problem": "Plan the creation of a PowerShell script to automate enabling Discord developer experiments and reverting the UI, guiding the user through manual steps.",
+  "thinking_type": "systems",
+  "context": "Goal: PowerShell script (.ps1) for Windows.\nPurpose: Automate Discord dev experiment enabling & UI reversion (Desktop Visual Refresh -> Treatment 0).\nMethod: Guide user via Windows message boxes for manual steps (uninstall, console interaction).\nKey Script Steps:\n1. Load System.Windows.Forms.\n2. Show Disclaimer message box.\n3. Prompt for Uninstall message box.\n4. Open appwiz.cpl.\n5. Wait for uninstall confirmation.\n6. Download Discord installer (Invoke-WebRequest, error handling).\n7. Install Discord (Start-Process -Wait, silent attempt, cleanup, error handling).\n8. Modify settings.json ($env:APPDATA\\discord\\settings.json): Add \"DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING\" = $true (JSON parsing/writing, error handling).\n9. Launch Discord ($env:LOCALAPPDATA\\Discord\\Update.exe --processStart Discord.exe, error handling).\n10. Instruct user to open DevTools (Ctrl+Shift+I), go to Console, type 'allow pasting', press Enter. Wait for confirmation.\n11. Copy specific JavaScript code to clipboard (Set-Clipboard).\n12. Instruct user to paste JS into console, run it, then manually set \"Desktop Visual Refresh\" experiment to \"Treatment 0\" in Discord settings. Provide contact info. Wait for final confirmation.\n13. End script.",
+  "created_at": "2025-03-27T21:24:19.165Z",
+  "updated_at": "2025-03-27T21:27:08.094Z",
+  "steps": [
+    {
+      "id": "b09bfa64-7756-42ad-bb7d-c3fcde85b79a",
+      "description": "Initialize script: Load Windows Forms assembly and display the initial disclaimer message box.",
+      "reasoning": "This is the necessary first step to enable GUI elements (message boxes) and inform the user about the script's purpose and risks.",
+      "evidence": "User requirements 1 and 2.",
+      "confidence": 1,
+      "created_at": "2025-03-27T21:24:35.820Z",
+      "updated_at": "2025-03-27T21:24:35.820Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "7d806d2f-e958-4fcb-8231-5d06dd488204",
+      "description": "Guide user through Discord uninstallation: Display instructions message box and open 'Programs and Features'.",
+      "reasoning": "This step initiates the manual uninstallation process required before reinstalling and modifying Discord. It provides clear instructions via a message box and opens the necessary system tool (`appwiz.cpl`). The message box also serves as the pause point (requirement 5) until the user confirms completion.",
+      "evidence": "User requirements 3, 4, and 5.",
+      "confidence": 1,
+      "created_at": "2025-03-27T21:25:27.385Z",
+      "updated_at": "2025-03-27T21:25:27.385Z",
+      "previous_step_id": "b09bfa64-7756-42ad-bb7d-c3fcde85b79a",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "c27765af-4f6b-4c2a-beb5-63ef329ccdc2",
+      "description": "Download and Install Discord: Download the latest installer using Invoke-WebRequest, execute it with Start-Process -Wait, handle potential errors, and clean up the installer file.",
+      "reasoning": "This automates the reacquisition and setup of Discord after the manual uninstall. It includes crucial error handling for download/install failures and ensures the script waits for installation to finish before proceeding. Cleanup keeps the temporary directory tidy.",
+      "evidence": "User requirements 6 and 7.",
+      "confidence": 1,
+      "created_at": "2025-03-27T21:26:25.561Z",
+      "updated_at": "2025-03-27T21:26:25.561Z",
+      "previous_step_id": "7d806d2f-e958-4fcb-8231-5d06dd488204",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "1922e4de-680a-47c3-9b40-41955d796559",
+      "description": "Modify Discord settings.json: Locate the file, read and parse its JSON content, add/update the developer flag (`DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING` = `$true`), convert back to JSON, and overwrite the file. Include error handling for file existence, JSON parsing, and writing.",
+      "reasoning": "This step programmatically enables the necessary developer flag in Discord's settings, which is a prerequisite for accessing the developer console and experiments later in the process. Robust error handling is included for file operations and JSON manipulation.",
+      "evidence": "User requirement 8.",
+      "confidence": 1,
+      "created_at": "2025-03-27T21:26:50.712Z",
+      "updated_at": "2025-03-27T21:26:50.712Z",
+      "previous_step_id": "c27765af-4f6b-4c2a-beb5-63ef329ccdc2",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "73f220a2-1eaf-4c03-8ff6-1482436b153b",
+      "description": "Launch Discord: Execute the Discord process using the standard path (`$env:LOCALAPPDATA\\Discord\\Update.exe --processStart Discord.exe`) and include basic error handling.",
+      "reasoning": "This step starts the Discord application after the settings have been modified, allowing the user to proceed with the next manual steps involving the developer console.",
+      "evidence": "User requirement 9.",
+      "confidence": 1,
+      "created_at": "2025-03-27T21:26:55.351Z",
+      "updated_at": "2025-03-27T21:26:55.351Z",
+      "previous_step_id": "1922e4de-680a-47c3-9b40-41955d796559",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "158dea01-c054-43db-9478-50d6321ff796",
+      "description": "Guide user to enable console pasting: Display a message box instructing the user to open DevTools (Ctrl+Shift+I), navigate to the Console tab, type 'allow pasting', press Enter, and then confirm completion by clicking OK on the message box.",
+      "reasoning": "This step provides instructions for a necessary manual action within Discord's developer tools. Enabling pasting is required before the script can provide the JavaScript code for the user to paste and execute. The message box pauses the script until the user confirms this action.",
+      "evidence": "User requirement 10.",
+      "confidence": 1,
+      "created_at": "2025-03-27T21:27:01.649Z",
+      "updated_at": "2025-03-27T21:27:01.649Z",
+      "previous_step_id": "73f220a2-1eaf-4c03-8ff6-1482436b153b",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "277d9f6c-dd2c-4fbb-879f-9640d16bce86",
+      "description": "Prepare and guide experiment application: Define the required JavaScript code, copy it to the clipboard using Set-Clipboard, and display a final message box instructing the user to paste the code into the Discord console, execute it, navigate to Experiments, find 'Desktop Visual Refresh', and select 'Treatment 0'. Provide contact info and wait for final confirmation.",
+      "reasoning": "This step provides the core JavaScript payload needed to enable the experiments UI and copies it for easy pasting by the user. The final instructions guide the user through the remaining manual steps within Discord to achieve the desired UI reversion. The message box serves as the final confirmation point before the script ends (requirement 13).",
+      "evidence": "User requirements 11, 12, and 13.",
+      "confidence": 1,
+      "created_at": "2025-03-27T21:27:08.094Z",
+      "updated_at": "2025-03-27T21:27:08.094Z",
+      "previous_step_id": "158dea01-c054-43db-9478-50d6321ff796",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "powershell",
+      "discord",
+      "automation",
+      "ui-reversion",
+      "developer-experiments",
+      "script-planning"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

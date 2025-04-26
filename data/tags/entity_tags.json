@@ -1,0 +1,548 @@
+{
+  "4f0b846e-9e26-43b3-918c-650b9262d830": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:yt-dlp",
+    "custom:music",
+    "custom:new-project",
+    "custom:systems-thinking"
+  ],
+  "bf9c7001-649b-47d6-873f-2f6e282b1a04": [
+    "custom:discordpy",
+    "custom:python",
+    "custom:bugfix",
+    "custom:application-commands",
+    "custom:cogs",
+    "custom:zmusicbot"
+  ],
+  "db70615a-da89-490d-9771-134da3c1a46b": [
+    "custom:discordpy",
+    "custom:powershell",
+    "custom:windows",
+    "custom:shortcut",
+    "custom:gui-revert",
+    "custom:process-management"
+  ],
+  "f362f091-3175-469f-afb0-ea6746860386": [
+    "custom:powershell",
+    "custom:discordpy",
+    "custom:vencord",
+    "custom:gui-revert",
+    "custom:scripting"
+  ],
+  "164e9d7d-9150-46b2-a1fb-4dd04872e9e2": [
+    "custom:powershell",
+    "custom:discordpy",
+    "custom:vencord",
+    "custom:gui-revert",
+    "custom:scripting",
+    "custom:code-analysis"
+  ],
+  "0e1c70df-ac73-4b50-90bf-cc349a5571f5": [
+    "custom:discordpy",
+    "custom:modding",
+    "custom:javascript-injection",
+    "custom:windows",
+    "custom:vencord",
+    "custom:experiments",
+    "custom:desktop-shortcut",
+    "custom:revert"
+  ],
+  "83ef3627-fa85-45d1-b6c8-a3243d5328d4": [
+    "custom:vscode-extension",
+    "custom:planning",
+    "custom:straico-api",
+    "custom:mcp-management",
+    "custom:filesystem-access"
+  ],
+  "98592306-c24b-43f6-a4a5-80771cf2b37b": [
+    "custom:powershell",
+    "custom:discordpy",
+    "custom:automation",
+    "custom:ui-reversion",
+    "custom:developer-experiments",
+    "custom:script-planning"
+  ],
+  "63b2fe6d-7096-4b27-a3fd-8004e043621d": [
+    "custom:powershell",
+    "custom:discordpy",
+    "custom:automation",
+    "custom:scripting"
+  ],
+  "838398aa-7aad-40fd-8631-0fa5cfaf4d19": [
+    "custom:prompt-engineering",
+    "custom:mcp-server",
+    "custom:puppeteer",
+    "custom:systems-thinking"
+  ],
+  "e894d018-4a66-41e6-b999-b06691b99ff4": [
+    "custom:mcp-server",
+    "custom:puppeteer",
+    "custom:browser-automation",
+    "custom:planning",
+    "custom:systems-thinking"
+  ],
+  "7f770749-7080-408f-a7a4-390b104752d8": [
+    "custom:mcp-server",
+    "custom:puppeteer",
+    "custom:modification",
+    "custom:planning",
+    "custom:systems-thinking",
+    "custom:captcha",
+    "custom:file-permissions",
+    "custom:lazy-loading"
+  ],
+  "da33737f-df11-4fd0-bacc-e95e8a20f070": [
+    "custom:puppeteer",
+    "custom:mcp",
+    "custom:error-detection",
+    "custom:captcha",
+    "custom:rate-limit",
+    "custom:screenshot-analysis"
+  ],
+  "e70c4115-c47c-424f-bb0e-f752f1745473": [
+    "custom:mcp-server",
+    "custom:puppeteer",
+    "custom:browser-automation",
+    "custom:planning",
+    "custom:ai-integration",
+    "custom:resilience"
+  ],
+  "1b78436e-01a7-44d3-b3a8-cd5aee3009e0": [
+    "custom:minecraft",
+    "custom:spigot",
+    "custom:odin",
+    "custom:server-development",
+    "custom:systems-thinking",
+    "custom:game-server",
+    "custom:api-implementation",
+    "custom:plugin-architecture",
+    "custom:web-interface"
+  ],
+  "97b2c7a4-152d-412e-be49-7138b7d3fd87": [
+    "custom:minecraft",
+    "custom:server",
+    "custom:spigot",
+    "custom:fork",
+    "custom:odin",
+    "custom:plugin-compatibility",
+    "custom:web-ui",
+    "custom:systems-thinking",
+    "custom:project-planning"
+  ],
+  "1f5722c1-f32a-4310-956c-1c835e78b8ad": [
+    "custom:minecraft",
+    "custom:spigot-fork",
+    "custom:odin",
+    "custom:server-development",
+    "custom:planning"
+  ],
+  "d1aa2bf7-8c51-4a99-b743-36a575d1c219": [
+    "custom:mcp-server",
+    "custom:puppeteer",
+    "custom:browser-automation",
+    "custom:nlp",
+    "custom:planning",
+    "custom:systems-thinking"
+  ],
+  "4b438790-afc0-4eff-9489-349dc32a077f": [
+    "custom:mcp-server",
+    "custom:puppeteer",
+    "custom:browser-automation",
+    "custom:planning",
+    "custom:systems-thinking",
+    "custom:ai-integration",
+    "custom:nlp"
+  ],
+  "83fa08ec-4733-4ef6-aa69-1e711a264932": [
+    "custom:mcp-server",
+    "custom:puppeteer",
+    "custom:browser-automation",
+    "custom:systems-design",
+    "custom:resilience",
+    "custom:ai-integration"
+  ],
+  "ebd1907f-1972-4237-b59c-4fe8212929b0": [
+    "custom:mcp-server",
+    "custom:puppeteer",
+    "custom:browser-automation",
+    "custom:typescript",
+    "custom:systems-design"
+  ],
+  "a47b4189-2aaf-4d58-8d79-fbbed7445e88": [
+    "custom:planning",
+    "custom:browser-automation",
+    "custom:vscode-extension",
+    "custom:mcp-server",
+    "custom:systems-thinking"
+  ],
+  "9c092380-8659-4365-b98d-848cbbf4f05b": [
+    "custom:planning",
+    "custom:gui",
+    "custom:c",
+    "custom:minecraft",
+    "custom:patcher",
+    "custom:systems-thinking",
+    "custom:minebedrock4all"
+  ],
+  "1f905169-c98a-4d00-86c4-09e91bce3bef": [
+    "custom:gui",
+    "custom:wpf",
+    "custom:csharp",
+    "custom:minecraft",
+    "custom:patcher",
+    "custom:visual-studio",
+    "custom:nexus-loader"
+  ],
+  "ac7348b7-4027-4118-b3d8-bafa36f163f9": [
+    "custom:prompt-engineering",
+    "custom:wpf",
+    "custom:csharp",
+    "custom:feasibility-analysis"
+  ],
+  "49ffa304-3a53-4991-a21f-dd4de207a2dc": [
+    "custom:mcp-server",
+    "custom:vscode-extension",
+    "custom:puppeteer",
+    "custom:gemini-api",
+    "custom:browser-automation",
+    "custom:hybrid-browsing"
+  ],
+  "a1bb2f67-e662-4ea2-b6dc-2383e99479b6": [
+    "custom:mcp-server",
+    "custom:browser-automation",
+    "custom:puppeteer",
+    "custom:gemini",
+    "custom:vscode-extension",
+    "custom:planning"
+  ],
+  "e56fc679-16de-48a2-bf0e-018ae4e8c47e": [
+    "custom:mcp-server",
+    "custom:recreation",
+    "custom:enhancement",
+    "custom:puppeteer",
+    "custom:gemini",
+    "custom:vscode-extension"
+  ],
+  "da1c19fb-b13f-4b75-8be8-f6897ec221d0": [
+    "custom:planning",
+    "custom:architecture",
+    "custom:browser-automation",
+    "custom:mcp-server",
+    "custom:gemini-api",
+    "custom:puppeteer",
+    "custom:vscode-extension"
+  ],
+  "50d064b6-213c-4b9e-b640-372152bf9f74": [
+    "custom:mcp-server",
+    "custom:browser-automation",
+    "custom:gemini-api",
+    "custom:puppeteer",
+    "custom:vscode-extension",
+    "custom:nodejs"
+  ],
+  "8ab896e2-5099-446b-b9ae-3b577ce0ead4": [
+    "custom:mcp-server",
+    "custom:browser-automation",
+    "custom:gemini-api",
+    "custom:puppeteer",
+    "custom:vscode-extension",
+    "custom:typescript",
+    "custom:nodejs"
+  ],
+  "6c748d7f-1113-4db2-871c-f4055fc02a80": [
+    "custom:mcp",
+    "custom:browser-automation",
+    "custom:puppeteer",
+    "custom:vscode-extension",
+    "custom:gemini-api",
+    "custom:planning",
+    "custom:systems-thinking"
+  ],
+  "3944caa6-bac6-45fb-bfca-02d51c106cc7": [
+    "custom:windows",
+    "custom:csharp",
+    "custom:gui",
+    "custom:screenshare",
+    "custom:audio",
+    "custom:gemini-api",
+    "custom:logging"
+  ],
+  "43f9e689-a4ae-48e6-b784-cc2cf58c9df7": [
+    "custom:wpf",
+    "custom:xaml",
+    "custom:build-error",
+    "custom:material-design",
+    "custom:debugging"
+  ],
+  "7d72e32b-73bf-425e-b703-8133974c0796": [
+    "custom:mcp",
+    "custom:brightdata",
+    "custom:serp-api",
+    "custom:planning"
+  ],
+  "b5eecfe2-bed8-405f-81f5-54e967d9873b": [
+    "custom:github",
+    "custom:sample-project",
+    "custom:releasecom",
+    "custom:web-scraping"
+  ],
+  "223c20b2-cc9b-4c48-ac1b-971feadc994d": [
+    "custom:rust",
+    "custom:minecraft",
+    "custom:server",
+    "custom:translation",
+    "custom:networking",
+    "custom:protocol"
+  ],
+  "f69d8f1a-11f3-4301-a214-02e354b477fa": [
+    "custom:rust",
+    "custom:minecraft",
+    "custom:networking",
+    "custom:protocol",
+    "custom:tokio"
+  ],
+  "8cb3a34c-04bd-4d39-bdb5-a83607b9e656": [
+    "custom:rust",
+    "custom:minecraft",
+    "custom:jni",
+    "custom:server",
+    "custom:networking",
+    "custom:async"
+  ],
+  "d6d5af53-ca1d-4584-b52d-7003d42d5171": [
+    "custom:rust",
+    "custom:minecraft",
+    "custom:jni",
+    "custom:server",
+    "custom:architecture",
+    "custom:code-generation"
+  ],
+  "5d2c1686-3ff6-47d1-920b-d40d8839326e": [
+    "custom:discordpy",
+    "custom:gui",
+    "custom:zmusicbot",
+    "custom:seek-bar",
+    "custom:scrub-bar",
+    "custom:api-implementation"
+  ],
+  "0f4fb82d-3210-4a6e-8d36-6c1876780a45": [
+    "custom:discordpy",
+    "custom:python",
+    "custom:zmusicbot",
+    "custom:async",
+    "custom:yt-dlp",
+    "custom:cogs",
+    "custom:ffmpeg",
+    "custom:generation"
+  ],
+  "7a84c4a7-40fa-4324-9b82-02eb7ceba1d3": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:async",
+    "custom:music",
+    "custom:discordpy",
+    "custom:yt-dlp",
+    "custom:ffmpeg",
+    "custom:ui",
+    "custom:cogs"
+  ],
+  "b1f8c75c-1255-4f61-b7ee-29a908888c0e": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:discordpy",
+    "custom:zmusicbot",
+    "custom:async",
+    "custom:yt-dlp",
+    "custom:ui",
+    "custom:cogs"
+  ],
+  "29976d77-497a-4af9-8cd7-dd1bdbe3fd71": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:async",
+    "custom:music",
+    "custom:discordpy",
+    "custom:yt-dlp",
+    "custom:ffmpeg",
+    "custom:ui",
+    "custom:slash-commands",
+    "custom:zmusica1"
+  ],
+  "57bcb168-b33c-479f-8858-25144ba5b461": [
+    "custom:vscode",
+    "custom:game-server",
+    "custom:ide",
+    "custom:setup"
+  ],
+  "d62c5df5-6550-41f5-add7-6ecabc7a6154": [
+    "custom:vscode-extension",
+    "custom:cline-replica",
+    "custom:powershell-integration",
+    "custom:gemini-25-pro"
+  ],
+  "8ae8b50c-9532-48c0-acb2-9bc9489aeb5c": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:async",
+    "custom:discordpy",
+    "custom:zmusicbot",
+    "custom:yt-dlp",
+    "custom:ffmpeg",
+    "custom:ui",
+    "custom:slash-commands"
+  ],
+  "a36fe9c0-6b5f-4ec2-a332-66ddf643260c": [
+    "custom:gui",
+    "custom:python",
+    "custom:mcp",
+    "custom:gemini-25-pro",
+    "custom:dark-mode"
+  ],
+  "da79d4d2-808b-4a43-97e9-9238946f47e8": [
+    "custom:typescript",
+    "custom:ai-integration",
+    "custom:http-request",
+    "custom:gemini-api"
+  ],
+  "81cc0ba7-2908-449f-b93a-d23abdf49113": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:async",
+    "custom:discordpy",
+    "custom:yt-dlp",
+    "custom:zmusicbot",
+    "custom:interactive-ui"
+  ],
+  "33afe934-9995-4b43-96a3-3f8207d51bf3": [
+    "custom:discordpy",
+    "custom:zmusicbot",
+    "custom:youtube",
+    "custom:async",
+    "custom:yt-dlp",
+    "custom:python",
+    "custom:discord-bot",
+    "custom:slash-commands"
+  ],
+  "9a1264e0-8adb-4441-bc30-f09984a54c07": [
+    "custom:discord-bot",
+    "custom:zmusicbot",
+    "custom:enhancement"
+  ],
+  "eb56dc4c-bc65-41e6-82d6-3447d835756a": [
+    "custom:discordpy",
+    "custom:python",
+    "custom:async",
+    "custom:zmusicbot",
+    "custom:youtube",
+    "custom:yt-dlp",
+    "custom:ffmpeg",
+    "custom:slash-commands"
+  ],
+  "2250048c-6ea1-42a6-8579-ca4a8d911465": [
+    "custom:discordpy",
+    "custom:python",
+    "custom:zmusicbot",
+    "custom:planning",
+    "custom:music",
+    "custom:development-strategy"
+  ],
+  "27dfe5d8-3978-4896-93d2-7924f3f4c949": [
+    "custom:discordpy",
+    "custom:zmusicbot",
+    "custom:async",
+    "custom:yt-dlp",
+    "custom:ffmpeg",
+    "custom:ui",
+    "custom:python"
+  ],
+  "68fadae2-8485-4dec-8acc-83510b1e35e8": [
+    "custom:discordpy",
+    "custom:python",
+    "custom:async",
+    "custom:zmusicbot",
+    "custom:youtube",
+    "custom:yt-dlp",
+    "custom:slash-commands",
+    "custom:state-management",
+    "custom:background-tasks"
+  ],
+  "52aa3def-b547-4ae8-9d3b-e8dc91ae55ec": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:async",
+    "custom:discordpy",
+    "custom:yt-dlp",
+    "custom:zmusicbot",
+    "custom:youtube",
+    "custom:interactive-ui"
+  ],
+  "67ebc99c-421f-41bf-9227-9efac7e2da38": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:async",
+    "custom:discordpy",
+    "custom:yt-dlp",
+    "custom:zmusicbot",
+    "custom:ui",
+    "custom:slash-commands"
+  ],
+  "5401c581-f1db-4c34-bbc5-f08585e2370d": [
+    "custom:python",
+    "custom:discordpy",
+    "custom:debugging",
+    "custom:indentation",
+    "custom:syntax"
+  ],
+  "eb3b872f-6842-47e5-85ea-548ff5ffc95c": [
+    "custom:python",
+    "custom:debug",
+    "custom:indentation",
+    "custom:discordpy",
+    "custom:cogs"
+  ],
+  "5d6c0d37-cd75-419c-8fbc-f0254b06f054": [
+    "custom:python",
+    "custom:discordpy",
+    "custom:debugging",
+    "custom:indentation"
+  ],
+  "bcc7470b-339f-44bc-98a9-5ea00883b547": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:async",
+    "custom:youtube",
+    "custom:music",
+    "custom:discordpy",
+    "custom:yt-dlp",
+    "custom:ui"
+  ],
+  "37138f2b-3f66-4549-b946-108fdb21a657": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:async",
+    "custom:zmusicbot",
+    "custom:youtube",
+    "custom:yt-dlp",
+    "custom:discordpy",
+    "custom:music"
+  ],
+  "3468d424-75b9-4e8d-9f49-4cb172e553a0": [
+    "custom:discord-bot",
+    "custom:python",
+    "custom:zmusicbot",
+    "custom:initialization",
+    "custom:planning",
+    "custom:mode-selection",
+    "custom:music"
+  ],
+  "a234ef13-950b-47ab-b407-09893979ac06": [
+    "custom:python",
+    "custom:discordpy",
+    "custom:debugging",
+    "custom:code-fix",
+    "custom:indentation-error",
+    "custom:syntax-error",
+    "custom:attribute-error"
+  ]
+}

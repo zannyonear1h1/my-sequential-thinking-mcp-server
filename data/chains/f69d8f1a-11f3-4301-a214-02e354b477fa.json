@@ -1,0 +1,26 @@
+{
+  "id": "f69d8f1a-11f3-4301-a214-02e354b477fa",
+  "problem": "Create a minimal Minecraft server in Rust from scratch based on wiki.vg protocol documentation, implementing Handshake, Status, and basic offline Login states.",
+  "thinking_type": "analytical",
+  "context": "User wants a Rust implementation using Tokio, focusing on protocol accuracy based on wiki.vg. Initial scope includes Handshake, Status, and basic offline Login states. Project structure and specific crates (tokio, bytes, serde, uuid, tracing) are suggested.",
+  "created_at": "2025-04-09T17:42:01.485Z",
+  "updated_at": "2025-04-09T17:42:01.485Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "rust",
+      "minecraft",
+      "networking",
+      "protocol",
+      "tokio"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 5,
+    "pattern": "break_down_analyze_synthesize"
+  }
+}

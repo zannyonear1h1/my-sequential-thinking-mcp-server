@@ -1,0 +1,27 @@
+{
+  "id": "bf9c7001-649b-47d6-873f-2f6e282b1a04",
+  "problem": "Fix multiple errors in the ZMusic Discord bot codebase, including CommandNotFound for 'skip' and 'nowplaying', and AttributeError related to message views in 'pause' and 'resume' commands.",
+  "thinking_type": "systems",
+  "context": "The bot uses discord.py with application commands and cogs. Errors occurred during runtime. Codebase includes bot.py, cogs/music.py, and cogs/general.py. Memory bank files provide project context but appear outdated regarding current implementation progress.",
+  "created_at": "2025-03-26T15:25:11.845Z",
+  "updated_at": "2025-03-26T15:25:11.845Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord.py",
+      "python",
+      "bugfix",
+      "application-commands",
+      "cogs",
+      "ZMusicBot"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

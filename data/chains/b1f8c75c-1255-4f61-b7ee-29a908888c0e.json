@@ -1,0 +1,29 @@
+{
+  "id": "b1f8c75c-1255-4f61-b7ee-29a908888c0e",
+  "problem": "Develop a feature-rich Discord music bot (ZMusica1) with multi-source audio/video playback, dual command interfaces (prefix/slash), interactive player UI, advanced queue management, permissions, and persistence.",
+  "thinking_type": "systems",
+  "context": "The bot needs to handle asynchronous operations, integrate yt-dlp, manage state per guild, synchronize command and UI interactions, handle errors robustly, and be configurable. Modularity via Cogs is preferred. Key libraries: discord.py, asyncio, yt-dlp, json. External dependency: ffmpeg.",
+  "created_at": "2025-04-10T23:54:58.739Z",
+  "updated_at": "2025-04-10T23:54:58.739Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "discord-bot",
+      "python",
+      "discord.py",
+      "music-bot",
+      "asyncio",
+      "yt-dlp",
+      "ui",
+      "cogs"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

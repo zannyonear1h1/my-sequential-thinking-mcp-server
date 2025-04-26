@@ -1,0 +1,106 @@
+{
+  "id": "eb56dc4c-bc65-41e6-82d6-3447d835756a",
+  "problem": "Develop a feature-rich asynchronous Python Discord bot for YouTube audio/video playback with dual command interfaces (prefix/slash) and an interactive player UI featuring a live progress bar.",
+  "thinking_type": "systems",
+  "context": "The bot needs robust queue management, permissions, effects, search, screensharing, vote-skip, idle disconnect, and persistent elements like saved queues and prefixes. Key challenges include the live progress bar (rate limits), state synchronization between commands and UI, and managing external dependencies like yt-dlp and ffmpeg. Modularity via Cogs is highly recommended.",
+  "created_at": "2025-04-23T02:08:12.978Z",
+  "updated_at": "2025-04-23T02:13:28.802Z",
+  "steps": [
+    {
+      "id": "a8d4049b-09d7-4d07-81a8-3df6af599642",
+      "description": "Define Project Scope and Core Requirements",
+      "reasoning": "Establish the foundational understanding of the project based on the user's detailed request. This involves creating the initial 'projectbrief.md' for the Memory Bank.",
+      "evidence": "User's initial task description outlining features like YouTube playback, dual command interfaces, interactive UI with progress bar, queue management, permissions, etc.",
+      "confidence": 1,
+      "created_at": "2025-04-23T02:11:29.230Z",
+      "updated_at": "2025-04-23T02:11:29.230Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "85e3bef5-e831-4b3c-96c9-8bf062471fa0",
+      "description": "Define Product Context",
+      "reasoning": "Elaborate on the 'why' behind the project: the problems it solves, the target user experience, and how the features contribute to the overall product goal. This populates 'productContext.md'.",
+      "evidence": "Derived from the 'projectbrief.md' and the user's initial request, focusing on user interaction patterns (commands, UI), playback quality, and control features.",
+      "confidence": 1,
+      "created_at": "2025-04-23T02:11:54.896Z",
+      "updated_at": "2025-04-23T02:11:54.896Z",
+      "previous_step_id": "a8d4049b-09d7-4d07-81a8-3df6af599642",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "b147716c-75d5-4b7c-870d-f471ed06e75f",
+      "description": "Define System Architecture and Patterns",
+      "reasoning": "Outline the high-level technical design, including the use of Cogs, class structures for player/queue management, handling of state, and interaction between components (commands, UI, background tasks). This populates 'systemPatterns.md'.",
+      "evidence": "Based on 'projectbrief.md' requirements like modularity (Cogs), interactive UI (`discord.ui`), background tasks (progress bar), and the need for state management per guild.",
+      "confidence": 1,
+      "created_at": "2025-04-23T02:12:22.007Z",
+      "updated_at": "2025-04-23T02:12:22.007Z",
+      "previous_step_id": "85e3bef5-e831-4b3c-96c9-8bf062471fa0",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "942c6d52-611a-4c39-ae39-f6a138372fa4",
+      "description": "Define Technical Context",
+      "reasoning": "Specify the concrete technologies, libraries, external dependencies, development setup, and technical constraints for the project. This populates 'techContext.md'.",
+      "evidence": "Derived from 'projectbrief.md' (libraries, ffmpeg), 'systemPatterns.md' (yt-dlp, JSON), and standard Python bot development practices.",
+      "confidence": 1,
+      "created_at": "2025-04-23T02:12:56.852Z",
+      "updated_at": "2025-04-23T02:12:56.852Z",
+      "previous_step_id": "b147716c-75d5-4b7c-870d-f471ed06e75f",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "47f68ed3-9c7d-4291-992e-d82f568035fc",
+      "description": "Define Initial Active Context",
+      "reasoning": "Establish the starting point for development. Since no code exists yet, the focus is on setting up the project structure and core bot initialization. This populates 'activeContext.md'.",
+      "evidence": "Project state is pre-development. Based on 'projectbrief.md' and 'systemPatterns.md', the immediate next steps involve creating the basic file layout and bot entry point.",
+      "confidence": 1,
+      "created_at": "2025-04-23T02:13:28.802Z",
+      "updated_at": "2025-04-23T02:13:28.802Z",
+      "previous_step_id": "942c6d52-611a-4c39-ae39-f6a138372fa4",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 71,
+    "tags": [
+      "discord.py",
+      "python",
+      "asyncio",
+      "music-bot",
+      "youtube",
+      "yt-dlp",
+      "ffmpeg",
+      "discord.ui",
+      "slash-commands"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "da1c19fb-b13f-4b75-8be8-f6897ec221d0",
+  "problem": "Outline a plan, architecture, tech stack, and challenges for Zanny's Browser Automation Hybrid MCP Server V1.0",
+  "thinking_type": "systems",
+  "context": "The system involves a backend MCP server using Gemini AI, controlling both a Puppeteer instance (PNM) and the user's Chrome browser via an extension (URBM). Key features include AI context awareness, user intervention, and robust logging.",
+  "created_at": "2025-04-03T19:07:20.866Z",
+  "updated_at": "2025-04-03T19:07:57.577Z",
+  "steps": [
+    {
+      "id": "2a2e7bf9-bc62-494b-bb37-b1bd09d195d9",
+      "description": "Define High-Level Development Plan & Phases",
+      "reasoning": "Establish a structured roadmap for the project.",
+      "evidence": "Phase 1: Setup & Core Backend (Node.js server, basic MCP structure, .env handling, logging setup). Phase 2: Puppeteer Navigator Mode (PNM) Implementation (Puppeteer integration, core actions). Phase 3: Chrome Extension Development (Basic extension structure, communication bridge). Phase 4: User Real Browser Mode (URBM) Implementation (Server-Extension communication logic, action execution via extension). Phase 5: Gemini AI Integration (API connection, context gathering logic, command interpretation). Phase 6: User Intervention Mechanism (Pause/resume logic for both modes). Phase 7: Testing & Refinement (Unit, integration, end-to-end tests). Phase 8: Documentation & Tutorial (Write project docs and HTML tutorial).",
+      "confidence": 0.5,
+      "created_at": "2025-04-03T19:07:29.109Z",
+      "updated_at": "2025-04-03T19:07:29.109Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "3b5241cf-97ba-46fa-a94b-8a123e4cf729",
+      "description": "Propose System Architecture",
+      "reasoning": "Define the core components and their interactions to ensure a cohesive system.",
+      "evidence": "Components: 1. MCP Backend Server (Node.js/Express): Handles incoming requests, manages state, orchestrates AI and browser actions. 2. Gemini AI Module: Interfaces with the Gemini API, processes context, interprets commands. 3. Puppeteer Module (PNM): Manages the Puppeteer instance, executes browser actions. 4. Chrome Extension Bridge (URBM): Communicates with the Chrome Extension. 5. Chrome Extension: Runs in the user's browser, receives commands, executes actions, sends context back. Interactions: User -> MCP Server -> (Gemini AI Module -> Browser Module [PNM or URBM]) -> (Puppeteer Instance or Chrome Extension). Context Flow: Browser (Puppeteer/Extension) -> Server -> Gemini AI. Command Flow: User -> Server -> Gemini AI -> Server -> Browser Module -> Browser (Puppeteer/Extension). Communication: Server <-> Extension via WebSockets or long-polling for real-time interaction.",
+      "confidence": 0.5,
+      "created_at": "2025-04-03T19:07:36.195Z",
+      "updated_at": "2025-04-03T19:07:36.195Z",
+      "previous_step_id": "2a2e7bf9-bc62-494b-bb37-b1bd09d195d9",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "65821041-fa8b-4c12-8d7a-479da6050c35",
+      "description": "Recommend Technology Stack",
+      "reasoning": "Select appropriate technologies for each component based on requirements and common practices.",
+      "evidence": "Backend Server: Node.js (JavaScript runtime), Express.js (Web framework for API/MCP), dotenv (for .env loading), Winston or pino (Logging). AI Integration: @google/generative-ai (Official Gemini Node.js client). Puppeteer Mode (PNM): Puppeteer (Headless Chrome control). Chrome Extension: Standard Web Technologies (HTML, CSS, JavaScript), Chrome Extension APIs (tabs, scripting, storage, runtime for communication). Communication (Server <-> Extension): WebSockets (e.g., using the 'ws' library in Node.js and native WebSocket API in the extension) for efficient bidirectional communication. Testing: Jest or Mocha/Chai (Unit/Integration testing framework).",
+      "confidence": 0.5,
+      "created_at": "2025-04-03T19:07:50.236Z",
+      "updated_at": "2025-04-03T19:07:50.236Z",
+      "previous_step_id": "3b5241cf-97ba-46fa-a94b-8a123e4cf729",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "7c1650a8-7cfb-40dc-9fca-ba0af6683d5e",
+      "description": "Identify Key Challenges & Risks",
+      "reasoning": "Proactively address potential difficulties to mitigate risks during development.",
+      "evidence": "1. AI Context Accuracy: Ensuring the AI receives sufficient and relevant context (DOM, screenshots) without overwhelming it or causing performance issues. 2. Robustness Across Websites: Handling dynamic web pages, SPAs, anti-bot measures, and variations in website structures reliably. 3. Extension Security & Permissions: Balancing functionality with security, requesting only necessary permissions, and securing server-extension communication. 4. User Intervention Seamlessness: Designing a smooth transition between AI control and manual user control, and ensuring the AI can resume correctly. 5. State Management: Maintaining consistent state across the server, AI, Puppeteer instance, and Chrome extension. 6. Error Handling & Recovery: Implementing comprehensive error handling for AI failures, browser crashes, network issues, and unexpected website behavior. 7. Performance: Optimizing context gathering, AI interaction, and browser actions to avoid sluggishness. 8. Gemini API Limitations/Costs: Understanding potential rate limits, costs, and capabilities/limitations of the chosen Gemini model.",
+      "confidence": 0.5,
+      "created_at": "2025-04-03T19:07:57.577Z",
+      "updated_at": "2025-04-03T19:07:57.577Z",
+      "previous_step_id": "65821041-fa8b-4c12-8d7a-479da6050c35",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 57,
+    "tags": [
+      "planning",
+      "architecture",
+      "browser-automation",
+      "mcp-server",
+      "gemini-ai",
+      "puppeteer",
+      "chrome-extension"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "3944caa6-bac6-45fb-bfca-02d51c106cc7",
+  "problem": "Develop a Windows application (Screenshare with Gemini 2.5 Pro V1.0) using C# (pending confirmation) that captures screen and microphone, sends data to Gemini 2.5 Pro, provides GUI controls based on an image, and includes logging.",
+  "thinking_type": "systems",
+  "context": "Target Platform: Windows. Language: C# preferred. Key Components: GUI, Screen Capture, Audio Capture, Gemini API Integration, Logging, Threading. Potential Challenge: Real-time streaming support in Gemini API.",
+  "created_at": "2025-04-04T20:06:14.691Z",
+  "updated_at": "2025-04-04T20:06:14.691Z",
+  "steps": [],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 0,
+    "tags": [
+      "windows",
+      "csharp",
+      "gui",
+      "screenshare",
+      "audio",
+      "gemini-api",
+      "logging"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}

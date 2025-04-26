@@ -1,0 +1,147 @@
+{
+  "id": "e894d018-4a66-41e6-b999-b06691b99ff4",
+  "problem": "**Prompt: Requirements for Puppeteer Browser Automation MCP Server**\n\n**1. Overall Goal:**\nCreate an MCP server named `puppeteer-browser` that enables Roo Cline & Cline to perform browser automation tasks using Puppeteer. The server should control *non-headless* Chrome browser instances, allowing the user to observe the automation in real-time. The server must aim for **guaranteed operation across all target websites**, employing advanced techniques to handle variations and anti-automation measures.\n\n**2. Core Functionality (Puppeteer Actions):**\nThe server must provide tools corresponding to common Puppeteer actions, including but not limited to:\n*   `goto(url)`: Navigate to a specified URL.\n*   `click(selector)`: Click on an element matching the CSS selector.\n*   `type(selector, text, [options])`: Type text into an input field. Options could include `{ delay: number }`.\n*   `select(selector, value)`: Select an option within a `<select>` element.\n*   `waitForSelector(selector, [options])`: Wait for an element to appear in the DOM. Options could include `{ visible: boolean, timeout: number }`.\n*   `evaluate(js_function, ...args)`: Execute a JavaScript function within the page context.\n*   `extractText(selector)`: Extract the text content of element(s) matching the selector.\n*   `extractAttribute(selector, attributeName)`: Extract an attribute value from an element.\n*   `screenshot([options])`: Take a screenshot of the current page. Options could include `{ path: string, fullPage: boolean }`.\n*   `scroll(x, y)`: Scroll the page by specified amounts.\n*   `hover(selector)`: Hover the mouse cursor over an element.\n\nThe server should be designed with extensibility in mind, allowing new Puppeteer actions to be added as tools in the future.\n\n**3. Concurrency and State Management:**\n*   **Multiple Sessions:** The server must support managing **multiple concurrent browser sessions** independently. Users should be able to initiate, interact with, and terminate specific sessions.\n*   **Complex State Management:** Implement robust mechanisms for **managing complex state across different user requests within a session**. This includes handling logins, cookies, local storage, and session variables to maintain context for multi-step operations.\n\n**4. Invocation / Triggering:**\nUsers should be able to invoke the browser actions through:\n*   **Direct Commands:** Using a clear prefix, e.g., `browser(session_id): goto google.com`, `browser: click #submitButton`. Session ID optional if only one session is active or a default is assumed.\n*   **Advanced Natural Language Intent:** The server must employ **advanced AI-driven interpretation** to understand natural language requests, including **highly ambiguous or complex multi-step tasks**. It should be able to infer user intent, break down complex goals, and sequence appropriate browser actions automatically.\n\n*Examples:*\n    *   `browser(session_A): goto https://google.com`\n    *   `browser: type input[name=q] \"Elon Musk\"`\n    *   `browser: click input[name=btnK]`\n    *   `browser: waitForSelector #search`\n    *   `browser: extractText .g .LC20lb`\n    *   \"Using the browser, log into my bank account, navigate to the statements page, download the last 3 PDF statements, and let me know when done.\" (Requires advanced interpretation, state, and session management).\n\n**5. Configurable Parameters:**\nProvide the following configurable parameters for controlling browser behavior, with sensible defaults:\n*   `default_delay_ms`: Default delay (in milliseconds) between actions (e.g., 100ms). Allow override per action.\n*   `navigation_timeout_ms`: Maximum time (in milliseconds) for navigation actions like `goto` (e.g., 30000ms).\n*   `user_agent_string`: Allow setting a custom User-Agent string. Default to a standard Chrome UA.\n*   `viewport_width`, `viewport_height`: Set the browser window size (e.g., 1280x720).\n*   `screenshot_on_error` (boolean): Automatically take a screenshot if an action fails (default: true).\n*   `data_extraction_format`: Specify format for multi-item data extraction (e.g., \"json\", \"csv\", \"text_list\"). Default: \"json\".\n\nUsers should be able to override these defaults for specific tasks or action sequences if needed.\n\n**6. Error Handling & Resilience:**\n*   Implement advanced error handling, including configurable retries, timeouts, and **strategies to overcome anti-bot measures and CAPTCHAs** where feasible.\n*   Log actions, errors, decisions, and key events extensively for debugging and analysis.\n*   **Advanced Resilience & Self-Correction:** Implement sophisticated resilience mechanisms:\n    *   *Intelligent Retries*: Retry failed actions with modified strategies (e.g., different timings, interaction methods).\n    *   *Dynamic Selector Adaptation*: Actively adapt selectors when elements change structure or attributes.\n    *   *AI-driven Problem Solving*: If an instruction is ambiguous or an action fails persistently, the AI should attempt to diagnose the problem and formulate alternative approaches to achieve the user's inferred goal, potentially asking for clarification only as a last resort. The goal is maximum autonomy and success rate.\n\n**7. Data Handling:**\n*   For tools that extract data, define how single and multiple results are returned. Use the `data_extraction_format` parameter for multiple results.\n*   Return data clearly structured, likely as JSON output from the MCP tool.",
+  "thinking_type": "systems",
+  "context": "Planning the development of a Puppeteer MCP server based on user requirements.",
+  "created_at": "2025-03-28T15:25:53.217Z",
+  "updated_at": "2025-03-28T15:28:09.189Z",
+  "steps": [
+    {
+      "id": "39e40c6a-342d-4142-8dcf-fced6f645429",
+      "description": "Define System Boundaries and Overall Goal: Create a non-headless Puppeteer MCP server (`puppeteer-browser`) for robust browser automation, observable by the user, aiming for guaranteed operation.",
+      "reasoning": "Establish the scope and primary objective as the foundation for the system design.",
+      "evidence": "",
+      "confidence": 0.95,
+      "created_at": "2025-03-28T15:26:38.165Z",
+      "updated_at": "2025-03-28T15:26:38.165Z",
+      "previous_step_id": null,
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "e9b2f8d2-cefd-4043-b92a-07fc5ed0beba",
+      "description": "Identify Core Components: MCP Server (Node.js?), Puppeteer Library, Chrome Browser (non-headless), User Interface (Cline), Target Websites.",
+      "reasoning": "List the key parts of the system to understand their roles and relationships.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T15:26:42.252Z",
+      "updated_at": "2025-03-28T15:26:42.252Z",
+      "previous_step_id": "39e40c6a-342d-4142-8dcf-fced6f645429",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "aafc6ae4-e70c-4986-9a0f-e00026201e73",
+      "description": "Map Core Functionality: Define MCP tools corresponding to Puppeteer actions (`goto`, `click`, `type`, `select`, `waitForSelector`, `evaluate`, `extractText`, `extractAttribute`, `screenshot`, `scroll`, `hover`). Design for extensibility.",
+      "reasoning": "Specify the primary capabilities the server must offer, linking them to the underlying Puppeteer functions.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T15:26:56.781Z",
+      "updated_at": "2025-03-28T15:26:56.781Z",
+      "previous_step_id": "e9b2f8d2-cefd-4043-b92a-07fc5ed0beba",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "3a7a72de-e1c9-4523-a8c7-da235d3a61b5",
+      "description": "Design for Concurrency & State: Implement mechanisms for managing multiple independent browser sessions (session IDs) and maintaining state (cookies, storage, logins) within each session.",
+      "reasoning": "Address the need for parallel operations and persistent context across user interactions.",
+      "evidence": "",
+      "confidence": 0.85,
+      "created_at": "2025-03-28T15:27:11.673Z",
+      "updated_at": "2025-03-28T15:27:11.673Z",
+      "previous_step_id": "aafc6ae4-e70c-4986-9a0f-e00026201e73",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "2ab5d336-d513-4ad2-a1cb-a1a5e1ff8ff9",
+      "description": "Specify Invocation Mechanisms: Support direct commands (e.g., `browser(sid): action`) and advanced natural language processing for intent inference and complex task execution.",
+      "reasoning": "Define how users will interact with the server, covering both explicit and implicit commands.",
+      "evidence": "",
+      "confidence": 0.8,
+      "created_at": "2025-03-28T15:27:26.078Z",
+      "updated_at": "2025-03-28T15:27:26.078Z",
+      "previous_step_id": "3a7a72de-e1c9-4523-a8c7-da235d3a61b5",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "b97198f3-a7ed-44ec-975f-c67fce9b3d83",
+      "description": "Outline Configuration: Define parameters (`default_delay_ms`, `navigation_timeout_ms`, `user_agent_string`, `viewport_width/height`, `screenshot_on_error`, `data_extraction_format`) with defaults and override capability.",
+      "reasoning": "Provide flexibility and control over the browser automation behavior.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T15:27:40.494Z",
+      "updated_at": "2025-03-28T15:27:40.494Z",
+      "previous_step_id": "2ab5d336-d513-4ad2-a1cb-a1a5e1ff8ff9",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "bf820ec2-422a-4bb8-a7d1-6c214b8e7e29",
+      "description": "Design for Resilience: Implement advanced error handling (retries, timeouts), anti-bot/CAPTCHA strategies, extensive logging, and self-correction mechanisms (intelligent retries, dynamic selectors, AI problem-solving).",
+      "reasoning": "Ensure the system is robust, reliable, and can handle failures and website variations gracefully, aiming for 'guaranteed operation'.",
+      "evidence": "",
+      "confidence": 0.85,
+      "created_at": "2025-03-28T15:27:55.093Z",
+      "updated_at": "2025-03-28T15:27:55.093Z",
+      "previous_step_id": "b97198f3-a7ed-44ec-975f-c67fce9b3d83",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    },
+    {
+      "id": "33d59a0f-791f-461d-bba5-96c46aa8aa84",
+      "description": "Define Data Handling: Specify structured output (likely JSON) for extracted data, using `data_extraction_format` for multiple results.",
+      "reasoning": "Ensure data returned by the server is clear, consistent, and usable.",
+      "evidence": "",
+      "confidence": 0.9,
+      "created_at": "2025-03-28T15:28:09.189Z",
+      "updated_at": "2025-03-28T15:28:09.189Z",
+      "previous_step_id": "bf820ec2-422a-4bb8-a7d1-6c214b8e7e29",
+      "validation": {
+        "is_validated": false,
+        "issues": [],
+        "score": null
+      }
+    }
+  ],
+  "metadata": {
+    "status": "in_progress",
+    "validation_state": "not_validated",
+    "completion_percentage": 100,
+    "tags": [
+      "mcp-server",
+      "puppeteer",
+      "browser-automation",
+      "planning",
+      "systems-thinking"
+    ]
+  },
+  "structure": {
+    "phase": "initial",
+    "expected_steps": 7,
+    "pattern": "map_analyze_model"
+  }
+}
